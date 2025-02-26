@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Dictionary</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            margin: 0;
+            padding: 20px;
+        }
+    
+        #search-container {
+            margin-bottom: 20px;
+        }
+    
+        #search {
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+        }
+    
+        button {
+            padding: 10px 15px;
+            border: none;
+            background-color: #007bff;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-left: 10px;
+        }
+    
+        button:hover {
+            background-color: #0056b3;
+        }
+    
+        #result {
+            background-color: white;
+            padding: 20px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+        }
+    
+        strong {
+            display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+    margin-top: 10px;
+        }
+    
+        code {
+            background-color: #f8f8f8;
+            padding: 2px 5px;
+            border-radius: 3px;
+            display: block;
+            margin-bottom: 10px;
+            font-family: 'Courier New', monospace;
+            white-space: pre-wrap; /* Preserve whitespace */
+        }
+    
+        .example {
+            font-style: italic;
+            margin-top: 10px;
+            color: #555;
+        }
+    </style>
+    
+</head>
+<body>
+
+<h1>HTML Tag Dictionary</h1>
+    <input type="text" id="search" placeholder="Search for a tag..." oninput="searchTag()">
+    <div id="result"></div>
+
+<script>
+const tags = {
+    "a": {
+        "description": "Defines a hyperlink.",
+        "code": "<code>&lt;a href='https://www.example.com'&gt;This is a link&lt;/a&gt;</code>"
+    },
+    "div": {
+        "description": "Defines a division or section.",
+        "code": "<code>&lt;div&gt;This is a division.&lt;/div&gt;</code>"
+    },
+    "p": {
+        "description": "Defines a paragraph.",
+        "code": "<code>&lt;p&gt;This is a paragraph.&lt;/p&gt;</code>",
+        "example": "<p>This is a paragraph.</p>"
+    },
+    "h1": {
+        "description": "Defines HTML headings.",
+        "code": "<code>&lt;h1&gt;This is a heading&lt;/h1&gt;</code>",
+        "example": "<h1>This is a heading</h1>"
+    },
+    "h2": {
+        "description": "Defines HTML headings.",
+        "code": "<code>&lt;h2&gt;This is a subheading&lt;/h2&gt;</code>",
+        "example": "<h2>This is a subheading</h2>"
+    },
+    "h3": {
+        "description": "Defines HTML headings.",
+        "code": "<code>&lt;h3&gt;This is a smaller heading&lt;/h3&gt;</code>",
+        "example": "<h3>This is a smaller heading</h3>"
+    },
+    "img": {
+        "description": "Defines an image.",
+        "code": "<code>&lt;img src='image.jpg' alt='Image Description'&gt;</code>",
+        "example": "<img src='image.jpg' alt='Image Description'>"
+    },
+    "ul": {
+        "description": "Defines an unordered list.",
+        "code": "<code>&lt;ul&gt;&lt;li&gt;Item 1&lt;/li&gt;&lt;li&gt;Item 2&lt;/li&gt;&lt;/ul&gt;</code>",
+        "example": "<ul><li>Item 1</li><li>Item 2</li></ul>"
+    },
+    "ol": {
+        "description": "Defines an ordered list.",
+        "code": "<code>&lt;ol&gt;&lt;li&gt;First item&lt;/li&gt;&lt;li&gt;Second item&lt;/li&gt;&lt;/ol&gt;</code>",
+        "example": "<ol><li>First item</li><li>Second item</li></ol>"
+    },
+    "li": {
+        "description": "Defines a list item.",
+        "code": "<code>&lt;li&gt;This is a list item&lt;/li&gt;</code>",
+        "example": "<li>This is a list item</li>"
+    },
+    "table": {
+        "description": "Defines a table.",
+        "code": "<code>&lt;table&gt;&lt;tr&gt;&lt;td&gt;Cell 1&lt;/td&gt;&lt;td&gt;Cell 2&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;</code>",
+        "example": "<table><tr><td>Cell 1</td><td>Cell 2</td></tr></table>"
+    },
+    "tr": {
+        "description": "Defines a row in a table.",
+        "code": "<code>&lt;tr&gt;&lt;td&gt;Row 1 Cell 1&lt;/td&gt;&lt;/tr&gt;</code>",
+        "example": "<tr><td>Row 1 Cell 1</td></tr>"
+    },
+    "td": {
+        "description": "Defines a cell in a table.",
+        "code": "<code>&lt;td&gt;This is a table cell&lt;/td&gt;</code>",
+        "example": "<td>This is a table cell</td>"
+    },
+    "th": {
+        "description": "Defines a header cell in a table.",
+        "code": "<code>&lt;th&gt;This is a header cell&lt;/th&gt;</code>",
+        "example": "<th>This is a header cell</th>"
+    },
+    "form": {
+        "description": "Defines an HTML form for user input.",
+        "code": "<code>&lt;form&gt;&lt;input type='text' placeholder='Enter name'&gt;&lt;/form&gt;</code>",
+        "example": "<form><input type='text' placeholder='Enter name'></form>"
+    },
+    "input": {
+        "description": "Defines an input control.",
+        "code": "<code>&lt;input type='text' placeholder='Text input'&gt;</code>",
+        "example": "<input type='text' placeholder='Text input'>"
+    },
+    "button": {
+        "description": "Defines a clickable button.",
+        "code": "<code>&lt;button&gt;Click Me!&lt;/button&gt;</code>",
+        "example": "<button>Click Me!</button>"
+    },
+    "span": {
+        "description": "Defines a section in a document.",
+        "code": "<code>&lt;span&gt;This is a span element&lt;/span&gt;</code>",
+        "example": "<span>This is a span element</span>"
+    },
+    "strong": {
+        "description": "Defines important text.",
+        "code": "<code>&lt;strong&gt;This text is strong&lt;/strong&gt;</code>",
+        "example": "<strong>This text is strong</strong>"
+    },
+    "em": {
+        "description": "Defines emphasized text.",
+        "code": "<code>&lt;em&gt;This text is emphasized&lt;/em&gt;</code>",
+        "example": "<em>This text is emphasized</em>"
+    },
+    "br": {
+        "description": "Inserts a single line break.",
+        "code": "<code>&lt;br&gt;</code>",
+        "example": "Line 1<br>Line 2"
+    },
+    "hr": {
+        "description": "Defines a thematic change in the content.",
+        "code": "<code>&lt;hr&gt;</code>",
+        "example": "<hr>"
+    },
+    "blockquote": {
+        "description": "Defines a section that is quoted from another source.",
+        "code": "<code>&lt;blockquote&gt;This is a quote.&lt;/blockquote&gt;</code>",
+        "example": "<blockquote>This is a quote.</blockquote>"
+    },
+    "code": {
+        "description": "Defines a piece of computer code.",
+        "code": "<code>&lt;code&gt;console.log('Hello, World!');&lt;/code&gt;</code>",
+        "example": "<code>console.log('Hello, World!');</code>"
+    },
+    "pre": {
+        "description": "Defines preformatted text.",
+        "code": "<code>&lt;pre&gt;This is preformatted text.&lt;/pre&gt;</code>",
+        "example": "<pre>This is preformatted text.</pre>"
+    },
+    "sub": {
+        "description": "Defines subscript text.",
+        "code": "<code>&lt;sub&gt;This is subscript&lt;/sub&gt;</code>",
+        "example": "<sub>This is subscript</sub>"
+    },
+    "sup": {
+        "description": "Defines superscript text.",
+        "code": "<code>&lt;sup&gt;This is superscript&lt;/sup&gt;</code>",
+        "example": "<sup>This is superscript</sup>"
+    },
+    "cite": {
+        "description": "Defines the title of a work.",
+        "code": "<code>&lt;cite&gt;Title of the work&lt;/cite&gt;</code>",
+        "example": "<cite>Title of the work</cite>"
+    },
+    "label": {
+        "description": "Defines a label for an &lt;input&gt; element.",
+        "code": "<code>&lt;label&gt;Name:&lt;/label&gt;&lt;input type='text'&gt;</code>",
+        "example": "<label>Name:</label><input type='text'>"
+    },
+    "select": {
+        "description": "Defines a drop-down list.",
+        "code": "<code>&lt;select&gt;&lt;option&gt;Option 1&lt;/option&gt;&lt;/select&gt;</code>",
+        "example": "<select><option>Option 1</option></select>"
+    },
+    "option": {
+        "description": "Defines an option in a drop-down list.",
+        "code": "<code>&lt;option&gt;This is an option&lt;/option&gt;</code>",
+        "example": "<option>This is an option</option>"
+    },
+    "textarea": {
+        "description": "Defines a multi-line input control.",
+        "code": "<code>&lt;textarea&gt;This is a textarea&lt;/textarea&gt;</code>",
+        "example": "<textarea>This is a textarea</textarea>"
+    },
+    "area": {
+        "description": "Defines an area inside an image map.",
+        "code": "<code>&lt;area&gt;This is an area&lt;/area&gt;</code>",
+        "example": "<area>"
+    },
+    "map": {
+        "description": "Defines an image map.",
+        "code": "<code>&lt;map&gt;&lt;area&gt;Area&lt;/area&gt;&lt;/map&gt;</code>",
+        "example": "<map><area></area></map>"
+    },
+    "iframe": {
+        "description": "Defines an inline frame.",
+        "code": "<code>&lt;iframe src='https://www.example.com'&gt;&lt;/iframe&gt;</code>",
+        "example": "<iframe src='https://www.example.com'></iframe>"
+    },
+    "style": {
+        "description": "Defines style information for a document.",
+        "code": "<code>&lt;style&gt;body { background-color: lightblue; }&lt;/style&gt;</code>",
+        "example": "See Background Color<style>body { background-color: lightblue; }</style>"
+    },
+    "link": {
+        "description": "Defines the relationship between a document and an external resource (most used for stylesheets).",
+        "code": "<code>&lt;link rel='stylesheet' href='styles.css'&gt;</code>",
+        "example": "<link rel='stylesheet' href='styles.css'>"
+    },
+    "meta": {
+        "description": "Defines metadata about an HTML document.",
+        "code": "<code>&lt;meta charset='UTF-8'&gt;</code>",
+        "example": "<meta charset='UTF-8'>"
+    },
+    "title": {
+        "description": "Defines the title of the document.",
+        "code": "<code>&lt;title&gt;Document Title&lt;/title&gt;</code>",
+        "example": "<title>Document Title</title>"
+    },
+    "html": {
+        "description": "Defines the root of an HTML document.",
+        "code": "<code>&lt;html&gt;&lt;/html&gt;</code>",
+        "example": "<html></html>"
+    },
+    "head": {
+        "description": "Defines the head section of an HTML document.",
+        "code": "<code>&lt;head&gt;&lt;/head&gt;</code>",
+        "example": "<head></head>"
+    },
+    "body": {
+        "description": "Defines the body of an HTML document.",
+        "code": "<code>&lt;body&gt;&lt;/body&gt;</code>",
+        "example": "<body></body>"
+    },
+    "abbr": {
+        "description": "Defines an abbreviation.",
+        "code": "<code>&lt;abbr title='Abbreviation'&gt;Abbr.&lt;/abbr&gt;</code>",
+        "example": "<abbr title='Abbreviation'>Abbr.</abbr>"
+    },
+    "address": {
+        "description": "Defines contact information.",
+        "code": "<code>&lt;address&gt;123 Main St.&lt;/address&gt;</code>",
+        "example": "<address>123 Main St.</address>"
+    },
+    "b": {
+        "description": "Defines bold text.",
+        "code": "<code>&lt;b&gt;This is bold text&lt;/b&gt;</code>",
+        "example": "<b>This is bold text</b>"
+    },
+    "i": {
+        "description": "Defines italic text.",
+        "code": "<code>&lt;i&gt;This is italic text&lt;/i&gt;</code>",
+        "example": "<i>This is italic text</i>"
+    },
+    "u": {
+        "description": "Defines underlined text.",
+        "code": "<code>&lt;u&gt;This text is underlined&lt;/u&gt;</code>",
+        "example": "<u>This text is underlined</u>"
+    },
+    "small": {
+        "description": "Defines smaller text.",
+        "code": "<code>&lt;small&gt;This is smaller text&lt;/small&gt;</code>",
+        "example": "<small>This is smaller text</small>"
+    },
+    "mark": {
+        "description": "Defines marked/highlighted text.",
+        "code": "<code>&lt;mark&gt;This text is marked&lt;/mark&gt;</code>",
+        "example": "<mark>This text is marked</mark>"
+    },
+    "del": {
+        "description": "Defines deleted text.",
+        "code": "<code>&lt;del&gt;This text is deleted&lt;/del&gt;</code>",
+        "example": "<del>This text is deleted</del>"
+    },
+    "ins": {
+        "description": "Defines inserted text.",
+        "code": "<code>&lt;ins&gt;This text is inserted&lt;/ins&gt;</code>",
+        "example": "<ins>This text is inserted</ins>"
+    },
+    "time": {
+        "description": "Defines a specific time (or range of time).",
+        "code": "<code>&lt;time&gt;2024-10-18&lt;/time&gt;</code>",
+        "example": "<time>2024-10-18</time>"
+    },
+    "progress": {
+        "description": "Represents the progress of a task.",
+        "code": "<code>&lt;progress value='50' max='100'&gt;&lt;/progress&gt;</code>",
+        "example": "<progress value='50' max='100'></progress>"
+    },
+    "meter": {
+        "description": "Defines a scalar measurement within a known range.",
+        "code": "<code>&lt;meter value='0.6' min='0' max='1'&gt;&lt;/meter&gt;</code>",
+        "example": "<meter value='0.6' min='0' max='1'></meter>"
+    },
+    "details": {
+        "description": "Defines additional details that the user can view or hide.",
+        "code": "<code>&lt;details&gt;&lt;summary&gt;More info&lt;/summary&gt;Details text&lt;/details&gt;</code>",
+        "example": "<details><summary>More info</summary>Details text</details>"
+    },
+    "summary": {
+        "description": "Defines a summary for a &lt;details&gt; element.",
+        "code": "<code>&lt;summary&gt;Summary text&lt;/summary&gt;</code>",
+        "example": "<summary>Summary text</summary>"
+    },
+    "dialog": {
+        "description": "Defines a dialog box or window.",
+        "code": "<code>&lt;dialog&gt;This is a dialog&lt;/dialog&gt;</code>",
+        "example": "<dialog>This is a dialog</dialog>"
+    },
+    "template": {
+        "description": "Defines a template.",
+        "code": "<code>&lt;template&gt;&lt;p&gt;This is a template&lt;/p&gt;&lt;/template&gt;</code>",
+        "example": "<template><p>This is a template</p></template>"
+    },
+    "slot": {
+        "description": "Defines a slot in a template.",
+        "code": "<code>&lt;slot&gt;Default content&lt;/slot&gt;</code>",
+        "example": "<slot>Default content</slot>"
+    },
+    "noscript": {
+        "description": "Defines an alternate content for users that have disabled scripts.",
+        "code": "<code>&lt;noscript&gt;Scripts are disabled.&lt;/noscript&gt;</code>",
+        "example": "<noscript>Scripts are disabled.</noscript>"
+    },
+    "wbr": {
+        "description": "Suggests where a line break could occur.",
+        "code": "<code>&lt;wbr&gt;</code>",
+        "example": "Hello<wbr>World"
+    },
+    "fieldset": {
+        "description": "Groups related elements in a form.",
+        "code": "<code>&lt;fieldset&gt;&lt;legend&gt;Legend&lt;/legend&gt;Content&lt;/fieldset&gt;</code>",
+        "example": "<fieldset><legend>Legend</legend>Content</fieldset>"
+    },
+    "legend": {
+        "description": "Defines a caption for a &lt;fieldset&gt; element.",
+        "code": "<code>&lt;legend&gt;This is a legend&lt;/legend&gt;</code>",
+        "example": "<legend>This is a legend</legend>"
+    },
+    "canvas": {
+        "description": "Used to draw graphics on the fly via scripting (usually JavaScript).",
+        "code": "<code>&lt;canvas width='200' height='100'&gt;&lt;/canvas&gt;</code>",
+        "example": "<canvas width='200' height='100'></canvas>"
+    },
+    "svg": {
+        "description": "Defines a container for Scalable Vector Graphics.",
+        "code": "<code>&lt;svg width='100' height='100'&gt;&lt;/svg&gt;</code>",
+        "example": "<svg width='100' height='100'></svg>"
+    },
+    "path": {
+        "description": "Defines a path in SVG.",
+        "code": "<code>&lt;path d='M10 10 H 90 V 90 H 10 L 10 10'&gt;&lt;/path&gt;</code>",
+        "example": "<path d='M10 10 H 90 V 90 H 10 L 10 10'></path>"
+    },
+    "circle": {
+        "description": "Defines a circle in SVG.",
+        "code": "<code>&lt;circle cx='50' cy='50' r='40'&gt;&lt;/circle&gt;</code>",
+        "example": "<circle cx='50' cy='50' r='40'></circle>"
+    },
+    "rect": {
+        "description": "Defines a rectangle in SVG.",
+        "code": "<code>&lt;rect width='100' height='100'&gt;&lt;/rect&gt;</code>",
+        "example": "<rect width='100' height='100'></rect>"
+    },
+    "line": {
+        "description": "Defines a line in SVG.",
+        "code": "<code>&lt;line x1='0' y1='0' x2='200' y2='100'&gt;&lt;/line&gt;</code>",
+        "example": "<line x1='0' y1='0' x2='200' y2='100'></line>"
+    },
+    "polygon": {
+        "description": "Defines a shape with multiple sides in SVG.",
+        "code": "<code>&lt;polygon points='200,10 250,190 160,210'&gt;&lt;/polygon&gt;</code>",
+        "example": "<polygon points='200,10 250,190 160,210'></polygon>"
+    },
+    "polyline": {
+        "description": "Defines a shape consisting of connected straight line segments in SVG.",
+        "code": "<code>&lt;polyline points='200,10 250,190 160,210'&gt;&lt;/polyline&gt;</code>",
+        "example": "<polyline points='200,10 250,190 160,210'></polyline>"
+    },
+    "ellipse": {
+        "description": "Defines an ellipse in SVG.",
+        "code": "<code>&lt;ellipse cx='50' cy='50' rx='30' ry='20'&gt;&lt;/ellipse&gt;</code>",
+        "example": "<ellipse cx='50' cy='50' rx='30' ry='20'></ellipse>"
+    },
+    "defs": {
+        "description": "Defines a container for defining objects that can be reused.",
+        "code": "<code>&lt;defs&gt;&lt;/defs&gt;</code>",
+        "example": "<defs></defs>"
+    },
+    "use": {
+        "description": "Reuses an element defined in &lt;defs&gt;.",
+        "code": "<code>&lt;use xlink:href='#id'&gt;&lt;/use&gt;</code>",
+        "example": "<use xlink:href='#id'></use>"
+    },
+    "symbol": {
+        "description": "Defines a symbol definition in SVG.",
+        "code": "<code>&lt;symbol&gt;&lt;/symbol&gt;</code>",
+        "example": "<symbol></symbol>"
+    },
+    "mask": {
+        "description": "Defines an area that will show the content of the element underneath.",
+        "code": "<code>&lt;mask&gt;&lt;/mask&gt;</code>",
+        "example": "<mask></mask>"
+    },
+    "filter": {
+        "description": "Defines a filter effect for an SVG element.",
+        "code": "<code>&lt;filter&gt;&lt;/filter&gt;</code>",
+        "example": "<filter></filter>"
+    },
+    "linearGradient": {
+        "description": "Defines a linear gradient.",
+        "code": "<code>&lt;linearGradient&gt;&lt;/linearGradient&gt;</code>",
+        "example": "<linearGradient></linearGradient>"
+    },
+    "radialGradient": {
+        "description": "Defines a radial gradient.",
+        "code": "<code>&lt;radialGradient&gt;&lt;/radialGradient&gt;</code>",
+        "example": "<radialGradient></radialGradient>"
+    },
+    "stop": {
+        "description": "Defines a stop in a gradient.",
+        "code": "<code>&lt;stop&gt;&lt;/stop&gt;</code>",
+        "example": "<stop></stop>"
+    },
+    "view": {
+        "description": "Defines the visible area of an SVG canvas.",
+        "code": "<code>&lt;view&gt;&lt;/view&gt;</code>",
+        "example": "<view></view>"
+    },
+    "pattern": {
+        "description": "Defines a pattern to use in filling shapes.",
+        "code": "<code>&lt;pattern&gt;&lt;/pattern&gt;</code>",
+        "example": "<pattern></pattern>"
+    },
+    "noscript": {
+        "description": "Defines an alternate content for users that have disabled scripts.",
+        "code": "<code>&lt;noscript&gt;Scripts are disabled&lt;/noscript&gt;</code>",
+        "example": "<noscript>Scripts are disabled</noscript>"
+    },
+    "time": {
+        "description": "Defines a specific time (or range of time).",
+        "code": "<code>&lt;time&gt;2024-10-18&lt;/time&gt;</code>",
+        "example": "<time>2024-10-18</time>"
+    },
+    "progress": {
+        "description": "Represents the progress of a task.",
+        "code": "<code>&lt;progress value='50' max='100'&gt;&lt;/progress&gt;</code>",
+        "example": "<progress value='50' max='100'></progress>"
+    },
+    "meter": {
+        "description": "Defines a scalar measurement within a known range.",
+        "code": "<code>&lt;meter value='0.6' min='0' max='1'&gt;&lt;/meter&gt;</code>",
+        "example": "<meter value='0.6' min='0' max='1'></meter>"
+    },
+    // Add more tags as needed up to 150
+};
+
+
+
+
+function searchTag() {
+    const searchInput = document.getElementById('search').value.toLowerCase();
+    const resultDiv = document.getElementById('result');
+    resultDiv.innerHTML = '';
+
+    if (searchInput === '') {
+        return; // If the input is empty, do nothing
+    }
+
+    const tagInfo = tags[searchInput];
+    if (tagInfo) {
+        const exampleText = tagInfo.example ? tagInfo.example : 'Click Try it Yourself to see example.';
+        resultDiv.innerHTML = `
+            <strong>Tag:</strong> ${searchInput}<br>
+            <strong>Description:</strong> ${tagInfo.description}<br>
+            <strong>HTML Code:</strong> <code>${tagInfo.code}</code><br>
+            <strong>Example:</strong> ${exampleText}<br>
+            <button onclick="openPlayground('${searchInput}')">Try it Yourself</button>
+        `;
+    } else {
+        resultDiv.innerHTML = 'Tag not found. Please try another.';
+    }
+}
+
+function openPlayground(tagName) {
+    const url = `html_playground.html?tag=${tagName}`;
+    window.open(url, '_blank');
+}
+</script>
+
+</body>
+</html>
