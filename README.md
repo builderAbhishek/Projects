@@ -5,7 +5,7 @@
 
 <p align="left"> <a href="https://github.com/ryo-ma/github-profile-trophy"><img src="https://github-profile-trophy.vercel.app/?username=chaudharyabhishek-p" alt="chaudharyabhishek-p" /></a> </p>
 
-- 🔭 I’m currently working on [Bhartiya Cyber Squad](bhartiyacybersquad.in)
+- 🔭 I’m currently working on [Alag Innovative Solution](https://viraltopics.in/alag-innovative-solution)
 
 - 🌱 I’m currently learning **Backend (PHP, MySql, React.js), Cyber Security**
 
@@ -13,15 +13,15 @@
 
 - 🤝 I'm looking for a team to work with me **(web development, content writing, cyber security, app development, etc.)**
 
-- 👨‍💻 All of my projects are available at [techinwave.tech](techinwave.tech)
+- 👨‍💻 All of my projects are available at [Abhi.shohratgarh.in](abhi.shohratgarh.in)
 
-- 📝 I regularly write articles on [apnasiddharthnagar.in](apnasiddharthnagar.in)
+- 📝 I regularly write articles on [viraltopics.in](https://viraltopics.in)
 
 - 💬 Ask me about **Front end and Cyber Security**
 
 - 📫 How to reach me **kkumarch96@gmail.com**
 
-- 📄 Know about my experiences [techinwave.tech/resume.pdf](techinwave.tech/resume.pdf)
+- 📄 Know about my experiences [abhi.shohratgarh.in/resume.pdf](abhi.shohratgarh.in/resume.pdf)
 
 - ⚡ Fun fact **If you really want to know just dm me**
 
