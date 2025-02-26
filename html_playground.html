@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML & CSS Coding Playground by Abhishek Chaudhary</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        body {
+            font-family: 'Courier New', Courier, monospace;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            margin: 0;
+            padding: 0px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+        }
+        nav {
+            width: 100%;
+            background-color: #fafafa;
+            padding: 10px;
+            position: fixed;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            margin-bottom: 5px;
+        }
+        nav h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            color: #007bff;
+        }
+        nav p {
+            color: red;
+            font-size: 1.5rem;
+            margin-top: 5px;
+            margin-bottom: 0px;
+        }
+        h1 {
+            margin: 0;
+            font-size: 2.3rem;
+        }
+        h3 {
+            margin: 15px 0 5px;
+            font-size: 2rem;
+        }
+        .editor-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            margin-top: 150px;
+            max-width: 1200px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        textarea {
+            height: 300px;
+            border: none;
+            resize: none;
+            padding: 10px;
+            background-color: #3e3e42;
+            color: #ffffff;
+            font-family: Arial, Helvetica, sans-serif;
+            font-size: 14px;
+        }
+        textarea:focus {
+            outline: none;
+            border: 1px solid #09c947;
+        }
+        #output {
+            width: 80%;
+            height: 400px;
+            border: 3px solid #09c947;
+            border-top: 3px solid #09c947;
+            background-color: #fff;
+            padding: 5px;
+            overflow: auto;
+        }
+        button {
+            padding: 10px 15px;
+            background-color: #007bff;
+            color: #ffffff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin: 5px; /* Added margin for spacing */
+        }
+        button:hover {
+            background-color: #3e3e42;
+        }
+        .button-container {
+            margin: 15px 0;
+        }
+        .editor-section {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            margin-bottom: 10px;
+        }
+        .editor-label {
+            padding: 10px;
+            background-color: #09c947;
+            font-weight: bold;
+            color: #000000;
+            font-size: 1.6rem;
+        }
+        @media (min-width: 768px) {
+            .editor-container {
+                flex-direction: row;
+            }
+            .editor-section {
+                flex: 1;
+                margin: 0 5px;
+            }
+        }
+        footer {
+            margin-top: 20px;
+            padding: 10px;
+            background-color: #1e1e1e;
+            color: #ffffff;
+            width: 100%;
+            font-size: 0.9rem;
+            border-radius: 5px;
+        }
+        .shortcut {
+            display: inline-block;
+            margin: 0 5px;
+            padding: 3px 5px;
+            background-color: #007bff;
+            color: #ffffff;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <h1>Coding Playground by <span style="color: #FF6600;">SkyNet Technical Institute</span></h1>
+        <p>Developed by Abhishek Chaudhary</p>
+    </nav>
+    
+    <div class="editor-container">
+        <div class="editor-section">
+            <div class="editor-label">HTML</div>
+            <textarea id="htmlCode" placeholder="Write HTML code here..."></textarea>
+        </div>
+        <div class="editor-section">
+            <div class="editor-label">CSS</div>
+            <textarea id="cssCode" placeholder="Write CSS code here..."></textarea>
+        </div>
+    </div>
+
+    <div class="button-container">
+        <button id="runButton"><i class="fas fa-play"></i> Run Code</button>
+        <button id="saveButton"><i class="fas fa-save"></i> Save Code</button> <!-- Save Button -->
+    </div>
+
+    <h3>Output</h3>
+    <iframe id="output" sandbox="allow-same-origin allow-scripts" srcdoc=""></iframe>
+
+    <footer>
+        <div style="width: 100%; display: flex; align-items: center; justify-content: center;">
+            <p>
+                <span style="font-size: 25px; font-weight: 700;">Shortcut Key:</span> <br><br>
+                <span class="shortcut">Ctrl + /</span> Comment/Uncomment<br><br>
+                <span class="shortcut">Ctrl + Enter</span> Run Code<br><br>
+                <span class="shortcut">Ctrl + Z</span> Undo<br><br>
+                <span class="shortcut">Ctrl + Y</span> Redo<br><br>
+                <span class="shortcut">Ctrl + C</span> Copy<br><br>
+                <span class="shortcut">Ctrl + V</span> Paste<br><br>
+                <span class="shortcut">Ctrl + X</span> Cut<br><br>
+                <span class="shortcut">Ctrl + A</span> Select All
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        const runCode = () => {
+    const html = document.getElementById('htmlCode').value;
+    const css = "<style>" + document.getElementById('cssCode').value + "</style>";
+    const output = document.getElementById('output');
+    output.srcdoc = html + css;
+
+    // Add event listener for links to open in new tab
+    output.onload = () => {
+        const links = output.contentDocument.querySelectorAll('a');
+        links.forEach(link => {
+            link.addEventListener('click', (event) => {
+                event.preventDefault(); // Prevent the default action
+                window.open(link.href, '_blank'); // Open the link in a new tab
+            });
+        });
+    };
+};
+
+
+        const saveCode = () => {
+            const html = document.getElementById('htmlCode').value;
+            const css = document.getElementById('cssCode').value;
+            const blob = new Blob([html + "\n<style>\n" + css + "\n</style>"], { type: 'text/html' });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = 'skynet_playground_code.html';
+            a.click();
+            URL.revokeObjectURL(url);
+        };
+
+        document.getElementById('runButton').onclick = runCode;
+        document.getElementById('saveButton').onclick = saveCode; // Save button click event
+
+        // Undo/Redo history
+        let currentTextarea = null;
+        const MAX_HISTORY = 20; // Maximum number of history entries
+        const history = {
+            undo: [],
+            redo: [],
+        };
+
+        const trackChanges = (value) => {
+            if (currentTextarea) {
+                if (history.undo.length === 0 || history.undo[history.undo.length - 1] !== value) {
+                    if (history.undo.length >= MAX_HISTORY) {
+                        history.undo.shift(); // Remove oldest entry if limit is reached
+                    }
+                    history.undo.push(value);
+                    history.redo = []; // Clear redo stack on new change
+                }
+            }
+        };
+
+        const addCommentToggle = (textarea) => {
+            const start = textarea.selectionStart;
+            const end = textarea.selectionEnd;
+            const selectedText = textarea.value.substring(start, end);
+            const lines = selectedText.split('\n').map(line => {
+                if (textarea.id === 'htmlCode') {
+                    // For HTML
+                    return line.startsWith('<!--') && line.endsWith('-->') 
+                        ? line.slice(4, -3) // Remove <!-- and -->
+                        : '<!-- ' + line + ' -->'; // Add <!-- and -->
+                } else if (textarea.id === 'cssCode') {
+                    // For CSS
+                    return line.startsWith('/*') && line.endsWith('*/') 
+                        ? line.slice(2, -2) // Remove /* and */
+                        : '/* ' + line + ' */'; // Add /* and */
+                }
+                return line; // If not HTML or CSS, return line unchanged
+            });
+            textarea.setRangeText(lines.join('\n'), start, end, 'end');
+        };
+
+        // Keyboard shortcuts
+        document.addEventListener('keydown', function(event) {
+            const activeElement = document.activeElement;
+            if (activeElement.tagName === 'TEXTAREA') {
+                currentTextarea = activeElement; // Track the currently focused textarea
+
+                // Track changes on input
+                if (event.key !== 'Control' && event.key !== 'Meta') {
+                    trackChanges(activeElement.value);
+                }
+
+                // Ctrl + Enter to run code
+                if (event.ctrlKey && event.key === 'Enter') {
+                    event.preventDefault();
+                    runCode();
+                }
+                // Ctrl + / to comment/uncomment selected lines
+                else if (event.ctrlKey && event.key === '/') {
+                    event.preventDefault();
+                    addCommentToggle(activeElement);
+                }
+                // Ctrl + Z for undo
+                else if (event.ctrlKey && event.key === 'z') {
+                    event.preventDefault();
+                    if (history.undo.length > 0) {
+                        const lastValue = history.undo.pop();
+                        history.redo.push(activeElement.value);
+                        activeElement.value = history.undo.length > 0 ? history.undo[history.undo.length - 1] : '';
+                    }
+                }
+                // Ctrl + Y for redo
+                else if (event.ctrlKey && event.key === 'y') {
+                    event.preventDefault();
+                    if (history.redo.length > 0) {
+                        const lastValue = history.redo.pop();
+                        history.undo.push(activeElement.value);
+                        activeElement.value = lastValue;
+                    }
+                }
+                // Ctrl + C for copy
+                else if (event.ctrlKey && event.key === 'c') {
+                    document.execCommand('copy');
+                }
+                // Ctrl + V for paste
+                else if (event.ctrlKey && event.key === 'v') {
+                    document.execCommand('paste');
+                }
+                // Ctrl + X for cut
+                else if (event.ctrlKey && event.key === 'x') {
+                    document.execCommand('cut');
+                }
+                // Ctrl + A for select all
+                else if (event.ctrlKey && event.key === 'a') {
+                    activeElement.select();
+                }
+            }
+        });
+    </script>
+
+
+<script>
+    function getTagFromUrl() {
+        const params = new URLSearchParams(window.location.search);
+        return params.get('tag');
+    }
+    
+    function displayTag() {
+        const tagName = getTagFromUrl();
+        const contentDiv = document.getElementById('htmlCode');
+    
+        if (tagName) {
+            contentDiv.innerHTML = `<h1>${tagName} Tag Example</h1>`;
+            contentDiv.innerHTML += `<p>This is an example of the <strong>${tagName}</strong> tag:<br>👇👇👇👇👇👇👇👇👇👇👇</p>`;
+            contentDiv.innerHTML += `<${tagName}>Sample content for the ${tagName} tag</${tagName}>`;
+        } else {
+            contentDiv.innerHTML = 'No tag specified.';
+        }
+    }
+    
+    displayTag();
+    </script>
+
+</body>
+</html>
