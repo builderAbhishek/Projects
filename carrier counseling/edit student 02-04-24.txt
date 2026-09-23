@@ -1,0 +1,294 @@
+<?php
+session_start();
+
+// Check if the user is not logged in, redirect to login page
+if (!isset($_SESSION["school_id"])) {
+    header("Location:/attendance/login.php");
+    exit;
+}
+
+
+// Include the database configuration file
+require_once "db_config.php";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+
+// Check connection
+if ($conn->connect_error) {
+    die("Connection failed: " . $conn->connect_error);
+}
+
+// Function to retrieve student details based on provided class, section, and roll number
+function getStudentDetails($conn, $class, $section, $roll_number) {
+    $sql = "SELECT * FROM students WHERE class='$class' AND section='$section' AND roll_number='$roll_number'";
+    $result = $conn->query($sql);
+
+    if ($result->num_rows > 0) {
+        return $result->fetch_assoc();
+    } else {
+        return false;
+    }
+}
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    // Retrieve form data
+    $class = $_POST["class"];
+    $section = $_POST["section"];
+    $roll_number = $_POST["roll_number"];
+    
+    // Retrieve student details based on provided class, section, and roll number
+    $studentDetails = getStudentDetails($conn, $class, $section, $roll_number);
+}
+
+// Process update or delete action
+if(isset($_POST['action'])) {
+    if ($_POST['action'] === 'update') {
+        // Update student details in the database
+        $id = $_POST["id"];
+        $name = $_POST["name"];
+        $class = $_POST["class"];
+        $section = $_POST["section"];
+        $roll_number = $_POST["roll_number"];
+        $mobile_number = $_POST["mobile_number"];
+        $father_name = $_POST["father_name"];
+        $address = $_POST["address"];
+        $email = $_POST["email"];
+        $gender = $_POST["gender"];
+        $dob = $_POST["dob"];
+        $rfid_number = $_POST["rfid_number"]; // Add RFID number
+        
+        $sql = "UPDATE students SET name='$name', class='$class', section='$section', roll_number='$roll_number', mobile_number='$mobile_number', father_name='$father_name', address='$address', email='$email', gender='$gender', dob='$dob', rfid_number='$rfid_number' WHERE id=$id";
+        if ($conn->query($sql) === TRUE) {
+            echo "Student record updated successfully.";
+        } else {
+            echo "Error updating record: " . $conn->error;
+        }
+    } elseif ($_POST['action'] === 'delete') {
+        // Delete student record from the database
+        $id = $_POST["id"];
+        $sql = "DELETE FROM students WHERE id=$id";
+        if ($conn->query($sql) === TRUE) {
+            echo "Student record deleted successfully.";
+            // Reset student details
+            $studentDetails = null;
+        } else {
+            echo "Error deleting record: " . $conn->error;
+        }
+    }
+}
+
+$conn->close();
+?> 
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Edit Student</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<!-- Start Header -->
+<div id="header">
+    <!-- Include header.html here -->
+    <?php include 'header.html'; ?>
+</div>
+  <!-- End Header -->
+
+<!-- Start Contact Section -->
+<section class="contact-section sec-padding" id="searchForm">
+  <div class="container">
+    <div class="row">
+      <div class="section-title">
+        <h2>Edit<span> Student</span></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="contact-img">
+        <img src="img/contact-img.png" alt="Contact-img">
+      </div>
+      <div class="contact-form">
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+
+        <div class="select" >
+              <select id="class" name="class">
+                <option value="">Select Class</option>
+                <option value="1">Class 1</option>
+                <option value="2">Class 2</option>
+                <option value="3">Class 3</option>
+                <option value="4">Class 4</option>
+                <option value="5">Class 5</option>
+                <option value="6">Class 6</option>
+                <option value="7">Class 7</option>
+                <option value="8">Class 8</option>
+                <option value="9">Class 9</option>
+                <option value="10">Class 10</option>
+                <option value="11">Class 11</option>
+                <option value="12">Class 12</option>
+              </select>
+              <br><br>
+              <select id="section" name="section">
+                <option value="">Select Section</option>
+                <option value="A">Section A</option>
+                <option value="B">Section B</option>
+                <option value="C">Section C</option>
+                <option value="D">Section D</option>
+                <option value="E">Section E</option>
+              </select>
+              </div><br>
+
+        <input type="text" id="roll_number" name="roll_number" class="form-control" placeholder="Roll Number" required><br>
+        <input type="submit" class="btn btn-1" value="Search">
+    </form></div>
+    </div>
+  </div>
+</section>
+
+<section class="contact-section sec-padding" id="updateDeleteOptions" style="display: none;">
+  <div class="container">
+    <div class="row">
+      <div class="section-title">
+        <h2>New<span> Admission</span></h2>
+      </div>
+    </div>
+ <div class="row">
+      <div class="contact-img">
+        <img src="img/contact-img.png" alt="Contact-img">
+      </div>
+      <div class="contact-form">
+
+    <?php if(isset($studentDetails)): ?>
+    <!-- Display student details and update/delete options -->
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <input type="hidden" name="id" value="<?php echo $studentDetails['id']; ?>">
+        <input type="hidden" name="action" value="update">
+        
+        <label for="name" style="color: white;">Name:</label><br>
+        <input type="text" id="name" name="name" class="form-control" value="<?php echo $studentDetails['name']; ?>"><br>
+       
+        <label for="class" style="color: white;">Class:</label><br>
+        <div class="select">
+              <select id="class" name="class">
+                <option value="<?php echo $studentDetails['class']; ?>">Select Class</option>
+                <option value="1">Class 1</option>
+                <option value="2">Class 2</option>
+                <option value="3">Class 3</option>
+                <option value="4">Class 4</option>
+                <option value="5">Class 5</option>
+                <option value="6">Class 6</option>
+                <option value="7">Class 7</option>
+                <option value="8">Class 8</option>
+                <option value="9">Class 9</option>
+                <option value="10">Class 10</option>
+                <option value="11">Class 11</option>
+                <option value="12">Class 12</option>
+              </select>
+              <br><br>
+              <label for="class" style="color: white;">Section:</label><br>
+              <select id="section" name="section">
+                <option value="<?php echo $studentDetails['section']; ?>">Select Section</option>
+                <option value="A">Section A</option>
+                <option value="B">Section B</option>
+                <option value="C">Section C</option>
+                <option value="D">Section D</option>
+                <option value="E">Section E</option>
+              </select>
+              </div><br>
+        
+        <label for="roll_number" style="color: white;">Roll Number:</label><br>
+        <input type="text" id="roll_number" name="roll_number" class="form-control" value="<?php echo $studentDetails['roll_number']; ?>"><br>
+        
+                <label for="roll_number" style="color: white;">RFID Number:</label><br>
+                <input type="text" class="form-control" id="rfid_number" placeholder="RFID Number" name="rfid_number" value="<?php echo $studentDetails['rfid_number']; ?>"><br>
+        
+        <label for="mobile_number" style="color: white;">Mobile Number:</label><br>
+        <input type="text" id="mobile_number" name="mobile_number" class="form-control" value="<?php echo $studentDetails['mobile_number']; ?>"><br>
+        
+        <label for="father_name" style="color: white;">Father's Name:</label><br>
+        <input type="text" id="father_name" name="father_name" class="form-control" value="<?php echo $studentDetails['father_name']; ?>"><br>
+        
+      
+        <label for="address" style="color: white;">Address:</label><br>
+        <textarea id="address" name="address" class="form-control"><?php echo $studentDetails['address']; ?></textarea><br>
+        
+        <label for="email" style="color: white;">Email:</label><br>
+        <input type="email" id="email" name="email" class="form-control" value="<?php echo $studentDetails['email']; ?>"><br>
+        
+       
+        <div class="input-group" id="gender" name="gender">
+        
+            <h3>Gender</h3><br>
+       
+           <input type="radio" id="male" name="gender" value="male" <?php if($studentDetails['gender'] === 'male') echo 'selected'; ?>>
+            <label class="label" for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female"  <?php if($studentDetails['gender'] === 'female') echo 'selected'; ?>>
+            <label class="label" for="female">Female</label><br></div>
+             
+            
+<div class="input-group">
+            <h3>Date of Birth:</h3><br>
+        <input type="date" class="date" id="dob" name="dob" value="<?php echo $studentDetails['dob']; ?>"><br><br>
+        <input type="submit" class="btn btn-1" value="Update">
+    </form></div><br>
+
+    <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <input type="hidden" name="id" value="<?php echo $studentDetails['id']; ?>">
+        <input type="hidden" name="action" value="delete">
+        <input type="submit" class="btn btn-1" value="Delete">
+    </form>
+    <?php endif; ?>
+</div>
+    </div>
+  </div>
+</section>
+<!-- End Contact Section -->
+
+<!-- JavaScript to toggle visibility and handle form submission -->
+        <script>
+          // Function to toggle visibility of search form and update/delete options
+          function toggleForms() {
+            document.getElementById('searchForm').style.display = 'none';
+            document.getElementById('updateDeleteOptions').style.display = 'block';
+          }
+
+          // Event listener for search form submission
+          document.getElementById('searchForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Call the function to toggle visibility
+            toggleForms();
+          });
+
+          // Event listener for update form submission
+          document.getElementById('updateForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Your code to handle update form submission goes here
+
+            // Reload the page after successful update
+            location.reload();
+          });
+
+          // Event listener for delete form submission
+          document.getElementById('deleteForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Your code to handle delete form submission goes here
+
+            // Reload the page after successful delete
+            location.reload();
+          });
+        </script>
+
+
+<div id="footer" class="footer">
+    
+    <!-- Include header.html here -->
+    <?php include 'footer.html'; ?>
+</div>
+<script src="main.js"></script>
+</body>
+</html>

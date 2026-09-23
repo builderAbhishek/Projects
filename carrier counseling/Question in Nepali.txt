@@ -1,0 +1,139 @@
+const questions = {
+    "Math": [
+        "के तपाईं गणित समस्याहरू हल गर्न मन पर्छ?",
+        "के तपाईं ज्यामिती रोचक लाग्छ?",
+        "के तपाईं नम्बरसहित काम गर्न मन पर्छ?",
+        "के तपाईं बीजगणित पसन्द गर्छन्?",
+        "के तपाईं क्यालकुलस रोचक महसुस गर्दैनुहुन्छ?",
+        "के तपाईं समीकरणहरू हल गर्न मन पर्छ?",
+        "के तपाईं संभावना र सांख्यिकी रोचक मान्छिनुहुन्छ?",
+        "के तपाईं गणित पहेलीहरूमा मन पर्छ?",
+        "के तपाईं गणितीय अवधारणाहरू अन्वेषण गर्न मन पर्छ?",
+        "के तपाईं गणित एल्गोरिदम प्रोग्राम गर्न मन पर्छ?"
+    ],
+    "Biology": [
+        "के तपाईं जीवित जीवहरू बारेमा सिक्न मन पर्छ?",
+        "के तपाईं मानव शारीरिक रचना रोचक मान्छिनुहुन्छ?",
+        "के तपाईं कोशिका जीव अध्ययन गर्न मन पर्छ?",
+        "के तपाईं आनुवंशिकता र विरासतमा रुचि राख्नुहुन्छ?",
+        "के तपाईं कोशिका जीव अध्ययन गर्न मन पर्छ?",
+        "के तपाईं पारिस्थितिकी र पारिस्थितिकी तत्वहरूको अध्ययन गर्न मन पर्छ?",
+        "के तपाईं जीव-प्रजातिहरूको विविधताले प्रभावित हुनुहुन्छ?",
+        "के तपाईं उत्ताराधिकारी जीव अध्ययन गर्न मन पर्छ?",
+        "के तपाईं जल परिस्थितिहरूमा रुचि राख्नुहुन्छ?",
+        "के तपाईं जीवबिज्ञानी प्रक्रियाहरूको अध्ययन गर्न मन पर्छ?"
+    ],
+    "Commerce": [
+        "के तपाईं व्यवसाय तत्वहरू अध्ययन गर्न मन पर्छ?",
+        "के तपाईं अर्थशास्त्र रोचक मान्छिनुहुन्छ?",
+        "के तपाईं विपणन रणनीतिहरूबाट प्रभावित हुनुहुन्छ?",
+        "के तपाईं वित्त र निवेश अध्ययन गर्न मन पर्छ?",
+        "के तपाईं आपूर्ति श्रृंखला प्रबंधन गर्न मन पर्छ?",
+        "के तपाईं बजारको ट्रेन्डहरूको विश्लेषण गर्न मन पर्छ?",
+        "के तपाईं अन्तर्राष्ट्रिय व्यापारमा रुचि राख्नुहुन्छ?",
+        "के तपाईं लेखाकलन तत्वहरूलाई रोचक मान्नुहुन्छ?",
+        "के तपाईं उद्यमिता रोचक मान्नुहुन्छ?",
+        "के तपाईं उपभोक्ता व्यवहार अध्ययन गर्न मन पर्छ?"
+    ],
+    "Arts": [
+        "के तपाईं चित्र वा चित्रकला मन पर्छ?",
+        "के तपाईं कला इतिहास अध्ययन गर्न मन पर्छ?",
+        "के तपाईं मूर्तिकला वा मट्टीकला लागि रुचि राख्नुहुन्छ?",
+        "के तपाईं फोटोग्राफी रोचक मान्नुहुन्छ?",
+        "के तपाईं थियेटर वा नृत्यले गर्भित छिट्याउँछ?",
+        "के तपाईं विभिन्न कला रूप र तकनीकहरू अन्वेषण गर्न मन पर्छ?",
+        "के तपाईं वास्तुकला र डिजाइनमा रुचि राख्नुहुन्छ?",
+        "के तपाईं कला ग्यालरी र संग्रहालय भ्रमण गर्न मन पर्छ?",
+        "के तपाईं ग्राफिक डिजाइन अध्ययन गर्न मन पर्छ?",
+        "के तपाईं कलात्मक भावनाहरू अनुभव गराउन मन पर्छ?"
+    ]
+};
+
+
+
+let interestScores = {
+    "Math": 0,
+    "Biology": 0,
+    "Commerce": 0,
+    "Arts": 0
+};
+
+let askedQuestions = new Set();
+let currentInterest = "";
+
+const questionContainer = document.getElementById("question");
+const resultContainer = document.getElementById("result");
+const yesButton = document.getElementById("yesBtn");
+const noButton = document.getElementById("noBtn");
+
+function getRandomQuestion(interest) {
+    let availableQuestions = questions[interest].filter(q => !askedQuestions.has(q));
+    if (availableQuestions.length === 0) {
+        return null;
+    }
+    let question = availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
+    return question;
+}
+
+function displayQuestion() {
+    currentInterest = Object.keys(questions)[Math.floor(Math.random() * Object.keys(questions).length)];
+    let question = getRandomQuestion(currentInterest);
+    if (question) {
+        questionContainer.innerText = question;
+    } else {
+        showResult();
+    }
+}
+
+function processAnswer(answer) {
+    if (answer === "yes") {
+        interestScores[currentInterest]++;
+    }
+    askedQuestions.add(questionContainer.innerText);
+    displayQuestion();
+}
+
+
+
+function showResult() {
+    questionContainer.style.display = "none";
+    yesButton.style.display = "none";
+    noButton.style.display = "none";
+    resultContainer.innerHTML = "<h2>तपाईंको रुचिको आधारमा, यसै बाट केहि सुझाइएका विषयहरू यहाँ छन्:</h2>";
+    let maxInterest = Object.keys(interestScores).reduce((a, b) => interestScores[a] > interestScores[b] ? a : b);
+    if (interestScores[maxInterest] > 0) {
+        resultContainer.innerHTML += `<p class="txt2">- तपाईंको प्रमुख रुचि हो ${maxInterest}!</p>`;
+        resultContainer.innerHTML += `<p class="txt2">${maxInterest} मा क्यारियर विकल्पहरूको बारेमा थाहा पाउन चाहनुहुन्छ? (हो/होइन)</p>`;
+        let answerBtns = document.createElement("div");
+        answerBtns.innerHTML = `<button class="button" id="careerYesBtn">हो</button><button class="button" id="careerNoBtn">होइन</button>`;
+        resultContainer.appendChild(answerBtns);
+        document.getElementById("careerYesBtn").addEventListener("click", () => {
+            showCareerOptions(maxInterest);
+        });
+        document.getElementById("careerNoBtn").addEventListener("click", () => {
+            resultContainer.innerHTML += "<p>कुनै विशेष रुचि प्राप्त भएन, थप अन्वेषण गर्नुहोस्!</p>";
+        });
+    }
+}
+
+function showCareerOptions(interest) {
+    let careerOptions = {
+        "Math": ["कम्प्युटर विज्ञान", "क्रिप्टोग्राफी", "गणित अभिकलन", "परिचालन अनुसन्धान", "वित्तिय विश्लेषण", "जोखिम प्रबन्धन", "गणित शिक्षा", "गणित अनुसन्धान", "सफ्टवेयर विकास", "संख्यात्मक विश्लेषण"],
+        "Biology": ["माइक्रोबायोलोजी", "जेनेटिक्स", "पारिस्थितिकी", "समुद्र जीवविज्ञान", "जिओलोजी", "उद्भिद विज्ञान", "फार्मेसी", "पशुचिकित्सा", "फोरेन्सिक विज्ञान", "जैवविज्ञान"],
+        "Commerce": ["मानव स्रोत प्रबन्धन", "आपूर्ति श्रृंखला प्रबन्धन", "अन्तर्राष्ट्रिय व्यापार", "खुद्रा प्रबन्धन", "व्यावसायिक विश्लेषण", "जोखिम प्रबन्धन", "उद्यमिता", "कर्पोरेट कानून", "रियल एस्टेट प्रबन्धन", "परिचालन प्रबन्धन"],
+        "Arts": ["फेसन डिजाइनिङ", "आन्तरिक डिजाइनिङ", "फोटोग्राफी", "फिल्म निर्माण", "एनिमेसन", "सृजनात्मक लेखन", "विज्ञापन", "मल्टिमिडिया कला", "चित्रविमर्श र निर्माण", "नाटक र नृत्य"]
+    };
+    resultContainer.innerHTML = `<h2 class="txt1">${interest} मा केहि करियर विकल्पहरू यहाँ छन्:</h2>`;
+    let optionsList = document.createElement("ul");
+    careerOptions[interest].forEach(option => {
+        let listItem = document.createElement("li");
+        listItem.textContent = option;
+        optionsList.appendChild(listItem);
+    });
+    resultContainer.appendChild(optionsList);
+}
+
+yesButton.addEventListener("click", () => processAnswer("हो"));
+noButton.addEventListener("click", () => processAnswer("होइन"));
+
+displayQuestion();

@@ -1,0 +1,381 @@
+<style>
+    h1 {
+        display: block;
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h2 {
+        display: block;
+        font-size: 1.5em;
+        margin-top: 0.83em;
+        margin-bottom: 0.83em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h4 {
+        display: block;
+        font-size: 1.17em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h4 {
+        display: block;
+        font-size: 1em;
+        margin-top: 1.33em;
+        margin-bottom: 1.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h5 {
+        display: block;
+        font-size: .83em;
+        margin-top: 1.67em;
+        margin-bottom: 1.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h6 {
+        display: block;
+        font-size: .67em;
+        margin-top: 2.33em;
+        margin-bottom: 2.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    table {
+        width: fit-content;
+        border-collapse: collapse;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        text-align: start;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .syllabus-outline {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .syllabus-box {
+        width: 100%;
+        /*margin: 0px 5% 0px 5%;*/
+        display: flex;
+    }
+
+    .syllabus-container {
+        margin-bottom: 10px;
+        padding: 10px;
+        float: left;
+        margin-left: 13px;
+        box-shadow: 0 3px 3px rgb(0 0 0 / 60%), 0 1px 0 rgb(0 0 0 / 60%);
+    }
+
+    .dashed-border {
+        background-color: #fffba1;
+        padding: 20px 9px 0;
+        border-style: dashed;
+        border-width: 6px;
+        border-color: #000;
+    }
+
+    .left-right-border-box {
+        max-width: 100%;
+    }
+
+    .left-right-border {
+        background-color: #eaf5e4;
+        padding: 0 0 0 10px;
+        border-style: groove;
+        border-width: 0 10px;
+        border-color: #66db19;
+        border-radius: 0;
+    }
+
+    .left-right-border-box-2 {
+        max-width: 100%;
+    }
+
+    .left-border-sky {
+        padding: 1px 0 1px 10px;
+        border-style: groove;
+        margin: 10px;
+        border-width: 0 0 0 10px;
+        border-color: #02ccee;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+    }
+
+    .left-border-green {
+        padding: 1px 0 1px 10px;
+        border-style: groove;
+        margin: 10px;
+        border-width: 0 0 0 10px;
+        border-color: #a3ee02;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+    }
+
+    .section {
+        margin-bottom: 40px;
+    }
+
+    .left-border-purple {
+        padding: 1px 0 1px 10px;
+        margin: 10px;
+        border-style: groove;
+        border-width: 0 0 0 10px;
+        border-color: #bc60ff;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+    }
+
+    .h2-bg-black {
+        background-color: transparent;
+        padding: 15px;
+        background-image: linear-gradient(180deg, #000 0%, #000 100%);
+        color: #fff;
+    }
+
+    .p-bg-yellow {
+        background-color: transparent;
+        padding: 15px;
+        background-image: linear-gradient(180deg, #677dff 0%, #7f68ff 100%);
+        color: #ffffff;
+    }
+
+    .h2-bg-yellow-black {
+        background-color: transparent;
+        padding: 0 0 0 10px;
+        background-image: linear-gradient(180deg, #ecca68 0%, #fff144 100%);
+        border-style: groove;
+        border-width: 0 0 0 10px;
+        border-color: #000;
+    }
+
+    p {
+        margin-top: inherit;
+        margin-bottom: inherit;
+    }
+
+    li {
+        margin: inherit;
+    }
+
+
+    @media only screen and (max-width: 860px) {
+        .syllabus-box {
+            display: grid;
+        }
+
+        .syllabus-container {
+            margin-left: 0;
+        }
+
+        .col-md-6 {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+</style>
+
+
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        line-height: 1.6;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+    }
+    .container {
+        width: 80%;
+        margin: auto;
+        overflow: hidden;
+        padding: 20px;
+        background: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    h1 {
+        color: #333;
+    }
+    h2 {
+        border-bottom: 2px solid #333;
+        padding-bottom: 5px;
+    }
+    .question-answer {
+        background: #f9f9f9;
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        margin: 10px 0;
+        padding: 10px;
+    }
+    .question {
+        color: #333;
+        font-weight: bold;
+    }
+    .answer {
+        color: #555;
+    }
+</style>
+</head>
+<body>
+
+<div class="container">
+    <h1>CCC Chapter 1: Model Questions and Answers</h1>
+
+    <h2>1. What is a computer?</h2>
+    <div class="question-answer">
+        <p class="question">Q1: What is a computer?</p>
+        <p class="answer">A1: A computer is an electronic device that processes data and performs calculations based on instructions given by the user. It includes hardware and software components.</p>
+    </div>
+
+    <h2>2. What are the main components of a computer?</h2>
+    <div class="question-answer">
+        <p class="question">Q2: What are the main components of a computer?</p>
+        <p class="answer">A2: The main components of a computer system include the Central Processing Unit (CPU), input devices (keyboard, mouse), output devices (monitor, printer), and memory (RAM and ROM).</p>
+    </div>
+
+    <h2>3. What is the role of the CPU?</h2>
+    <div class="question-answer">
+        <p class="question">Q3: What is the role of the CPU?</p>
+        <p class="answer">A3: The CPU, or Central Processing Unit, is the brain of the computer. It performs calculations, processes instructions, and manages data flow between various components of the computer.</p>
+    </div>
+
+    <h2>4. Describe RAM and its function.</h2>
+    <div class="question-answer">
+        <p class="question">Q4: Describe RAM and its function.</p>
+        <p class="answer">A4: RAM (Random Access Memory) is a type of volatile memory used to store data that is currently being used or processed by the computer. It allows for quick access to this data, which speeds up performance.</p>
+    </div>
+
+    <h2>5. What is ROM and how does it differ from RAM?</h2>
+    <div class="question-answer">
+        <p class="question">Q5: What is ROM and how does it differ from RAM?</p>
+        <p class="answer">A5: ROM (Read-Only Memory) is a type of non-volatile memory that permanently stores system firmware and essential instructions for booting up the computer. Unlike RAM, ROM retains its data even when the power is turned off.</p>
+    </div>
+
+    <h2>6. What is an operating system?</h2>
+    <div class="question-answer">
+        <p class="question">Q6: What is an operating system?</p>
+        <p class="answer">A6: An operating system (OS) is system software that manages computer hardware and software resources and provides common services for computer programs. Examples include Windows, macOS, and Linux.</p>
+    </div>
+
+    <h2>7. Explain the difference between hardware and software.</h2>
+    <div class="question-answer">
+        <p class="question">Q7: Explain the difference between hardware and software.</p>
+        <p class="answer">A7: Hardware refers to the physical components of a computer system, such as the CPU, keyboard, and monitor. Software refers to the programs and operating systems that run on the hardware and provide functionality, such as word processors and games.</p>
+    </div>
+
+    <h2>8. What is e-Governance?</h2>
+    <div class="question-answer">
+        <p class="question">Q8: What is e-Governance?</p>
+        <p class="answer">A8: e-Governance involves using information and communication technology to provide government services online, making government operations more efficient and accessible to the public.</p>
+    </div>
+
+    <h2>9. What are input devices? Give examples.</h2>
+    <div class="question-answer">
+        <p class="question">Q9: What are input devices? Give examples.</p>
+        <p class="answer">A9: Input devices are hardware components used to enter data into a computer. Examples include keyboards, mice, scanners, and microphones.</p>
+    </div>
+
+    <h2>10. What are output devices? Give examples.</h2>
+    <div class="question-answer">
+        <p class="question">Q10: What are output devices? Give examples.</p>
+        <p class="answer">A10: Output devices are hardware components that receive data from a computer and convert it into a readable format. Examples include monitors, printers, and speakers.</p>
+    </div>
+
+    <h2>11. Define application software.</h2>
+    <div class="question-answer">
+        <p class="question">Q11: Define application software.</p>
+        <p class="answer">A11: Application software refers to programs designed to perform specific tasks for the user, such as word processing, spreadsheet calculations, and web browsing.</p>
+    </div>
+
+    <h2>12. What is system software? Give examples.</h2>
+    <div class="question-answer">
+        <p class="question">Q12: What is system software? Give examples.</p>
+        <p class="answer">A12: System software includes the operating system and utility programs that manage and control computer hardware and software. Examples include Windows OS, macOS, and antivirus programs.</p>
+    </div>
+
+    <h2>13. Explain the concept of data processing.</h2>
+    <div class="question-answer">
+        <p class="question">Q13: Explain the concept of data processing.</p>
+        <p class="answer">A13: Data processing refers to the series of actions performed on data to convert it into meaningful information. This includes data collection, input, processing, and output.</p>
+    </div>
+
+    <h2>14. What is the purpose of programming languages?</h2>
+    <div class="question-answer">
+        <p class="question">Q14: What is the purpose of programming languages?</p>
+        <p class="answer">A14: Programming languages are used to write software programs that instruct the computer to perform specific tasks. They provide a means to communicate with the computer and develop applications.</p>
+    </div>
+
+    <h2>15. Describe the basic function of a scanner.</h2>
+    <div class="question-answer">
+        <p class="question">Q15: Describe the basic function of a scanner.</p>
+        <p class="answer">A15: A scanner is an input device that converts physical documents and images into digital format that can be processed and stored on a computer.</p>
+    </div>
+
+    <h2>16. What role does a printer play in a computer system?</h2>
+    <div class="question-answer">
+        <p class="question">Q16: What role does a printer play in a computer system?</p>
+        <p class="answer">A16: A printer is an output device that produces physical copies of digital documents and images from a computer onto paper or other media.</p>
+    </div>
+
+    <h2>17. Explain the term 'binary code'.</h2>
+    <div class="question-answer">
+        <p class="question">Q17: Explain the term 'binary code'.</p>
+        <p class="answer">A17: Binary code is a system of representing text or computer processor instructions using the binary number system, which uses only two digits, 0 and 1.</p>
+    </div>
+
+    <h2>18. What are multimedia applications?</h2>
+    <div class="question-answer">
+        <p class="question">Q18: What are multimedia applications?</p>
+        <p class="answer">A18: Multimedia applications combine different forms of media, such as text, audio, video, and graphics, to create interactive and engaging content for users.</p>
+    </div>
+
+    <h2>19. How does a mouse function as an input device?</h2>
+    <div class="question-answer">
+        <p class="question">Q19: How does a mouse function as an input device?</p>
+        <p class="answer">A19: A mouse is an input device that allows users to interact with a computer by moving a pointer on the screen and selecting items through clicks and scrolls.</p>
+    </div>
+
+    <h2>20. What is the significance of the operating system in a computer?</h2>
+    <div class="question-answer">
+        <p class="question">Q20: What is the significance of the operating system in a computer?</p>
+        <p class="answer">A20: The operating system is crucial because it manages all hardware and software resources on the computer, provides a user interface, and enables applications to run efficiently.</p>
+    </div>
+
+</div>

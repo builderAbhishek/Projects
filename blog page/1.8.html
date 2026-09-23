@@ -1,0 +1,313 @@
+<style>
+    h1 {
+        display: block;
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h2 {
+        display: block;
+        font-size: 1.5em;
+        margin-top: 0.83em;
+        margin-bottom: 0.83em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h4 {
+        display: block;
+        font-size: 1.17em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h4 {
+        display: block;
+        font-size: 1em;
+        margin-top: 1.33em;
+        margin-bottom: 1.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h5 {
+        display: block;
+        font-size: .83em;
+        margin-top: 1.67em;
+        margin-bottom: 1.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h6 {
+        display: block;
+        font-size: .67em;
+        margin-top: 2.33em;
+        margin-bottom: 2.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    table {
+        width: fit-content;
+        border-collapse: collapse;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        text-align: start;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .syllabus-outline {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .syllabus-box {
+        width: 100%;
+        /*margin: 0px 5% 0px 5%;*/
+        display: flex;
+    }
+
+    .syllabus-container {
+        margin-bottom: 10px;
+        padding: 10px;
+        float: left;
+        margin-left: 13px;
+        box-shadow: 0 3px 3px rgb(0 0 0 / 60%), 0 1px 0 rgb(0 0 0 / 60%);
+    }
+
+    .dashed-border {
+        background-color: #fffba1;
+        padding: 20px 9px 0;
+        border-style: dashed;
+        border-width: 6px;
+        border-color: #000;
+    }
+
+    .left-right-border-box {
+        max-width: 100%;
+    }
+
+    .left-right-border {
+        background-color: #eaf5e4;
+        padding: 0 0 0 10px;
+        border-style: groove;
+        border-width: 0 10px;
+        border-color: #66db19;
+        border-radius: 0;
+    }
+
+    .left-right-border-box-2 {
+        max-width: 100%;
+    }
+
+    .left-border-sky {
+        padding: 1px 0 1px 10px;
+        border-style: groove;
+        margin: 10px;
+        border-width: 0 0 0 10px;
+        border-color: #02ccee;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+    }
+
+    .left-border-green {
+        padding: 1px 0 1px 10px;
+        border-style: groove;
+        margin: 10px;
+        border-width: 0 0 0 10px;
+        border-color: #a3ee02;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+    }
+
+    .section {
+        margin-bottom: 40px;
+    }
+
+    .left-border-purple {
+        padding: 1px 0 1px 10px;
+        margin: 10px;
+        border-style: groove;
+        border-width: 0 0 0 10px;
+        border-color: #bc60ff;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+    }
+
+    .h2-bg-black {
+        background-color: transparent;
+        padding: 15px;
+        background-image: linear-gradient(180deg, #000 0%, #000 100%);
+        color: #fff;
+    }
+
+    .p-bg-yellow {
+        background-color: transparent;
+        padding: 15px;
+        background-image: linear-gradient(180deg, #677dff 0%, #7f68ff 100%);
+        color: #ffffff;
+    }
+
+    .h2-bg-yellow-black {
+        background-color: transparent;
+        padding: 0 0 0 10px;
+        background-image: linear-gradient(180deg, #ecca68 0%, #fff144 100%);
+        border-style: groove;
+        border-width: 0 0 0 10px;
+        border-color: #000;
+    }
+
+    p {
+        margin-top: inherit;
+        margin-bottom: inherit;
+    }
+
+    li {
+        margin: inherit;
+    }
+
+
+    @media only screen and (max-width: 860px) {
+        .syllabus-box {
+            display: grid;
+        }
+
+        .syllabus-container {
+            margin-left: 0;
+        }
+
+        .col-md-6 {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+</style>
+
+
+
+<div class="container">
+    <h1>CCC Chapter 1: Summary of Key Topics</h1>
+
+    <h2>1. What is Computer? (कंप्यूटर क्या है?)</h2>
+    <p>कंप्यूटर एक इलेक्ट्रॉनिक डिवाइस है जो डेटा प्रोसेसिंग और गणनाओं के लिए प्रयोग किया जाता है। यह इनपुट डेटा को प्रोसेस करता है और आउटपुट जानकारी प्रदान करता है।</p>
+    <p>A computer is an electronic device used for processing data and performing calculations. It processes input data and provides output information.</p>
+
+    <h3>1.1 History of Computer (कंप्यूटर का इतिहास)</h3>
+    <p>कंप्यूटर का इतिहास कई दशकों पुराना है, जिसमें पहले गणना यंत्र से लेकर आधुनिक डिजिटल कंप्यूटर तक के विकास शामिल हैं। पहले कंप्यूटर बड़े और महंगे थे, लेकिन आजकल वे छोटे और अधिक शक्तिशाली हैं।</p>
+    <p>The history of computers spans several decades, from early calculating machines to modern digital computers. Early computers were large and expensive, but today they are smaller and more powerful.</p>
+
+    <h3>1.2 Characteristics of Computer (कंप्यूटर की विशेषताएँ)</h3>
+    <ul>
+        <li class="section-box left-border-sky"><b>उच्च गति:</b> कंप्यूटर बहुत तेजी से गणनाएँ और प्रोसेसिंग कर सकते हैं।</li>
+        <li class="section-box left-border-green"><b>सटीकता:</b> कंप्यूटर की गणनाएँ बहुत सटीक होती हैं।</li>
+        <li class="section-box left-border-purple"><b>दृढ़ता:</b> कंप्यूटर लंबी अवधि तक निरंतर काम कर सकते हैं।</li>
+        <li class="section-box left-border-sky"><b>संगणना:</b> कंप्यूटर बड़ी मात्रा में डेटा को प्रोसेस कर सकते हैं।</li>
+    </ul>
+    <ul>
+        <li class="section-box left-border-sky"><b>High Speed:</b> Computers can perform calculations and processing very quickly.</li>
+        <li class="section-box left-border-green"><b>Accuracy:</b> Computer calculations are highly accurate.</li>
+        <li class="section-box left-border-purple"><b>Durability:</b> Computers can operate continuously for long periods.</li>
+        <li class="section-box left-border-sky"><b>Data Handling:</b> Computers can process large amounts of data.</li>
+    </ul>
+
+    <h3>1.3 Basic Application of Computer (कंप्यूटर के मूलभूत अनुप्रयोग)</h3>
+    <p>कंप्यूटर के बुनियादी अनुप्रयोगों में वर्ड प्रोसेसिंग, स्प्रेडशीट्स, इंटरनेट ब्राउज़िंग, और ईमेल शामिल हैं। ये अनुप्रयोग विभिन्न कार्यों के लिए कंप्यूटर का उपयोग करते हैं।</p>
+    <p>Basic applications of computers include word processing, spreadsheets, internet browsing, and email. These applications utilize computers for various tasks.</p>
+
+    <h2>2. Components of Computer System (कंप्यूटर सिस्टम के घटक)</h2>
+
+    <h3>2.1 Central Processing Unit (CPU) (सेंट्रल प्रोसेसिंग यूनिट)</h3>
+    <p>CPU कंप्यूटर का मस्तिष्क होता है जो सभी गणनाओं और डेटा प्रोसेसिंग का काम करता है।</p>
+    <p>The CPU is the brain of the computer that handles all calculations and data processing.</p>
+
+    <h3>2.2 Keyboard, Mouse, and VDU (कीबोर्ड, माउस, और वी.डी.यू.)</h3>
+    <p>कीबोर्ड और माउस इनपुट डिवाइस हैं, जबकि VDU (Visual Display Unit) एक आउटपुट डिवाइस है जो स्क्रीन पर जानकारी प्रदर्शित करता है।</p>
+    <p>The keyboard and mouse are input devices, while the VDU (Visual Display Unit) is an output device that displays information on the screen.</p>
+
+    <h3>2.3 Other Input Devices (अन्य इनपुट डिवाइस)</h3>
+    <p>अन्य इनपुट डिवाइस में स्कैनर, माइक्रोफोन, और वेबकैम शामिल हैं जो डेटा को कंप्यूटर में इनपुट करते हैं।</p>
+    <p>Other input devices include scanners, microphones, and webcams that input data into the computer.</p>
+
+    <h3>2.4 Other Output Devices (अन्य आउटपुट डिवाइस)</h3>
+    <p>अन्य आउटपुट डिवाइस में प्रिंटर, स्पीकर, और प्रोजेक्टर शामिल हैं जो प्रोसेस्ड डेटा को आउटपुट करते हैं।</p>
+    <p>Other output devices include printers, speakers, and projectors that output processed data.</p>
+
+    <h3>2.5 Computer Memory (कंप्यूटर मेमोरी)</h3>
+    <p>कंप्यूटर मेमोरी में RAM और ROM शामिल हैं। RAM अस्थायी डेटा स्टोरेज के लिए और ROM स्थायी डेटा स्टोरेज के लिए उपयोग की जाती है।</p>
+    <p>Computer memory includes RAM and ROM. RAM is used for temporary data storage, while ROM is used for permanent data storage.</p>
+
+    <h2>3. Concept of Hardware and Software (हार्डवेयर और सॉफ्टवेयर का अवधारणा)</h2>
+
+    <h3>3.1 Hardware (हार्डवेयर)</h3>
+    <p>हार्डवेयर वे भौतिक घटक हैं जिन्हें छुआ जा सकता है, जैसे कीबोर्ड, माउस, और CPU।</p>
+    <p>Hardware refers to the physical components that can be touched, such as the keyboard, mouse, and CPU.</p>
+
+    <h3>3.2 Software (सॉफ्टवेयर)</h3>
+    <p>सॉफ्टवेयर वे प्रोग्राम्स हैं जो हार्डवेयर को निर्देश देते हैं और विभिन्न कार्यों को संचालित करते हैं।</p>
+    <p>Software refers to the programs that instruct the hardware and perform various tasks.</p>
+
+    <h4>3.2.1 Application Software (एप्लिकेशन सॉफ्टवेयर)</h4>
+    <p>एप्लिकेशन सॉफ्टवेयर विशिष्ट कार्यों के लिए डिज़ाइन किए गए प्रोग्राम्स हैं, जैसे वर्ड प्रोसेसर्स और स्प्रेडशीट्स।</p>
+    <p>Application software consists of programs designed for specific tasks, such as word processors and spreadsheets.</p>
+
+    <h4>3.2.2 Systems Software (सिस्टम सॉफ्टवेयर)</h4>
+    <p>सिस्टम सॉफ्टवेयर ऑपरेटिंग सिस्टम और अन्य सॉफ्टवेयर होते हैं जो कंप्यूटर की सामान्य कार्यक्षमता को संभालते हैं।</p>
+    <p>Systems software includes the operating system and other software that manage the computer's basic functions.</p>
+
+    <h3>3.3 Programming Languages (प्रोग्रामिंग भाषाएँ)</h3>
+    <p>प्रोग्रामिंग भाषाएँ उन भाषाओं को संदर्भित करती हैं जिनका उपयोग सॉफ्टवेयर बनाने के लिए किया जाता है, जैसे C++, Java, और Python।</p>
+    <p>Programming languages refer to the languages used to create software, such as C++, Java, and Python.</p>
+
+    <h2>4. Representation of Data/Information (डेटा/सूचना का प्रतिनिधित्व)</h2>
+    <p>डेटा और सूचना बाइनरी कोड (0 और 1) द्वारा प्रतिनिधित्व की जाती हैं, जिससे कंप्यूटर डेटा को प्रोसेस और स्टोर कर सकता है।</p>
+    <p>Data and information are represented by binary code (0s and 1s), which allows the computer to process and store data.</p>
+
+    <h2>5. Concept of Data Processing (डेटा प्रोसेसिंग का अवधारणा)</h2>
+    <p>डेटा प्रोसेसिंग डेटा के इनपुट, प्रोसेसिंग, और आउटपुट के चरणों को संदर्भित करता है, जिसमें डेटा को अर्थपूर्ण जानकारी में परिवर्तित किया जाता है।</p>
+    <p>Data processing refers to the stages of input, processing, and output, where data is converted into meaningful information.</p>
+
+    <h2>6. Applications of IECT (आईईसीटी के अनुप्रयोग)</h2>
+
+    <h3>6.1 e-Governance (ई-गवर्नेंस)</h3>
+    <p>e-Governance सूचना और संचार प्रौद्योगिकी का उपयोग करके सरकारी सेवाओं को ऑनलाइन प्रदान करने की प्रक्रिया है।</p>
+    <p>e-Governance is the process of providing government services online using information and communication technology.</p>
+
+    <h3>6.2 Multimedia and Entertainment (मल्टीमीडिया और मनोरंजन)</h3>
+    <p>मल्टीमीडिया और मनोरंजन में वीडियो, ऑडियो, और ग्राफिक्स का उपयोग करके सूचना और मनोरंजन प्रदान किया जाता है।</p>
+    <p>Multimedia and entertainment involve using video, audio, and graphics to provide information and entertainment.</p>
+
+    <div class="conclusion">
+        <h2>निष्कर्ष / Conclusion:</h2>
+        <p>आशा है कि इस गाइड के माध्यम से आप कंप्यूटर सिस्टम के प्रमुख घटकों और उनके अनुप्रयोगों को समझ पाएंगे और CCC कोर्स में अपने अध्ययन को और प्रभावी बना सकेंगे।</p>
+        <p>I hope this guide helps you understand the major components and applications of computer systems and makes your study for the CCC course more effective.</p>
+    </div>
+</div>

@@ -1,0 +1,288 @@
+<style>
+    h1 {
+        display: block;
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h2 {
+        display: block;
+        font-size: 1.5em;
+        margin-top: 0.83em;
+        margin-bottom: 0.83em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h4 {
+        display: block;
+        font-size: 1.17em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h4 {
+        display: block;
+        font-size: 1em;
+        margin-top: 1.33em;
+        margin-bottom: 1.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h5 {
+        display: block;
+        font-size: .83em;
+        margin-top: 1.67em;
+        margin-bottom: 1.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h6 {
+        display: block;
+        font-size: .67em;
+        margin-top: 2.33em;
+        margin-bottom: 2.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    table {
+        width: fit-content;
+        border-collapse: collapse;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        text-align: start;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .syllabus-outline {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .syllabus-box {
+        width: 100%;
+        /*margin: 0px 5% 0px 5%;*/
+        display: flex;
+    }
+
+    .syllabus-container {
+        margin-bottom: 10px;
+        padding: 10px;
+        float: left;
+        margin-left: 13px;
+        box-shadow: 0 3px 3px rgb(0 0 0 / 60%), 0 1px 0 rgb(0 0 0 / 60%);
+    }
+
+    .dashed-border {
+        background-color: #fffba1;
+        padding: 20px 9px 0;
+        border-style: dashed;
+        border-width: 6px;
+        border-color: #000;
+    }
+
+    .left-right-border-box {
+        max-width: 100%;
+    }
+
+    .left-right-border {
+        background-color: #eaf5e4;
+        padding: 0 0 0 10px;
+        border-style: groove;
+        border-width: 0 10px;
+        border-color: #66db19;
+        border-radius: 0;
+    }
+
+    .left-right-border-box-2 {
+        max-width: 100%;
+    }
+
+    .left-border-sky {
+        padding: 1px 0 1px 10px;
+        border-style: groove;
+        margin: 10px;
+        border-width: 0 0 0 10px;
+        border-color: #02ccee;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+    }
+
+    .left-border-green {
+        padding: 1px 0 1px 10px;
+        border-style: groove;
+        margin: 10px;
+        border-width: 0 0 0 10px;
+        border-color: #a3ee02;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+    }
+
+    .section {
+        margin-bottom: 40px;
+    }
+
+    .left-border-purple {
+        padding: 1px 0 1px 10px;
+        margin: 10px;
+        border-style: groove;
+        border-width: 0 0 0 10px;
+        border-color: #bc60ff;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+    }
+
+    .h2-bg-black {
+        background-color: transparent;
+        padding: 15px;
+        background-image: linear-gradient(180deg, #000 0%, #000 100%);
+        color: #fff;
+    }
+
+    .p-bg-yellow {
+        background-color: transparent;
+        padding: 15px;
+        background-image: linear-gradient(180deg, #677dff 0%, #7f68ff 100%);
+        color: #ffffff;
+    }
+
+    .h2-bg-yellow-black {
+        background-color: transparent;
+        padding: 0 0 0 10px;
+        background-image: linear-gradient(180deg, #ecca68 0%, #fff144 100%);
+        border-style: groove;
+        border-width: 0 0 0 10px;
+        border-color: #000;
+    }
+
+    p {
+        margin-top: inherit;
+        margin-bottom: inherit;
+    }
+
+    li {
+        margin: inherit;
+    }
+
+
+    @media only screen and (max-width: 860px) {
+        .syllabus-box {
+            display: grid;
+        }
+
+        .syllabus-container {
+            margin-left: 0;
+        }
+
+        .col-md-6 {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+</style>
+
+<div class="container">
+    <h1>Applications of IECT: e-Governance and Multimedia</h1>
+
+    <h2>1. e-Governance (ई-गवर्नेंस)</h2>
+    <h3>क्या है:</h3>
+    <p>e-Governance का मतलब है सरकारी सेवाओं और प्रक्रियाओं को डिजिटल माध्यम से चलाना। यह नागरिकों को सरकारी सेवाओं तक पहुंच प्रदान करता है और प्रक्रियाओं को अधिक कुशल बनाता है।</p>
+    <p>e-Governance refers to the use of digital means to manage government services and processes. It provides citizens with access to government services and makes processes more efficient.</p>
+
+    <h3>उदाहरण:</h3>
+    <ul>
+        <li class="left-right-border-box-2">
+            <div class="left-border-sky">
+                <p><b>Online Tax Filing (ऑनलाइन टैक्स फाइलिंग):</b> नागरिक अपनी टैक्स रिटर्न्स को ऑनलाइन जमा कर सकते हैं, जिससे प्रक्रिया सरल और तेज हो जाती है।</p>
+            </div>
+        </li>
+        <li class="left-right-border-box-2">
+            <div class="left-border-green">
+                <p><b>Digital Identity Verification (डिजिटल आइडेंटिटी वेरिफिकेशन):</b> आधार कार्ड जैसे डिजिटल सिस्टम नागरिकों की पहचान को ऑनलाइन सत्यापित करते हैं।</p>
+            </div>
+        </li>
+    </ul>
+
+    <h3>Examples:</h3>
+    <ul>
+        <li class="left-right-border-box-2">
+            <div class="left-border-sky">
+                <p><b>Online Tax Filing:</b> Citizens can file their tax returns online, making the process simpler and faster.</p>
+            </div>
+        </li>
+        <li class="left-right-border-box-2">
+            <div class="left-border-green">
+                <p><b>Digital Identity Verification:</b> Digital systems like Aadhaar card verify citizens' identities online.</p>
+            </div>
+        </li>
+    </ul>
+
+    <h2>2. Multimedia and Entertainment (मल्टीमीडिया और एंटरटेनमेंट)</h2>
+    <h3>क्या है:</h3>
+    <p>Multimedia और Entertainment में टेक्नोलॉजी का उपयोग किया जाता है जो दर्शकों को आकर्षक और इंटरैक्टिव अनुभव प्रदान करता है। इसमें वीडियो, ऑडियो, ग्राफिक्स और एनीमेशन शामिल होते हैं।</p>
+    <p>Multimedia and Entertainment involve the use of technology to provide engaging and interactive experiences to audiences. This includes videos, audio, graphics, and animations.</p>
+
+    <h3>उदाहरण:</h3>
+    <ul>
+        <li class="left-right-border-box-2">
+            <div class="left-border-purple">
+                <p><b>Streaming Services (स्ट्रीमिंग सेवाएं):</b> Netflix, YouTube जैसी सेवाएं उपयोगकर्ताओं को वीडियो कंटेंट स्ट्रीम करने की सुविधा देती हैं।</p>
+            </div>
+        </li>
+        <li class="left-right-border-box-2">
+            <div class="left-border-green">
+                <p><b>Video Games (वीडियो गेम्स):</b> विभिन्न प्रकार के वीडियो गेम्स जो ग्राफिक्स, साउंड और इंटरैक्टिव अनुभव प्रदान करते हैं।</p>
+            </div>
+        </li>
+    </ul>
+
+    <h3>Examples:</h3>
+    <ul>
+        <li class="left-right-border-box-2">
+            <div class="left-border-purple">
+                <p><b>Streaming Services:</b> Services like Netflix and YouTube allow users to stream video content.</p>
+            </div>
+        </li>
+        <li class="left-right-border-box-2">
+            <div class="left-border-green">
+                <p><b>Video Games:</b> Various video games provide graphics, sound, and interactive experiences.</p>
+            </div>
+        </li>
+    </ul>
+
+    <h2>निष्कर्ष / Conclusion:</h2>
+    <p>आशा है कि इस गाइड ने आपको IECT के विभिन्न अनुप्रयोगों को समझने में मदद की होगी। चाहे वह e-Governance हो या Multimedia और Entertainment, IECT का योगदान हमारे जीवन को आसान और अधिक आकर्षक बना रहा है।</p>
+    <p>I hope this guide helps you understand the various applications of IECT. Whether it is e-Governance or Multimedia and Entertainment, IECT's contribution is making our lives easier and more engaging.</p>
+
+</div>

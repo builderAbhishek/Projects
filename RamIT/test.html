@@ -1,0 +1,366 @@
+<style>
+    #navbar {
+      background-color: #fff;
+      position: fixed;
+      top: 80px;
+      width: 100%;
+      display: block;
+      transition: top 0.3s;
+      z-index: 1030;
+          margin-bottom: 5px;
+          padding-left: 5%;
+    }
+    
+    #navbar li {
+        float: left;
+        display: block;
+        color: #090909;
+      padding: 0px 8px 0px 8px;
+      font-size: 18px;
+      border-radius: 0.5em;
+      background: #ffffff;
+      cursor: pointer;
+      /*transition: all 0.3s;*/
+      /*border: 1px solid #e8e8e8;*/
+      /*box-shadow: 3px 3px 6px #c5c5c5, -3px -3px 6px #ffffff;*/
+    }
+    
+    #navbar li:hover {
+      border: 1px solid #009087;
+      color: #090909 !important;
+    }
+    
+    #navbar li:active {
+      box-shadow: 4px 4px 12px #c5c5c5, -4px -4px 12px #ffffff;
+    }
+    
+    .cat-list {
+        display: flex;
+        flex-direction: row;
+       
+    }
+
+    .cat-list2 {
+        display: flex;
+        flex-direction: row;
+        margin-top: 50px;
+        margin-bottom: 0;
+        align-items: center;
+    }
+    
+    #navbar ul {
+        display: flex;
+            list-style: none;
+            overflow-x: auto;
+            width: 100%;
+            padding: 5px 5px 0px 17px;
+    }
+    
+    .mb-2 a {
+        font-size: 0.7rem;
+        color: #090909 !important;
+    }
+    
+    .mb-2 a:hover {
+        color: #090909 !important;
+    }
+    
+ /* WebKit Browsers (Chrome, Safari) */
+#navbar ul::-webkit-scrollbar {
+  width: 8px; /* Width of the scrollbar */
+  height: 8px; /* Height of the scrollbar (for horizontal scrollbars) */
+}
+
+/* WebKit Browsers (Chrome, Safari) - Scrollbar Track */
+#navbar ul::-webkit-scrollbar-track {
+  background: #f1f1f1; /* Background color of the track */
+  border-radius: 10px; /* Rounded corners for the track */
+}
+
+/* WebKit Browsers (Chrome, Safari) - Scrollbar Thumb */
+#navbar ul::-webkit-scrollbar-thumb {
+  background: #888; /* Color of the scrollbar handle */
+  border-radius: 10px; /* Rounded corners for the handle */
+}
+
+/* WebKit Browsers (Chrome, Safari) - Scrollbar Thumb on Hover */
+#navbar ul::-webkit-scrollbar-thumb:hover {
+  background: #d3d3d3; /* Color of the scrollbar handle on hover */
+}
+
+/* Firefox */
+#navbar ul {
+  scrollbar-width: thin; /* Makes the scrollbar thin */
+  scrollbar-color: #d1d1d1 #f1f1f1; /* Color of the handle and track */
+}
+
+/* Internet Explorer and Edge */
+#navbar {
+  -ms-overflow-style: scrollbar; /* Shows scrollbar on IE and Edge */
+}
+
+    
+    /* Horizontal list styling */
+    .horizontal-scroll-list {
+      display: flex; /* Align list items in a row */
+      flex-wrap: nowrap; /* Prevent items from wrapping to the next line */
+      padding: 0; /* Remove default padding */
+      margin: 0; /* Remove default margin */
+    }
+    
+    .horizontal-scroll-list li {
+      margin-right: 10px; /* Space between items */
+      list-style-type: none; /* Remove bullet points */
+    }
+    </style>
+<div id="navbar"><div class="cat-list2"><h3>Category</h3>
+        <ul class="cat-list">
+          <li>
+            <a href="category.php?catid=1">ENTERTAINMENT</a>
+          </li>
+          <li>
+            <a href="category.php?catid=2">TECHNOLOGY</a>
+          </li>
+          <li>
+            <a href="category.php?catid=3">LIFESTYLE</a>
+          </li>
+          <li>
+            <a href="category.php?catid=4">POLITICAL</a>
+          </li>
+          <li>
+            <a href="category.php?catid=5">SPORTS</a>
+          </li>
+          <li>
+            <a href="category.php?catid=6">SPIRITUAL</a>
+          </li>
+          <li>
+            <a href="category.php?catid=7">Politics</a>
+          </li>
+          <li>
+            <a href="category.php?catid=8">Government</a>
+          </li>
+          <li>
+            <a href="category.php?catid=9">Siddharthnagar</a>
+          </li>
+          <li>
+            <a href="category.php?catid=1">ENTERTAINMENT</a>
+          </li>
+          <li>
+            <a href="category.php?catid=2">TECHNOLOGY</a>
+          </li>
+          <li>
+            <a href="category.php?catid=3">LIFESTYLE</a>
+          </li>
+          <li>
+            <a href="category.php?catid=4">POLITICAL</a>
+          </li>
+          <li>
+            <a href="category.php?catid=5">SPORTS</a>
+          </li>
+          <li>
+            <a href="category.php?catid=6">SPIRITUAL</a>
+          </li>
+          <li>
+            <a href="category.php?catid=7">Politics</a>
+          </li>
+          <li>
+            <a href="category.php?catid=8">Government</a>
+          </li>
+          <li>
+            <a href="category.php?catid=9">Siddharthnagar</a>
+          </li>
+        </ul></div>
+</div>
+<div class="col-md-7" style="padding:15px 15px 2500px;font-size:30px">
+    <h4 class="widget-title mb-4">Today <span>Highlight</span></h4>
+    <!-- Blog Post -->
+    <div class="row">
+       <div class="owl-carousel owl-theme" id="slider">
+ <div class="card mb-4 border-0">
+ <img style="max-height:450px;"  alt="Image" class="card-img-top" src="admin/postimages/182c8011e7d63febeccaf52b42a9f7e9.jpg">
+ <div class="card-body">
+     <p class="m-0">
+         <!--category-->
+         <a class="badge bg-success text-decoration-none link-light" href="#" style="color:#fff">Sports</a>
+         <!--Subcategory--->
+         <a class="badge bg-warning text-decoration-none link-light" style="color:#fff">Sports</a>
+     </p>
+     <p class="m-0"><small> Posted on 2024-04-19 04:41:50</small></p>
+     <a href="news-details.php?nid=15" class="card-title text-decoration-none text-dark">
+         <h5 class="card-title">UP Board 10th/12th result 2024: अचानक हुआ जारी यूपी बोर्ड कक्षा 12वीं का रिजल्ट यहां से करें चेक अपना रिजल्ट</h5>
+     </a>
+ </div>
+</div>
+ <div class="card mb-4 border-0">
+ <img style="max-height:450px;"  alt="Image" class="card-img-top" src="admin/postimages/97032077203984cc086f2be7dc2ffee2.jpg">
+ <div class="card-body">
+     <p class="m-0">
+         <!--category-->
+         <a class="badge bg-success text-decoration-none link-light" href="#" style="color:#fff">Sports</a>
+         <!--Subcategory--->
+         <a class="badge bg-warning text-decoration-none link-light" style="color:#fff">Sports</a>
+     </p>
+     <p class="m-0"><small> Posted on 2024-04-14 18:02:35</small></p>
+     <a href="news-details.php?nid=14" class="card-title text-decoration-none text-dark">
+         <h5 class="card-title">जिला एकीकरण समिति, सिद्धार्थ नगर के तत्वावधान में डॉ भीमराव अंबेडकर सभागार में किया गया डॉ भीमराव अंबेडकर की जयंती का आयोजन, जिले के अनेक अधिकारी रहें उपस्थित </h5>
+     </a>
+ </div>
+</div>
+ <div class="card mb-4 border-0">
+ <img style="max-height:450px;"  alt="Image" class="card-img-top" src="admin/postimages/a7bc7b44d75b3ce7c728fe94ae4f45b9.jpg">
+ <div class="card-body">
+     <p class="m-0">
+         <!--category-->
+         <a class="badge bg-success text-decoration-none link-light" href="#" style="color:#fff">Sports</a>
+         <!--Subcategory--->
+         <a class="badge bg-warning text-decoration-none link-light" style="color:#fff">Sports</a>
+     </p>
+     <p class="m-0"><small> Posted on 2024-04-14 11:41:34</small></p>
+     <a href="news-details.php?nid=13" class="card-title text-decoration-none text-dark">
+         <h5 class="card-title">सिद्धार्थनगर। मौसम में हो रहे बदलाव ने किसानों की चिंता बढ़ा दी है</h5>
+     </a>
+ </div>
+</div>
+</div>
+
+       
+                            
+          
+       <div class="col-md-6">
+           
+          <div class="card mb-4 border-0">
+             <img class="card-img-top" alt="Image" src="admin/postimages/182c8011e7d63febeccaf52b42a9f7e9.jpg" alt="UP Board 10th/12th result 2024: अचानक हुआ जारी यूपी बोर्ड कक्षा 12वीं का रिजल्ट यहां से करें चेक अपना रिजल्ट" height="200px">
+             <div class="card-body">
+                <p class="m-0">
+                   <!--category-->
+                   <a class="badge bg-success text-decoration-none link-light" href="category.php?catid=9" style="color:#fff">Siddharthnagar</a>
+                   <!--Subcategory--->
+                   <a class="badge bg-warning text-decoration-none link-light"  style="color:#fff">News</a>
+                </p>
+                <p class="m-0"><small> Posted on 2024-04-19 04:41:50</small></p>
+                <a href="news-details.php?nid=15" class="card-title text-decoration-none text-dark">
+                   <h5 class="card-title">UP Board 10th/12th result 2024: अचानक हुआ जारी यूपी बोर्ड कक्षा 12वीं का रिजल्ट यहां से करें चेक अपना रिजल्ट</h5>
+                </a>
+                <!-- <a href="news-details.php?nid=15" class="">Read More &rarr;</a> -->
+             </div>
+          </div>
+          
+          <!--<a href = "https://techinowave.tech">
+          <img src="images/logo.png" class="img-fluid" alt="Logo"></a>-->
+          
+       </div>
+                            
+          
+       <div class="col-md-6">
+           
+          <div class="card mb-4 border-0">
+             <img class="card-img-top" alt="Image" src="admin/postimages/97032077203984cc086f2be7dc2ffee2.jpg" alt="जिला एकीकरण समिति, सिद्धार्थ नगर के तत्वावधान में डॉ भीमराव अंबेडकर सभागार में किया गया डॉ भीमराव अंबेडकर की जयंती का आयोजन, जिले के अनेक अधिकारी रहें उपस्थित " height="200px">
+             <div class="card-body">
+                <p class="m-0">
+                   <!--category-->
+                   <a class="badge bg-success text-decoration-none link-light" href="category.php?catid=9" style="color:#fff">Siddharthnagar</a>
+                   <!--Subcategory--->
+                   <a class="badge bg-warning text-decoration-none link-light"  style="color:#fff">Programs </a>
+                </p>
+                <p class="m-0"><small> Posted on 2024-04-14 18:02:35</small></p>
+                <a href="news-details.php?nid=14" class="card-title text-decoration-none text-dark">
+                   <h5 class="card-title">जिला एकीकरण समिति, सिद्धार्थ नगर के तत्वावधान में डॉ भीमराव अंबेडकर सभागार में किया गया डॉ भीमराव अंबेडकर की जयंती का आयोजन, जिले के अनेक अधिकारी रहें उपस्थित </h5>
+                </a>
+                <!-- <a href="news-details.php?nid=14" class="">Read More &rarr;</a> -->
+             </div>
+          </div>
+          
+          <!--<a href = "https://techinowave.tech">
+          <img src="images/logo.png" class="img-fluid" alt="Logo"></a>-->
+          
+       </div>
+                            
+          
+       <div class="col-md-6">
+           
+          <div class="card mb-4 border-0">
+             <img class="card-img-top" alt="Image" src="admin/postimages/a7bc7b44d75b3ce7c728fe94ae4f45b9.jpg" alt="सिद्धार्थनगर। मौसम में हो रहे बदलाव ने किसानों की चिंता बढ़ा दी है" height="200px">
+             <div class="card-body">
+                <p class="m-0">
+                   <!--category-->
+                   <a class="badge bg-success text-decoration-none link-light" href="category.php?catid=9" style="color:#fff">Siddharthnagar</a>
+                   <!--Subcategory--->
+                   <a class="badge bg-warning text-decoration-none link-light"  style="color:#fff">Weather </a>
+                </p>
+                <p class="m-0"><small> Posted on 2024-04-14 11:41:34</small></p>
+                <a href="news-details.php?nid=13" class="card-title text-decoration-none text-dark">
+                   <h5 class="card-title">सिद्धार्थनगर। मौसम में हो रहे बदलाव ने किसानों की चिंता बढ़ा दी है</h5>
+                </a>
+                <!-- <a href="news-details.php?nid=13" class="">Read More &rarr;</a> -->
+             </div>
+          </div>
+          
+          <!--<a href = "https://techinowave.tech">
+          <img src="images/logo.png" class="img-fluid" alt="Logo"></a>-->
+          
+       </div>
+                            
+          
+       <div class="col-md-6">
+           
+          <div class="card mb-4 border-0">
+             <img class="card-img-top" alt="Image" src="admin/postimages/68d5535b971d558f594f10a5affd0a71jpeg" alt="इटवा में बुनियादी ढाँचे की विफलता: नाले की दीवार गिरी, निर्माण गुणवत्ता पर चिंताएँ" height="200px">
+             <div class="card-body">
+                <p class="m-0">
+                   <!--category-->
+                   <a class="badge bg-success text-decoration-none link-light" href="category.php?catid=9" style="color:#fff">Siddharthnagar</a>
+                   <!--Subcategory--->
+                   <a class="badge bg-warning text-decoration-none link-light"  style="color:#fff">Shohratgarh </a>
+                </p>
+                <p class="m-0"><small> Posted on 2024-04-13 05:10:51</small></p>
+                <a href="news-details.php?nid=8" class="card-title text-decoration-none text-dark">
+                   <h5 class="card-title">इटवा में बुनियादी ढाँचे की विफलता: नाले की दीवार गिरी, निर्माण गुणवत्ता पर चिंताएँ</h5>
+                </a>
+                <!-- <a href="news-details.php?nid=8" class="">Read More &rarr;</a> -->
+             </div>
+          </div>
+          
+          <!--<a href = "https://techinowave.tech">
+          <img src="images/logo.png" class="img-fluid" alt="Logo"></a>-->
+          
+       </div>
+                            
+          
+       <div class="col-md-6">
+           
+          <div class="card mb-4 border-0">
+             <img class="card-img-top" alt="Image" src="admin/postimages/6081ea2a74ac77a486c45664f9b5170f.jpg" alt="मोहाना थाना क्षेत्र के खलीलपुर गांव में घरेलू हिंसा व दहेज उत्पीड़न का आरोप...." height="200px">
+             <div class="card-body">
+                <p class="m-0">
+                   <!--category-->
+                   <a class="badge bg-success text-decoration-none link-light" href="category.php?catid=9" style="color:#fff">Siddharthnagar</a>
+                   <!--Subcategory--->
+                   <a class="badge bg-warning text-decoration-none link-light"  style="color:#fff">Mohana</a>
+                </p>
+                <p class="m-0"><small> Posted on 2024-04-10 15:28:28</small></p>
+                <a href="news-details.php?nid=7" class="card-title text-decoration-none text-dark">
+                   <h5 class="card-title">मोहाना थाना क्षेत्र के खलीलपुर गांव में घरेलू हिंसा व दहेज उत्पीड़न का आरोप....</h5>
+                </a>
+                <!-- <a href="news-details.php?nid=7" class="">Read More &rarr;</a> -->
+             </div>
+          </div>
+          
+          <!--<a href = "https://techinowave.tech">
+          <img src="images/logo.png" class="img-fluid" alt="Logo"></a>-->
+          
+       </div>
+                            
+       <script>
+        // When the user scrolls down 20px from the top of the document, slide down the navbar
+        window.onscroll = function() {scrollFunction()};
+        
+        function scrollFunction() {
+          if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            document.getElementById("navbar").style.top = "80px";
+          } else {
+            document.getElementById("navbar").style.top = "80px";
+          }
+        }
+        </script>
+       
+       

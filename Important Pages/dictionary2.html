@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Dictionary</title>
+    <style>
+        body { display: flex; font-family: Arial, sans-serif; }
+        #info, #output-container { padding: 20px; border: 1px solid #ccc; width: 45%; margin: 10px; }
+        .attribute, .sub-attribute { margin-bottom: 10px; }
+        h2 { color: #333; }
+        button { margin-left: 10px; }
+        pre { background: #f4f4f4; padding: 10px; border: 1px solid #ddd; }
+    </style>
+</head>
+<body>
+
+<div id="search-container">
+    <input type="text" id="search" placeholder="Search for a tag...">
+    <button onclick="searchTag()">Search</button>
+</div>
+
+<div id="info">
+    <h2 id="tag-name"></h2>
+    <p id="tag-description"></p>
+    <h3>Attributes:</h3>
+    <div id="attributes"></div>
+    <h3>Code Example:</h3>
+    <pre id="code-example"></pre>
+</div>
+
+<div id="output-container">
+    <h3>Output:</h3>
+    <div id="output"></div>
+    <h3>Generated Code:</h3>
+    <pre id="generated-code"></pre>
+</div>
+
+<script>
+const tags = {
+    input: {
+        description: "Represents an input field for user data.",
+        attributes: {
+            type: {
+                description: "Defines the type of input.",
+                values: ["text", "password", "email"],
+                requiresValue: true,
+                subAttributes: {}
+            },
+            placeholder: {
+                description: "Short hint for input.",
+                values: [],
+                requiresValue: true
+            },
+            required: {
+                description: "Indicates whether input is required.",
+                values: [],
+                requiresValue: false
+            },
+            minLength: {
+                description: "Sets the minimum number of characters.",
+                requiresValue: true,
+                values: []
+            },
+            maxLength: {
+                description: "Sets the maximum number of characters.",
+                requiresValue: true,
+                values: []
+            }
+        },
+        code: "<input type='text' placeholder='Enter your name'>"
+    },
+    // Add more tags as needed
+};
+
+function searchTag() {
+    const searchInput = document.getElementById('search').value.toLowerCase();
+    const tagInfo = tags[searchInput];
+    if (tagInfo) {
+        document.getElementById('tag-name').innerText = searchInput;
+        document.getElementById('tag-description').innerText = tagInfo.description;
+        
+        const attributesList = Object.entries(tagInfo.attributes).map(([key, { description, values, requiresValue, subAttributes }]) => `
+            <div class="attribute">
+                <strong>${key}:</strong> ${description} 
+                <button onclick="addAttribute('${key}', '', ${requiresValue})">Add</button>
+                <span>${values.length > 0 ? `Options: ${values.join(', ')}` : 'No options available'}</span>
+                <div>
+                    <h4>Sub-Attributes:</h4>
+                    ${Object.entries(subAttributes || {}).map(([subKey, { description, requiresValue }]) => `
+                        <div class="sub-attribute">
+                            <strong>${subKey}:</strong> ${description} 
+                            <button onclick="addAttribute('${key}', '${subKey}', ${requiresValue})">Add</button>
+                        </div>
+                    `).join('')}
+                </div>
+            </div>
+        `).join('');
+        
+        document.getElementById('attributes').innerHTML = attributesList;
+        document.getElementById('code-example').innerText = tagInfo.code;
+    } else {
+        document.getElementById('tag-name').innerText = '';
+        document.getElementById('tag-description').innerText = 'Tag not found.';
+        document.getElementById('attributes').innerHTML = '';
+        document.getElementById('code-example').innerText = '';
+    }
+}
+
+function addAttribute(attribute, subAttribute, requiresValue) {
+    let attributeValue = '';
+    
+    if (requiresValue) {
+        attributeValue = prompt(`Enter value for ${attribute}${subAttribute ? ' ' + subAttribute : ''}:`);
+    }
+
+    if (requiresValue && !attributeValue) {
+        return; // Exit if no value is provided
+    }
+
+    const tagName = document.getElementById('tag-name').innerText;
+    const output = document.getElementById('output');
+    const generatedCode = document.getElementById('generated-code');
+
+    let attrString = `${attribute}${attributeValue ? `="${attributeValue}"` : ''}`;
+    if (subAttribute) {
+        attrString += ` ${subAttribute}${attributeValue ? `="${attributeValue}"` : ''}`;
+    }
+
+    const tagRegex = new RegExp(`<${tagName}[^>]*>`);
+    if (output.innerHTML.includes(`<${tagName}`)) {
+        // Update the existing output with the new attribute
+        const existingElement = output.innerHTML.match(tagRegex);
+        if (existingElement) {
+            const updatedElement = `<${tagName} ${existingElement[0].replace(/(.*?)>/, `$1 ${attrString}`)}>`;
+            output.innerHTML = output.innerHTML.replace(existingElement[0], updatedElement);
+        }
+    } else {
+        // If the tag is not present, add a new one
+        const newElement = `<${tagName} ${attrString}><br>`;
+        output.innerHTML += newElement;
+    }
+
+    // Update the generated code output
+    generatedCode.innerText = output.innerHTML.replace(/<br>/g, '\n'); // Format for better readability
+}
+</script>
+
+</body>
+</html>

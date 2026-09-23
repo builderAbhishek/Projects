@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Back ID Card Generator</title>
+</head>
+<body>
+    <div class="id-card">
+        <h2>Back Side ID Card Generator</h2>
+        <div class="field">
+            <label for="joining-date">छात्र का Joining Date:</label>
+            <input type="date" id="joining-date">
+        </div>
+        <div class="field">
+            <label for="expiry-date">छात्र के आईडी की Expiry Date:</label>
+            <input type="date" id="expiry-date">
+        </div>
+        <button onclick="generateBackCard()">Generate I'd Card</button>
+        <button onclick="document(location='index.html')">Front I'd card</button>
+    </div>
+
+    <canvas id="backCanvas" style="display:none;"></canvas>
+    <button id="downloadBackBtn" style="display:none;">Download Back I'd Card</button>
+
+    <script src="backScript.js"></script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "979631455033",
+    "project_id": "smartage-login-001",
+    "storage_bucket": "smartage-login-001.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:979631455033:android:f6a3128ee87bd0de8c46e8",
+        "android_client_info": {
+          "package_name": "com.ais.smartage_login_001"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCqrZfCU0_wAAGUed5uf5kDf6GyFA6EnbE"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

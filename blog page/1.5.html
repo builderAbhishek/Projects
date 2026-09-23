@@ -1,0 +1,318 @@
+<style>
+    h1 {
+        display: block;
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h2 {
+        display: block;
+        font-size: 1.5em;
+        margin-top: 0.83em;
+        margin-bottom: 0.83em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h4 {
+        display: block;
+        font-size: 1.17em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h4 {
+        display: block;
+        font-size: 1em;
+        margin-top: 1.33em;
+        margin-bottom: 1.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h5 {
+        display: block;
+        font-size: .83em;
+        margin-top: 1.67em;
+        margin-bottom: 1.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h6 {
+        display: block;
+        font-size: .67em;
+        margin-top: 2.33em;
+        margin-bottom: 2.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    table {
+        width: fit-content;
+        border-collapse: collapse;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        text-align: start;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .syllabus-outline {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .syllabus-box {
+        width: 100%;
+        /*margin: 0px 5% 0px 5%;*/
+        display: flex;
+    }
+
+    .syllabus-container {
+        margin-bottom: 10px;
+        padding: 10px;
+        float: left;
+        margin-left: 13px;
+        box-shadow: 0 3px 3px rgb(0 0 0 / 60%), 0 1px 0 rgb(0 0 0 / 60%);
+    }
+
+    .dashed-border {
+        background-color: #fffba1;
+        padding: 20px 9px 0;
+        border-style: dashed;
+        border-width: 6px;
+        border-color: #000;
+    }
+
+    .left-right-border-box {
+        max-width: 100%;
+    }
+
+    .left-right-border {
+        background-color: #eaf5e4;
+        padding: 0 0 0 10px;
+        border-style: groove;
+        border-width: 0 10px;
+        border-color: #66db19;
+        border-radius: 0;
+    }
+
+    .left-right-border-box-2 {
+        max-width: 100%;
+    }
+
+    .left-border-sky {
+        padding: 1px 0 1px 10px;
+        border-style: groove;
+        margin: 10px;
+        border-width: 0 0 0 10px;
+        border-color: #02ccee;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+    }
+
+    .left-border-green {
+        padding: 1px 0 1px 10px;
+        border-style: groove;
+        margin: 10px;
+        border-width: 0 0 0 10px;
+        border-color: #a3ee02;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+    }
+
+    .section {
+        margin-bottom: 40px;
+    }
+
+    .left-border-purple {
+        padding: 1px 0 1px 10px;
+        margin: 10px;
+        border-style: groove;
+        border-width: 0 0 0 10px;
+        border-color: #bc60ff;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+    }
+
+    .h2-bg-black {
+        background-color: transparent;
+        padding: 15px;
+        background-image: linear-gradient(180deg, #000 0%, #000 100%);
+        color: #fff;
+    }
+
+    .p-bg-yellow {
+        background-color: transparent;
+        padding: 15px;
+        background-image: linear-gradient(180deg, #677dff 0%, #7f68ff 100%);
+        color: #ffffff;
+    }
+
+    .h2-bg-yellow-black {
+        background-color: transparent;
+        padding: 0 0 0 10px;
+        background-image: linear-gradient(180deg, #ecca68 0%, #fff144 100%);
+        border-style: groove;
+        border-width: 0 0 0 10px;
+        border-color: #000;
+    }
+
+    p {
+        margin-top: inherit;
+        margin-bottom: inherit;
+    }
+
+    li {
+        margin: inherit;
+    }
+
+
+    @media only screen and (max-width: 860px) {
+        .syllabus-box {
+            display: grid;
+        }
+
+        .syllabus-container {
+            margin-left: 0;
+        }
+
+        .col-md-6 {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+</style>
+
+
+
+<div class="container">
+    <h1>Representation of Data/Information: A Comprehensive Guide</h1>
+
+    <p>If you're studying computer concepts or working on a CCC (Course on Computer Concepts), understanding how data and information are represented is crucial. This guide will help you grasp these concepts in both Hindi and English.</p>
+
+    <div class="section">
+        <h2>1.5 Representation of Data/Information</h2>
+
+        <h3>1.5.1 What is Data Representation?</h3>
+        <h3>क्या है:</h3>
+        <p>Data Representation डेटा को एक संरचित फॉर्म में प्रस्तुत करने की प्रक्रिया है जिसे कंप्यूटर प्रोसेस कर सके। यह विभिन्न रूपों में हो सकता है जैसे कि बाइनरी, दशमलव, या हेक्साडेसिमल।</p>
+
+        <h3>What is it:</h3>
+        <p>Data Representation is the process of presenting data in a structured form that a computer can process. It can be in various forms such as binary, decimal, or hexadecimal.</p>
+
+        <h3>1.5.2 Binary Representation</h3>
+        <h3>क्या है:</h3>
+        <p>Binary Representation डेटा को केवल दो संभावित मानों के रूप में प्रस्तुत करता है: 0 और 1। कंप्यूटर सिस्टम बाइनरी कोड का उपयोग करके डेटा को प्रोसेस और स्टोर करता है।</p>
+
+        <h3>What is it:</h3>
+        <p>Binary Representation presents data as only two possible values: 0 and 1. Computer systems use binary code to process and store data.</p>
+
+        <h3>उदाहरण:</h3>
+        <ul>
+            <li class="left-right-border-box-2">
+                <div class="left-border-sky">
+                    <p><b>Decimal Number 5:</b> बाइनरी में 101 के रूप में प्रस्तुत किया जाता है।</p>
+                </div>
+            </li>
+        </ul>
+
+        <h3>Examples:</h3>
+        <ul>
+            <li class="left-right-border-box-2">
+                <div class="left-border-sky">
+                    <p><b>Decimal Number 5:</b> Represented as 101 in binary.</p>
+                </div>
+            </li>
+        </ul>
+
+        <h3>1.5.3 Decimal Representation</h3>
+        <h3>क्या है:</h3>
+        <p>Decimal Representation डेटा को दस अंकों के आधार पर प्रस्तुत करता है, जिसमें अंकों की श्रृंखला होती है 0 से 9 तक। यह सामान्य गणना और मानव उपयोग के लिए उपयुक्त है।</p>
+
+        <h3>What is it:</h3>
+        <p>Decimal Representation presents data based on ten digits, ranging from 0 to 9. It is suitable for general calculations and human use.</p>
+
+        <h3>उदाहरण:</h3>
+        <ul>
+            <li class="left-right-border-box-2">
+                <div class="left-border-green">
+                    <p><b>Binary Number 101:</b> दशमलव में 5 के रूप में प्रस्तुत किया जाता है।</p>
+                </div>
+            </li>
+        </ul>
+
+        <h3>Examples:</h3>
+        <ul>
+            <li class="left-right-border-box-2">
+                <div class="left-border-green">
+                    <p><b>Binary Number 101:</b> Represented as 5 in decimal.</p>
+                </div>
+            </li>
+        </ul>
+
+        <h3>1.5.4 Hexadecimal Representation</h3>
+        <h3>क्या है:</h3>
+        <p>Hexadecimal Representation डेटा को 16 अंकों के आधार पर प्रस्तुत करता है, जिसमें अंकों की श्रृंखला 0 से 9 और अक्षरों की श्रृंखला A से F तक होती है। यह विशेष रूप से कंप्यूटर सिस्टम में उपयोगी होता है।</p>
+
+        <h3>What is it:</h3>
+        <p>Hexadecimal Representation presents data based on 16 digits, including numbers 0 to 9 and letters A to F. It is especially useful in computer systems.</p>
+
+        <h3>उदाहरण:</h3>
+        <ul>
+            <li class="left-right-border-box-2">
+                <div class="left-border-purple">
+                    <p><b>Decimal Number 255:</b> हेक्साडेसिमल में FF के रूप में प्रस्तुत किया जाता है।</p>
+                </div>
+            </li>
+        </ul>
+
+        <h3>Examples:</h3>
+        <ul>
+            <li class="left-right-border-box-2">
+                <div class="left-border-purple">
+                    <p><b>Decimal Number 255:</b> Represented as FF in hexadecimal.</p>
+                </div>
+            </li>
+        </ul>
+
+        <h3>1.5.5 Importance of Data Representation</h3>
+        <h3>क्या है:</h3>
+        <p>Data Representation की समझ महत्वपूर्ण है क्योंकि यह हमें डेटा को सही ढंग से स्टोर, प्रोसेस और ट्रांसफर करने में मदद करती है। विभिन्न सिस्टम और एप्लिकेशन डेटा के विभिन्न स्वरूपों का उपयोग करते हैं।</p>
+
+        <h3>What is it:</h3>
+        <p>Understanding Data Representation is important as it helps us to correctly store, process, and transfer data. Different systems and applications use different formats for data.</p>
+
+        <p>आशा है कि इस गाइड से आप डेटा और सूचना के प्रतिनिधित्व को बेहतर तरीके से समझ पाएंगे।</p>
+
+        <p>I hope this guide helps you better understand the representation of data and information.</p>
+    </div>
+</div>

@@ -1,0 +1,554 @@
+
+
+/* Heading styling */
+h2 {
+    color: #1F77B4; /* Soft Blue - Trust and Clarity */
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-family: "PT Serif", serif;
+}
+
+h3 {
+    color: #000000; /* Soft Blue - Trust and Clarity */
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    font-weight: 600;
+    font-family: "PT Serif", serif;
+}
+
+
+
+.tuto-info p {
+    font-size: 16px;
+    color: #cee2ff; /* Soft Blue for Text - Calm and Trustworthy */
+    margin-bottom: 10px;
+    font-family: "PT Serif", serif;
+}
+
+/* Paragraph and general content */
+.content-section p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    color: #000000; /* Dark Gray - Best for readability */
+    line-height: 1.8;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.content-section p strong {
+    color: #001dff; /* Trustworthy Blue */
+}
+
+mark {
+    font-weight: 700;
+}
+
+/* Example 1: Light Blue and Light Yellow */
+.examples1 {
+    background-color: #F0F8FF; /* Light Blue - Calm and Clear */
+    padding: 20px;
+    border-left: 5px solid #1F77B4; /* Soft Blue border for clarity */
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.examples1 h3 {
+    font-size: 25px;
+    color: #ff0000;
+    margin-bottom: 15px;
+    font-weight: 800;
+    font-family: 'Lora', serif;
+}
+
+.examples1 p strong {
+    font-size: 18px;
+    color: #ff0000; /* Soft Blue for Headings */
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.examples1 ul {
+    list-style-type: disc;
+    padding-left: 25px;
+}
+
+.examples1 li {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #000000; /* Dark Gray text */
+    background-color: #ffaeae8f; /* Soft Yellow for Highlight - Energy without distraction */
+    padding: 8px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+/* Important Background 1: Light Green and Soft Yellow */
+.imp-bg1 {
+    background-color: #D3F9D8; /* Light Green - Growth and Relaxation */
+    padding: 20px;
+    border-left: 5px solid #1F77B4; /* Soft Blue border for Clarity */
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.imp-bg1 h3 {
+    font-size: 1.5rem;
+    color: #2600ff; /* Green for heading - Growth and Clarity */
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.imp-bg1 p strong {
+    color: #001dff;
+}
+
+.imp-bg1 p {
+    font-size: 16px;
+    color: #000000; /* Dark Gray for Readability */
+    margin-bottom: 15px;
+}
+
+.imp-bg1 ul {
+    list-style-type: disc;
+    padding-left: 25px;
+}
+
+.imp-bg1 li {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #000000; /* Dark Gray text */
+    background-color: #FFF9C4; /* Soft Yellow - Highlighting without distraction */
+    padding: 8px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+/* Important Background 2: Light Green and Soft Yellow */
+.imp-bg2 {
+    background-color: #67ffd3b5; /* Soft Coral - Warm and Inviting */
+    padding: 20px;
+    border-left: 5px solid #FF7043; /* Soft Coral border */
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.imp-bg2 h3 {
+    font-size: 1.5rem;
+    color: #0b009f; /* Coral for Heading - Warm and Inviting */
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.imp-bg2 p strong {
+    color: #001dff;
+}
+
+.imp-bg2 p {
+    font-size: 16px;
+    color: #000000; /* Dark Gray text for readability */
+    margin-bottom: 15px;
+}
+
+.imp-bg2 ul {
+    list-style-type: disc;
+    padding-left: 25px;
+}
+
+.imp-bg2 li {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #000000; /* Dark Gray text */
+    background-color: #c4c1fbe3; /* Soft Peach - Gentle Highlight */
+    padding: 8px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+/* Important Background 3: Light Green and Soft Yellow */
+.imp-bg3 {
+    background-color: #E8EAF6; /* Light Lavender - Calm and Serene */
+    padding: 20px;
+    border-left: 5px solid #0017ff; /* Purple for Creativity and Wisdom */
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.imp-bg3 h3 {
+    font-size: 1.5rem;
+    color: #c800ff; /* Purple for Heading */
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.imp-bg3 p strong {
+    color: #001dff;
+}
+
+.imp-bg3 p {
+    font-size: 16px;
+    color: #000000; /* Dark Gray text */
+    margin-bottom: 15px;
+}
+
+.imp-bg3 ul {
+    list-style-type: disc;
+    padding-left: 25px;
+}
+
+.imp-bg3 li {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #000000; /* Dark Gray text */
+    background-color: #BBDEFB; /* Light Blue - Calming Background */
+    padding: 8px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+
+/* Important Background 4: Light Pink and Light Lavender */
+.imp-bg4 {
+    background-color: #FCE4EC; /* Light Pink - Soft and Gentle */
+    padding: 20px;
+    border-left: 5px solid #9C27B0; /* Purple border for Creativity */
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.imp-bg4 h3 {
+    font-size: 1.5rem;
+    color: #8E24AA; /* Purple for Heading */
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.imp-bg4 p strong {
+    color: #001dff;
+}
+
+.imp-bg4 p {
+    font-size: 16px;
+    color: #000000; /* Dark Gray text for readability */
+    margin-bottom: 15px;
+}
+
+.imp-bg4 ul {
+    list-style-type: disc;
+    padding-left: 25px;
+}
+
+.imp-bg4 li {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #000000;
+    background-color: #f3a2ff; /* Light Lavender for a calming background */
+    padding: 8px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+
+/* Important Background 5: Soft Yellow and Light Orange */
+
+.imp-bg5 {
+    background-color: #FFF9C4; /* Soft Yellow - Warm and Welcoming */
+    padding: 20px;
+    border-left: 5px solid #FF9800; /* Light Orange border */
+    margin-bottom: 20px;
+    margin-left: 20px;
+}
+
+.imp-bg5 h3 {
+    font-size: 1.5rem;
+    color: #FF5722; /* Orange for Heading */
+    margin-bottom: 15px;
+    font-weight: bold;
+}
+
+.imp-bg5 p strong {
+    color: #001dff;
+}
+
+.imp-bg5 p {
+    font-size: 16px;
+    color: #000000; /* Dark Gray text */
+    margin-bottom: 15px;
+}
+
+.imp-bg5 ul {
+    list-style-type: disc;
+    padding-left: 25px;
+}
+
+.imp-bg5 li {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #000000;
+    background-color: #ffda6a; /* Soft Orange Highlight */
+    padding: 8px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+.imp-bg1 h2, .imp-bg2 h2, .imp-bg3 h2, .imp-bg4 h2, .imp-bg5 h2 {
+    margin-top: 10px !important;
+}
+
+/* Article Start: Light Green and Soft Yellow */
+.article-start {
+    font-size: 18px;
+    color: #2c3e50;
+    margin-bottom: 30px;
+    line-height: 1.8;
+    background-color: #ffffff; /* Light Green background */
+    padding: 20px;
+}
+
+/* Article S-1: Light Blue and Soft Orange */
+.article-s1 {
+    font-size: 20px;
+    color: #34495e;
+    margin-bottom: 25px;
+    background-color: #e3f2fd; /* Light Blue background */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Article S-2: Soft Yellow and Light Gray */
+.article-s2 {
+    font-size: 18px;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    font-style: italic;
+    background-color: #fff9c4; /* Soft Yellow background */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Article S-3: Lavender and Purple */
+.article-s3 {
+    font-size: 16px;
+    color: #2c3e50;
+    background-color: #f3e5f5; /* Lavender background */
+    padding: 15px;
+    border-left: 5px solid #8e24aa; /* Purple left border */
+    margin-bottom: 20px;
+    border-radius: 5px;
+}
+
+/* Article S-4: Soft Coral and Peach */
+.article-s4 {
+    font-size: 18px;
+    color: #2c3e50;
+    font-weight: 600;
+    margin-top: 30px;
+    border-top: 2px solid #ecf0f1;
+    padding-top: 20px;
+    background-color: #FFEBEE; /* Soft Coral background */
+    padding: 20px;
+    border-radius: 5px;
+}
+
+/* Headings inside Articles */
+.article-start h2, .article-s1 h2, .article-s2 h2, .article-s3 h2, .article-s4 h2 {
+    font-size: 2.4rem;
+    margin-bottom: 20px;
+    font-weight: 600;
+    font-family: "PT Serif", serif;
+}
+
+/* Article Start Heading */
+.article-start h2 {
+    color: #000000; /* Soft Blue - Trust and Clarity */
+}
+
+/* Article S-1 Heading */
+.article-s1 h2 {
+    color: #FF5722; /* Bold Orange - Vibrant */
+}
+
+/* Article S-2 Heading */
+.article-s2 h2 {
+    color: #F9A825; /* Warm Yellow */
+}
+
+/* Article S-3 Heading */
+.article-s3 h2 {
+    color: #8E24AA; /* Purple - Creativity */
+}
+
+/* Article S-4 Heading */
+.article-s4 h2 {
+    color: #FF7043; /* Coral - Warm and Inviting */
+}
+
+/* Sub-headings inside Articles */
+.article-start h3, .article-s1 h3, .article-s2 h3, .article-s3 h3, .article-s4 h3 {
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    font-weight: 800;
+    font-family: "PT Serif", serif;
+}
+
+/* Paragraph inside Articles */
+.article-start p, .article-s1 p, .article-s2 p, .article-s3 p, .article-s4 p {
+    font-size: 16px;
+    margin-bottom: 20px;
+    line-height: 1.8;
+    font-weight: 500;
+    font-family: 'Open Sans', sans-serif;
+}
+
+/* Article Start Paragraph */
+.article-start p {
+    color: #000000; /* Dark Gray for readability */
+    font-size: 18px;
+    font-weight: 500;
+}
+
+/* Article S-1 Paragraph */
+.article-s1 p {
+    color: #040505; /* Dark Blue */
+}
+
+/* Article S-2 Paragraph */
+.article-s2 p {
+    color: #000000; /* Gray */
+}
+
+/* Article S-3 Paragraph */
+.article-s3 p {
+    color: #2c3e50; /* Dark Gray */
+}
+
+/* Article S-4 Paragraph */
+.article-s4 p {
+    color: #2c3e50; /* Dark Gray */
+}
+
+/* Paragraphs with Strong Text */
+.article-start p strong, .article-s1 p strong, .article-s2 p strong, .article-s3 p strong, .article-s4 p strong {
+    font-weight: 600;
+    color: #001dff; /* Blue */
+}
+
+/* Paragraphs with Strong Text */
+.article-s1 h2, .article-s2 h2, .article-s3 h2, .article-s4 h2 {
+    margin-top: 10px;
+}
+
+/* Paragraphs with Emphasis Text */
+.article-start p em, .article-s1 p em, .article-s2 p em, .article-s3 p em, .article-s4 p em {
+    font-style: italic;
+    color: #7f8c8d;
+}
+
+/* Tables inside Articles */
+.article-start table, .article-s1 table, .article-s2 table, .article-s3 table, .article-s4 table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+/* Table Headers */
+.article-start th, .article-s1 th, .article-s2 th, .article-s3 th, .article-s4 th {
+    background-color: #1F77B4;
+    color: #fff;
+    padding: 12px;
+    text-align: left;
+}
+
+/* Table Cells */
+.article-start td, .article-s1 td, .article-s2 td, .article-s3 td, .article-s4 td {
+    padding: 10px;
+    border: 1px solid #ddd;
+}
+
+/* Unordered List (ul) */
+.article-start ul, .article-s1 ul, .article-s2 ul, .article-s3 ul, .article-s4 ul {
+    list-style-type: disc;
+    padding-left: 25px;
+}
+
+/* List Items (li) */
+.article-start li, .article-s1 li, .article-s2 li, .article-s3 li, .article-s4 li {
+    font-size: 16px;
+    margin: 8px 0;
+    color: #000000;
+    background-color: #f9f9f9; /* Light Background */
+    padding: 8px;
+    border-radius: 5px;
+    list-style: none;
+}
+
+/* Ordered List (ol) */
+.article-start ol, .article-s1 ol, .article-s2 ol, .article-s3 ol, .article-s4 ol {
+    padding-left: 25px;
+}
+
+/* Marked (Highlighted) Text */
+.article-start mark, .article-s1 mark, .article-s2 mark, .article-s3 mark, .article-s4 mark {
+    background-color: #ffff00; /* Yellow highlight */
+    font-weight: bold;
+}
+
+/* Bold Text */
+.article-start b, .article-s1 b, .article-s2 b, .article-s3 b, .article-s4 b {
+    font-weight: bold;
+}
+
+/* Links inside Articles */
+.article-start a, .article-s1 a, .article-s2 a, .article-s3 a, .article-s4 a {
+    color: #3498db; /* Blue link color */
+    text-decoration: none;
+}
+
+.article-start a:hover, .article-s1 a:hover, .article-s2 a:hover, .article-s3 a:hover, .article-s4 a:hover {
+    color: #1F77B4; /* Soft Blue */
+    text-decoration: underline;
+}
+
+/* Blockquote */
+.article-start blockquote, .article-s1 blockquote, .article-s2 blockquote, .article-s3 blockquote, .article-s4 blockquote {
+    border-left: 5px solid #3498db;
+    padding-left: 15px;
+    font-style: italic;
+    color: #7f8c8d;
+    margin-bottom: 20px;
+    font-size: 18px;
+}
+
+/* Code snippets */
+.article-start code, .article-s1 code, .article-s2 code, .article-s3 code, .article-s4 code {
+    background-color: #f8f9fa;
+    border-radius: 5px;
+    padding: 2px 6px;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+    color: #2c3e50;
+}
+
+/* Preformatted Text */
+.article-start pre, .article-s1 pre, .article-s2 pre, .article-s3 pre, .article-s4 pre {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-radius: 5px;
+    overflow-x: auto;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: 14px;
+}
+
+/* Images inside Articles */
+.article-start img, .article-s1 img, .article-s2 img, .article-s3 img, .article-s4 img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+/* Horizontal Rule */
+.article-start hr, .article-s1 hr, .article-s2 hr, .article-s3 hr, .article-s4 hr {
+    border: 0;
+    border-top: 1px solid #3498db;
+    margin: 20px 0;
+}

@@ -1,0 +1,49 @@
+plugins {
+    id "com.android.application"  // Required for Android app development
+    id "kotlin-android"  // Kotlin support
+    id "dev.flutter.flutter-gradle-plugin"  // Flutter Gradle plugin
+    id 'com.google.gms.google-services'  // Firebase services plugin
+}
+
+dependencies {
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib-jdk8:1.8.22'  // Kotlin standard library
+    implementation 'com.google.firebase:firebase-bom:32.8.0'  // Firebase Bill of Materials for version control
+    implementation 'com.google.firebase:firebase-auth'  // Firebase Authentication
+
+    // Include additional Firebase services if needed, e.g.:
+    // implementation 'com.google.firebase:firebase-firestore'  // For Firestore
+    // implementation 'com.google.firebase:firebase-messaging'  // For Firebase Cloud Messaging
+}
+
+android {
+    namespace = "com.ais.smartage_login_001"  // Unique namespace for the app
+    compileSdk = flutter.compileSdkVersion  // Use Flutter SDK version
+    ndkVersion = flutter.ndkVersion  // Use NDK version from Flutter
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_1_8  // Set Java compatibility
+        targetCompatibility = JavaVersion.VERSION_1_8  // Set Java target compatibility
+    }
+
+    kotlinOptions {
+        jvmTarget = JavaVersion.VERSION_1_8  // Target JVM version for Kotlin
+    }
+
+    defaultConfig {
+        applicationId = "com.ais.smartage_login_001"  // Unique Application ID
+        minSdk = flutter.minSdkVersion  // Minimum SDK version based on Flutter settings
+        targetSdk = flutter.targetSdkVersion  // Target SDK version based on Flutter settings
+        versionCode = flutter.versionCode  // Version code for the app
+        versionName = flutter.versionName  // Version name for the app
+    }
+
+    buildTypes {
+        release {
+            signingConfig = signingConfigs.debug  // Use debug keys for release, configure later
+        }
+    }
+}
+
+flutter {
+    source = "../.."  // Ensure this points to the correct Flutter SDK directory
+}

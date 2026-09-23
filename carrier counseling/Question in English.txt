@@ -1,0 +1,138 @@
+const questions = {
+    "Math": [
+        "Do you enjoy solving math problems?",
+        "Do you find geometry interesting?",
+        "Do you enjoy working with numbers?",
+        "Do you like algebra?",
+        "Do you find calculus intriguing?",
+        "Do you like solving equations?",
+        "Do you find probability and statistics fascinating?",
+        "Do you enjoy mathematical puzzles?",
+        "Do you like exploring mathematical concepts?",
+        "Do you enjoy programming mathematical algorithms?"
+    ],
+    "Biology": [
+        "Do you enjoy learning about living organisms?",
+        "Do you find human anatomy fascinating?",
+        "Do you like studying cell biology?",
+        "Are you interested in genetics and heredity?",
+        "Do you find microbiology intriguing?",
+        "Do you enjoy studying ecology and ecosystems?",
+        "Are you fascinated by the diversity of life forms?",
+        "Do you like exploring evolutionary biology?",
+        "Are you interested in environmental biology?",
+        "Do you enjoy researching biological processes?"
+    ],
+    "Commerce": [
+        "Do you enjoy learning about business concepts?",
+        "Do you find economics interesting?",
+        "Are you fascinated by marketing strategies?",
+        "Do you like studying finance and investments?",
+        "Are you interested in supply chain management?",
+        "Do you enjoy analyzing market trends?",
+        "Are you intrigued by international trade?",
+        "Do you find accounting principles fascinating?",
+        "Are you interested in entrepreneurship?",
+        "Do you like studying consumer behavior?"
+    ],
+    "Arts": [
+        "Do you enjoy drawing or painting?",
+        "Do you like studying art history?",
+        "Are you interested in sculpture or pottery?",
+        "Do you find photography fascinating?",
+        "Are you intrigued by performing arts like theater or dance?",
+        "Do you enjoy exploring different art forms and techniques?",
+        "Are you fascinated by architecture and design?",
+        "Do you like visiting art galleries and museums?",
+        "Are you interested in learning about graphic design?",
+        "Do you enjoy expressing yourself through artistic means?"
+    ]
+};
+
+
+
+let interestScores = {
+    "Math": 0,
+    "Biology": 0,
+    "Commerce": 0,
+    "Arts": 0
+};
+
+let askedQuestions = new Set();
+let currentInterest = "";
+
+const questionContainer = document.getElementById("question");
+const resultContainer = document.getElementById("result");
+const yesButton = document.getElementById("yesBtn");
+const noButton = document.getElementById("noBtn");
+
+function getRandomQuestion(interest) {
+    let availableQuestions = questions[interest].filter(q => !askedQuestions.has(q));
+    if (availableQuestions.length === 0) {
+        return null;
+    }
+    let question = availableQuestions[Math.floor(Math.random() * availableQuestions.length)];
+    return question;
+}
+
+function displayQuestion() {
+    currentInterest = Object.keys(questions)[Math.floor(Math.random() * Object.keys(questions).length)];
+    let question = getRandomQuestion(currentInterest);
+    if (question) {
+        questionContainer.innerText = question;
+    } else {
+        showResult();
+    }
+}
+
+function processAnswer(answer) {
+    if (answer === "yes") {
+        interestScores[currentInterest]++;
+    }
+    askedQuestions.add(questionContainer.innerText);
+    displayQuestion();
+}
+
+
+function showResult() {
+    questionContainer.style.display = "none";
+    yesButton.style.display = "none";
+    noButton.style.display = "none";
+    resultContainer.innerHTML = "<h2>Based on your interests, here are some suggested subjects:</h2>";
+    let maxInterest = Object.keys(interestScores).reduce((a, b) => interestScores[a] > interestScores[b] ? a : b);
+    if (interestScores[maxInterest] > 0) {
+        resultContainer.innerHTML += `<p class="txt2">- Your main interest is ${maxInterest}!</p>`;
+        resultContainer.innerHTML += `<p class="txt2">Do you want to know about career options in ${maxInterest}? (yes/no)</p>`;
+        let answerBtns = document.createElement("div");
+        answerBtns.innerHTML = `<button class="button" id="careerYesBtn">Yes</button><button class="button" id="careerNoBtn">No</button>`;
+        resultContainer.appendChild(answerBtns);
+        document.getElementById("careerYesBtn").addEventListener("click", () => {
+            showCareerOptions(maxInterest);
+        });
+        document.getElementById("careerNoBtn").addEventListener("click", () => {
+            resultContainer.innerHTML += "<p>No specific interest found, try exploring more!</p>";
+        });
+    }
+}
+
+function showCareerOptions(interest) {
+    let careerOptions = {
+        "Math": ["Computer Science", "Cryptograpy", "Mathematical Modelling", "Operations Research", "Financial Analysis", "Risk Management", "Mathematical Education", "Mathematical Research", "Software Development", "Numerical Analysis"],
+        "Biology": ["Microbiology", "Genetics", "Ecology", "Marine Biology", "Zoology", "Botany", "Pharmacology", "Veterinary Science", "Forensic Science", "Bioinformatics"],
+        "Commerce": ["Human Resource Management", "Supply Chain Management", "International Business", "Retail Management", "Business Analytics", "Risk Management", "Entrepreneurship", "Corporate Law", "Real Estate Management", "Operations Management"],
+        "Arts": ["Fashion Designing", "Interior Designing", "Photography", "Film Making", "Animation", "Creative Writing", "Advertising", "Multimedia Arts", "Illustration", "Theater and Drama"]
+    };
+    resultContainer.innerHTML = `<h2 class="txt1">Here are some career options in ${interest}:</h2>`;
+    let optionsList = document.createElement("ul");
+    careerOptions[interest].forEach(option => {
+        let listItem = document.createElement("li");
+        listItem.textContent = option;
+        optionsList.appendChild(listItem);
+    });
+    resultContainer.appendChild(optionsList);
+}
+
+yesButton.addEventListener("click", () => processAnswer("yes"));
+noButton.addEventListener("click", () => processAnswer("no"));
+
+displayQuestion();

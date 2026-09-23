@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Header with Submenu</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            height: 100vh; /* Make body take full height */
+
+            padding-top: 10px; /* Add a 10px gap from the top */
+        }
+
+        header {
+            background-color: white;
+            color: black;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            width: 80%;   /* Sets the width to 80% */
+            height: 70px; /* Sets the height to 100px */
+            padding: 20px 40px;
+            position: relative;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            border-radius: 30px;  /* Border radius for rounded corners */
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        header:hover {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .logo img {
+            max-width: 50px;
+            height: auto;
+            margin-right: 15px;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            font-weight: 600;
+            letter-spacing: 1px;
+        }
+
+        .menu {
+            display: flex;
+            gap: 30px;
+            list-style: none;
+        }
+
+        .menu li {
+            position: relative;
+            font-weight: 500;
+            cursor: pointer;
+            transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .menu li:hover {
+            color: #007bff;
+            transform: scale(1.1);
+            box-shadow: 0 4px 10px rgba(0, 123, 255, 0.3);
+        }
+
+        .menu li a {
+            text-decoration: none;
+            color: black;
+            display: block;
+        }
+
+        /* Submenu */
+        .submenu {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background-color: white;
+            width: 200px;
+            display: none;
+            list-style: none;
+            padding: 10px 0;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            transition: transform 0.3s ease;
+        }
+
+        .menu li:hover .submenu {
+            display: block; /* Show submenu on hover */
+        }
+
+        .submenu li {
+            padding: 10px;
+            color: black;
+            font-size: 16px;
+            display: flex;
+            align-items: center;
+        }
+
+        .submenu li:hover {
+            background-color: #f0f0f0;
+            transform: translateX(5px);
+        }
+
+        .submenu li a {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            align-items: center;
+        }
+
+        .submenu li i {
+            margin-right: 10px;
+        }
+
+        .menu-btn {
+            display: none;
+            cursor: pointer;
+            font-size: 30px;
+            transition: transform 0.3s ease;
+        }
+
+        .menu-btn:hover {
+            transform: scale(1.2);
+        }
+
+        /* Mobile Menu styles */
+        .mobile-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background-color: #333;
+            color: white;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: left 0.4s ease;
+            z-index: 1000;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        }
+
+        .mobile-menu.open {
+            left: 0;
+        }
+
+        .mobile-menu li {
+            margin: 20px 0;
+            font-size: 26px;
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0;
+            animation: fadeIn 0.5s forwards;
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-menu li:hover {
+            color: #007bff;
+            transform: translateX(10px);
+        }
+
+        .mobile-menu li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 40px;
+            cursor: pointer;
+            color: white;
+            transition: color 0.3s ease, transform 0.3s ease;
+        }
+
+        .close-btn:hover {
+            color: #007bff;
+            transform: rotate(90deg);
+        }
+
+        @media (max-width: 768px) {
+            .menu {
+                display: none;
+            }
+            .menu-btn {
+                display: block;
+            }
+            /* Mobile Submenu */
+            .submenu {
+                position: relative;
+                width: 100%;
+                display: none;
+                flex-direction: column;
+                padding: 10px 0;
+                background-color: #333;
+                box-shadow: none;
+            }
+
+            .submenu li {
+                padding: 10px;
+                text-align: left;
+            }
+
+            .menu-item.open .submenu {
+                display: flex;
+            }
+
+            header {
+                background-color: white;
+        color: black;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        width: 100%;
+        height: 70px;
+        left: 0;
+        top: 0;
+        right: 10px;
+        padding: 20px 40px;
+        position: fixed;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        border-radius: 0px;
+        transition: box-shadow 0.3s ease-in-out;
+        }
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div style="background-color: #007bff;">
+    <div style="display: flex;">
+    <header>
+        <div class="logo">
+            <img src="https://via.placeholder.com/50" alt="Logo">
+            <h1>IoT School</h1>
+        </div>
+        <ul class="menu">
+            <li><a href="#home">Home</a></li>
+            <li class="menu-item">
+                <a href="#about">About</a>
+                <ul class="submenu">
+                    <li><a href="#about-us"><i class="fa fa-info-circle"></i> About Us</a></li>
+                    <li><a href="#team"><i class="fa fa-users"></i> Team</a></li>
+                    <li><a href="#careers"><i class="fa fa-briefcase"></i> Careers</a></li>
+                </ul>
+            </li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="menu-btn" id="menu-btn">&#9776;</div>
+    </header></div>
+
+    <div class="mobile-menu" id="mobile-menu">
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li class="menu-item">
+                <a href="#about">About</a>
+                <ul class="submenu">
+                    <li><a href="#about-us"><i class="fa fa-info-circle"></i> About Us</a></li>
+                    <li><a href="#team"><i class="fa fa-users"></i> Team</a></li>
+                    <li><a href="#careers"><i class="fa fa-briefcase"></i> Careers</a></li>
+                </ul>
+            </li>
+            <li><a href="#services">Services</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="close-btn" id="close-btn">&times;</div>
+    </div>
+
+<div style="margin-top: 100px;">
+    <h1 >hello</h1>
+</div>
+    <section class="hero-content">
+        <div class="hero-content">
+            <h2 class="animate__animated animate__fadeIn animate__delay-1s">Chalo IoT Seekhata Hun Hindi Mein, Mazedaar Tarike Se!</h2>
+            <p class="animate__animated animate__fadeIn animate__delay-2s">Ready ho tum? IoT ki duniya mein kuch fun aur easy tutorials ke saath mai tumhe leke chalta hun. Padhata hun, seekhta hun, aur enjoy karata hun!</p>
+            
+            <!-- Search Bar Section -->
+            <div class="search-container animate__animated animate__fadeIn animate__delay-3s">
+                <input type="text" id="search-bar" placeholder="Kya search karna hai?" class="search-input">
+                <button onclick="searchTopic()" class="search-btn">Search!</button>
+            </div>
+    
+            <!-- CTA Button -->
+            <a href="#" class="cta-button animate__animated animate__fadeIn animate__delay-4s">Pata Nahi Kahan Se Start Karein? Don't worry, main hoon na!</a>
+        </div>
+    </section>
+</div>
+    <script>
+        const menuBtn = document.getElementById('menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const closeBtn = document.getElementById('close-btn');
+        const menuItems = document.querySelectorAll('.menu-item');
+
+        // Open mobile menu on menu button click
+        menuBtn.addEventListener('click', () => {
+            mobileMenu.classList.add('open');
+        });
+
+        // Close mobile menu on close button click
+        closeBtn.addEventListener('click', () => {
+            mobileMenu.classList.remove('open');
+        });
+
+        // Toggle submenu on hover (desktop) and click (mobile)
+        menuItems.forEach(item => {
+            item.addEventListener('mouseenter', () => {
+                if (window.innerWidth > 768) {
+                    item.querySelector('.submenu').style.display = 'block';
+                }
+            });
+
+            item.addEventListener('mouseleave', () => {
+                if (window.innerWidth > 768) {
+                    item.querySelector('.submenu').style.display = 'none';
+                }
+            });
+
+            item.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    const submenu = item.querySelector('.submenu');
+                    submenu.style.display = submenu.style.display === 'block' ? 'none' : 'block';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>किशान मित्र</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://uiverse.io/build/_assets/tailwind-W26M35ZV.css">
+</head>
+
+<body>
+    <header>
+        <h1 style="font-size: 2.1em; font-weight: 900;">किशान मित्र</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#articles">Articles</a></li>
+                <li><a href="#video">Videos</a></li>
+            </ul>
+        </nav>
+
+    </header>
+    <main>
+        <section id="home">
+            <h2>किशान मित्र आपका स्वागत करता है</h2>
+            <p>आपको कोई भी समस्या हो या कुछ पूछना हो तो लाल माइक पर क्लिक कर के मुझसे पूछ सकते हैं </p>
+
+
+
+            <input type="checkbox" id="checkbox">
+            <label class="switch" for="checkbox" id="voiceBtn">
+                <div class="mic-on">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        class="bi bi-mic-fill" viewBox="0 0 16 16">
+                        <path d="M5 3a3 3 0 0 1 6 0v5a3 3 0 0 1-6 0V3z"></path>
+                        <path
+                            d="M3.5 6.5A.5.5 0 0 1 4 7v1a4 4 0 0 0 8 0V7a.5.5 0 0 1 1 0v1a5 5 0 0 1-4.5 4.975V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 .5-.5z">
+                        </path>
+                    </svg>
+                </div>
+                <div class="mic-off">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor"
+                        class="bi bi-mic-mute-fill" viewBox="0 0 16 16">
+                        <path
+                            d="M13 8c0 .564-.094 1.107-.266 1.613l-.814-.814A4.02 4.02 0 0 0 12 8V7a.5.5 0 0 1 1 0v1zm-5 4c.818 0 1.578-.245 2.212-.667l.718.719a4.973 4.973 0 0 1-2.43.923V15h3a.5.5 0 0 1 0 1h-7a.5.5 0 0 1 0-1h3v-2.025A5 5 0 0 1 3 8V7a.5.5 0 0 1 1 0v1a4 4 0 0 0 4 4zm3-9v4.879L5.158 2.037A3.001 3.001 0 0 1 11 3z">
+                        </path>
+                        <path
+                            d="M9.486 10.607 5 6.12V8a3 3 0 0 0 4.486 2.607zm-7.84-9.253 12 12 .708-.708-12-12-.708.708z">
+                        </path>
+                    </svg>
+                </div>
+            </label>
+            <p id="voiceOutput"></p>
+            <p id="botResponse" class="response"></p>
+        </section>
+        <div class="weather">
+            <div class="card">
+                <svg fill="none" height="300" width="fit-content"
+                    xmlns="http://www.w3.org/2000/svg" class="background">
+                    <path fill="url(#paint0_linear_103_640)"
+                        d="M0 66.4396C0 31.6455 0 14.2484 11.326 5.24044C22.6519 -3.76754 39.6026 0.147978 73.5041 7.97901L307.903 62.1238C324.259 65.9018 332.436 67.7909 337.218 73.8031C342 79.8154 342 88.2086 342 104.995V131C342 151.742 342 162.113 335.556 168.556C329.113 175 318.742 175 298 175H44C23.2582 175 12.8873 175 6.44365 168.556C0 162.113 0 151.742 0 131V66.4396Z">
+                    </path>
+                    <defs>
+                        <linearGradient gradientUnits="userSpaceOnUse" y2="128" x2="354.142" y1="128" x1="0"
+                            id="paint0_linear_103_640">
+                            <stop stop-color="#5936B4"></stop>
+                            <stop stop-color="#362A84" offset="1"></stop>
+                        </linearGradient>
+                    </defs>
+                </svg>
+                <div class="cloud">
+                    <svg fill="#000000" preserveAspectRatio="xMidYMid meet" class="iconify iconify--emojione" role="img"
+                        aria-hidden="true" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 64 64">
+                        <g stroke-width="0" id="SVGRepo_bgCarrier"></g>
+                        <g stroke-linejoin="round" stroke-linecap="round" id="SVGRepo_tracerCarrier"></g>
+                        <g id="SVGRepo_iconCarrier">
+                            <g fill="#75d6ff">
+                                <path
+                                    d="M10.8 42.9c-.5 1.5-.1 3 1 3.4c1.1.4 2.4-.5 3-2c.6-1.8.7-4.1.2-6.9c-2.1 1.9-3.6 3.8-4.2 5.5">
+                                </path>
+                                <path
+                                    d="M13.2 57.4c.6-1.8.7-4.1.2-6.9c-2.1 1.8-3.6 3.7-4.2 5.5c-.5 1.5-.1 3 1 3.4c1.1.4 2.5-.5 3-2">
+                                </path>
+                                <path
+                                    d="M51.5 37.4c-2.1 1.8-3.6 3.7-4.2 5.5c-.5 1.5-.1 3 1 3.4c1.1.4 2.4-.5 3-2c.5-1.7.6-4.1.2-6.9">
+                                </path>
+                                <path
+                                    d="M38.2 55.9c-.5 1.5-.1 3 1 3.4s2.4-.5 3-2c.6-1.8.7-4.1.2-6.9c-2 1.9-3.5 3.8-4.2 5.5">
+                                </path>
+                                <path
+                                    d="M46.9 55.9c-.5 1.5-.1 3 1 3.4s2.4-.5 3-2c.6-1.8.7-4.1.2-6.9c-2.1 1.9-3.6 3.8-4.2 5.5">
+                                </path>
+                                <path
+                                    d="M18.6 55.9c-.5 1.5-.1 3 1 3.4s2.4-.5 3-2c.6-1.8.7-4.1.2-6.9c-2.1 1.9-3.6 3.8-4.2 5.5">
+                                </path>
+                            </g>
+                            <path d="M24.5 31.9l-4.9 16.2h12.5L27.9 62l16.5-20.2H32.5l2.9-9.9z" fill="#ffce31">
+                            </path>
+                            <path fill="#ffffff"
+                                d="M18.2 32.5c-.8 0-1.6-.1-2.4-.4c-3.1-1-5.3-3.9-5.3-7.2c0-2.2 1-4.3 2.6-5.7c.4-.4.9-.7 1.4-1l.5-1.8c1.3-4.4 5.4-7.5 10-7.5c.5 0 .9 0 1.5.1c.4.1.8.1 1.2.3l.2-.4c1.9-3.3 5.4-5.4 9.2-5.4C43 3.5 47.7 8.2 47.7 14v1c.4.2.9.4 1.3.6c2.8 1.6 4.5 4.6 4.5 7.8c0 4.2-2.9 7.8-7 8.8c-.7.2-1.4.2-2 .2H18.2z">
+                            </path>
+                            <path fill="#b6c1d1"
+                                d="M37.1 5c5 0 9 4 9 8.9v.7c-2.1.2-4 1-5.4 2.3c1.1-.6 2.4-1 3.7-1c.5 0 1 .1 1.5.1c.8.2 1.6.5 2.3.9c2.3 1.3 3.8 3.7 3.8 6.5c0 3.6-2.5 6.5-5.8 7.3c-.7.2-1.2.3-1.8.3H18.2c-.7 0-1.3-.1-1.9-.3c-2.4-.8-4.2-3.1-4.2-5.8c0-1.8.8-3.5 2.1-4.6c.6-.5 1.3-.9 2-1.2c.6-.2 1.3-.3 2-.3c2 0 3.7.9 4.9 2.4h.1c-1.3-2.4-3.7-4.1-6.6-4.3c1.1-3.7 4.5-6.4 8.5-6.4c.4 0 .9 0 1.3.1c.8.1 1.6.3 2.3.7c2.7 1.2 4.7 3.7 5.1 6.8V18c0-3.4-1.8-6.5-4.5-8.3C30.8 6.9 33.8 5 37.1 5m0-3C33 2 29.2 4.1 27 7.6h-.3c-.6-.1-1.2-.1-1.7-.1c-5.3 0-10 3.5-11.4 8.6l-.3 1.2c-.4.2-.7.5-1.1.8c-2 1.7-3.1 4.2-3.1 6.9c0 4 2.5 7.4 6.3 8.7c.9.3 1.9.5 2.9.5h26.2c.8 0 1.6-.1 2.4-.3c4.8-1.1 8.2-5.3 8.2-10.3c0-3.8-2-7.3-5.3-9.1c-.2-.1-.3-.2-.5-.3v-.1C49.2 7.4 43.8 2 37.1 2z">
+                            </path>
+                        </g>
+                    </svg>
+                </div>
+                <p class="main-text" id="temperature" style="margin: 0px 0px 20px;"><span>°</span> </p>
+                        <div class="info">
+                            <div class="info-left">
+                                <p class="text-gray">Humidity: <span id="humidity"></span><span>, <br>Cloud Cover:
+                                    </span><span id="cloud-cover"> 16°</span></p>
+                                <p>Gorakhpur, Uttar Pradesh</p>
+                            </div>
+                            <p class="info-right" id="condition"></p>
+                        </div>
+
+            </div>
+
+            <!-- <div id="googleSearch">
+                    <h3>Google Search</h3>
+                    <input type="text" id="searchQuery" placeholder="Search Google...">
+                    <button id="searchBtn">Search</button>
+                </div> -->
+
+
+            <div class="flex items-center justify-center " id="googleSearch" style="margin: 0%; padding: 0%;">
+                <div class="rounded-lg bg-gray-700 p-1">
+                    <div class="flex">
+                        <div style=" border-top-left-radius: 10px; border-bottom-left-radius: 10px;"
+                            class="flex w-10 items-center justify-center rounded-tl-lg rounded-bl-lg border-r border-gray-200 bg-white p-5">
+                            <svg viewBox="0 0 20 20" aria-hidden="true"
+                                class="pointer-events-none absolute w-5 fill-gray-500 transition">
+                                <path
+                                    d="M16.72 17.78a.75.75 0 1 0 1.06-1.06l-1.06 1.06ZM9 14.5A5.5 5.5 0 0 1 3.5 9H2a7 7 0 0 0 7 7v-1.5ZM3.5 9A5.5 5.5 0 0 1 9 3.5V2a7 7 0 0 0-7 7h1.5ZM9 3.5A5.5 5.5 0 0 1 14.5 9H16a7 7 0 0 0-7-7v1.5Zm3.89 10.45 3.83 3.83 1.06-1.06-3.83-3.83-1.06 1.06ZM14.5 9a5.48 5.48 0 0 1-1.61 3.89l1.06 1.06A6.98 6.98 0 0 0 16 9h-1.5Zm-1.61 3.89A5.48 5.48 0 0 1 9 14.5V16a6.98 6.98 0 0 0 4.95-2.05l-1.06-1.06Z">
+                                </path>
+                            </svg>
+                        </div>
+                        <input type="text" id="searchQuery" style="border: none;"
+                            class="w-full max-w-[160px] bg-white pl-2 text-base font-semibold outline-0" placeholder=""
+                            id="">
+                        <input style=" border-top-right-radius: 10px; border-bottom-right-radius: 10px;" type="button"
+                            id="searchBtn" value="Search"
+                            class="bg-blue-500 p-2 rounded-tr-lg rounded-br-lg text-white font-semibold hover:bg-blue-800 transition-colors">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <section id="articles">
+            <h2 style="font-size: 2.2em; font-weight: 600;">Articles</h2>
+            <article>
+                <h3 style="font-size: 1.4em; font-weight: 600;">सरसों की खेती: बढ़िया उत्पादन के लिए कब और कैसे करें बुवाई</h3>
+                <p>सितम्बर महीने से किसान सरसों की बुवाई शुरू कर देते हैं, अगर किसान शुरू से ही खेती पर ध्यान देते हैं
+                    तो अच्छा उत्पादन पा सकते हैं।
+                    रबी की फसलों में सरसों का महत्वपूर्ण स्थान है देश के कई राज्य जैसे राजस्थान, पंजाब, हरियाणा,
+                    उत्तरप्रदेश में मुख्यता से की जाती है।
+                    सरसों के बीज में तेल की मात्रा 30 से 48 प्रतिशत तक पायी जाती है।........
+                    <a style="color: blue;"
+                        href="https://www.gaonconnection.com/krishi-sujhaw/mustard-farming-information-detailed-guide-varieties-cultivation-preparation-49805">
+                        पूरा पढ़ें
+                    </a>
+                </p>
+            </article>
+            <article>
+                <h3 style="font-size: 1.4em; font-weight: 600;">गन्ना बुवाई की ट्रेंच विधि : इन बातों का ध्यान रखेंगे तो मिलेगा ज्यादा उत्पादन</h3>
+                <p>किसान परंपरागत तरीके से गन्ने की बुवाई करते हैं, लेकिन किसान ट्रेंच विधि से गन्ने की बुवाई करके दूसरे
+                    तरीकों के मुकाबले ज्यादा पैदावार
+                    पा सकते हैं, इस विधि से बुवाई करने पर फसल की ज्यादा सिंचाई भी नहीं करनी पड़ती है। भारतीय गन्ना
+                    अनुसंधान संस्थान, लखनऊ के
+                    प्रधान वैज्ञानिक डॉ. अजय कुमार साह गन्ने की ट्रेंच विधि की पूरी जानकारी दे रहे हैं कि कैसे इस विधि
+                    से गन्ने का उत्पादन बढ़ा सकते हैं।
+                    ट्रेंच विधि के बारे में वो बताते हैं, "ट्रेंच का मतलब होता है नाली, ट्रेंच विधि का मतलब नाली खोदकर
+                    नाली में गहराई में गन्ने की बुवाई की
+                    जाती है।पिछले चार-पांच वर्षों में उत्तर प्रदेश सहित उत्तर भारत के कई राज्यों में........
+                    <a style="color: blue;"
+                        href="https://www.gaonconnection.com/gaon-connection-tvVideos/trench-method-of-sugarcane-cultivation-more-production-than-other-method-46306">पूरा
+                        पढ़ें</a>
+
+                </p>
+            </article>
+            <article>
+                <h3 style="font-size: 1.4em; font-weight: 600;">धान की सीधी बुआई तकनीक</h3>
+                <p>धान खाद्यान्न फसलों में गेहूँ के बाद दूसरी सबसे महत्वपूर्ण फसल है। खरीफ में धान की खेती के अंतर्गत
+                    ज्यादातर वर्षा
+                    आधारित क्षेत्र है जिनमे सिंचाई का साधन सीमित रहता है वहीं धान – गेहूं फसल पद्धति वाले क्षेत्रों में
+                    भूमिगत जलस्तर
+                    नीचे जाने, नहरों में पानी अंतिम मुहाने पर नहीं पहुंचने, श्रमिकों की कमी एवं मानसून के विलम्ब से आने
+                    के कारण
+                    धान की रोपाई का कार्य समय पर नहीं हो पाता है जिसके कारण उत्पादन प्रभावित होता है।
+
+                    धान की खेती में ज्यादा संसाधन जैसे पानी, श्रम तथा ऊर्जा की.......
+                    <a style="color: blue;"
+                        href="https://www.gaonconnection.com/gaon-connection-tvVideos/trench-method-of-sugarcane-cultivation-more-production-than-other-method-46306">पूरा
+                        पढ़ें</a>
+
+                </p>
+            </article>
+        </section>
+
+        <iframe src="https://www.krishakjagat.org/" style="border:1px #000000 solid;" name="myiFrame" scrolling="yes"
+            frameborder="1" marginheight="0px" marginwidth="0px" height="500px" width="100%" allowfullscreen></iframe>
+
+        <br>
+
+        <section id="video">
+            <iframe style="margin: 10px 10px 10px 10px;" width="400" height="250"
+                src="https://www.youtube.com/embed/1QBh4Mbv-Ak?si=BWygHPpzPqb4klek" title="YouTube video player"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <br><iframe style="margin: 10px 10px 10px 10px;" width="400" height="250"
+                src="https://www.youtube-nocookie.com/embed/TrsXb_4Vfpc?si=GTlHaKkGGNBV56pf"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <br><iframe style="margin: 10px 10px 10px 10px;" width="400" height="250"
+                src="https://www.youtube-nocookie.com/embed/-pVwB7QRJXg?si=nL0BzwACMJt5QGLb"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <br><iframe style="margin: 10px 10px 10px 10px;" width="400" height="250"
+                src="https://www.youtube-nocookie.com/embed/LVk5fG88d3E?si=cHKke2mfF6KFThIt"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+            <br><iframe style="margin: 10px 10px 10px 10px;" width="400" height="250"
+                src="https://www.youtube-nocookie.com/embed/yAZwcOSNWfI?si=juYtye8RE00y3Zfq"
+                title="YouTube video player" frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+        </section>
+    </main>
+    <footer>
+        <p>&copy; 2024 किशान मित्र. All rights reserved.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+
+</html>

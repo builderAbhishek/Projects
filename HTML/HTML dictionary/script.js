@@ -1,0 +1,709 @@
+const dictionaryData = [
+    {
+        "Tag Name": "<div>",
+        "Description": "Block-level element for grouping content.",
+        "Attributes": ["id", "class", "style"],
+        "Attribute Description": {
+            "id": "Unique identifier for the element.",
+            "class": "Used to apply CSS styles.",
+            "style": "Inline CSS styles."
+        },
+        "Example": "<div class='container'>Content here</div>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not using semantic HTML when appropriate.",
+        "Visual Representation": "A rectangular box containing content."
+    },
+    {
+        "Tag Name": "<a>",
+        "Description": "Defines a hyperlink.",
+        "Attributes": ["href", "target", "rel"],
+        "Attribute Description": {
+            "href": "URL of the linked resource.",
+            "target": "Specifies where to open the linked document.",
+            "rel": "Defines the relationship between the current document and the linked document."
+        },
+        "Example": "<a href='https://example.com' target='_blank'>Visit Example</a>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Missing href attribute, which makes the link ineffective.",
+        "Visual Representation": "Underlined text that changes color on hover."
+    },
+    {
+        "Tag Name": "<p>",
+        "Description": "Defines a paragraph.",
+        "Attributes": ["id", "class", "style"],
+        "Attribute Description": {
+            "id": "Unique identifier for the element.",
+            "class": "Used to apply CSS styles.",
+            "style": "Inline CSS styles."
+        },
+        "Example": "<p>This is a paragraph.</p>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Using multiple <p> tags for single line breaks.",
+        "Visual Representation": "Text block separated from other text."
+    },
+    {
+        "Tag Name": "<img>",
+        "Description": "Embeds an image.",
+        "Attributes": ["src", "alt", "width", "height"],
+        "Attribute Description": {
+            "src": "Path to the image file.",
+            "alt": "Alternative text for the image.",
+            "width": "Width of the image.",
+            "height": "Height of the image."
+        },
+        "Example": "<img src='image.jpg' alt='Sample Image' width='200' height='100'>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not providing an alt attribute for accessibility.",
+        "Visual Representation": "Displayed image."
+    },
+    {
+        "Tag Name": "<ul>",
+        "Description": "Defines an unordered list.",
+        "Attributes": ["type"],
+        "Attribute Description": {
+            "type": "Specifies the bullet style."
+        },
+        "Example": "<ul><li>Item 1</li><li>Item 2</li></ul>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not nesting lists properly.",
+        "Visual Representation": "A bulleted list."
+    },
+    {
+        "Tag Name": "<ol>",
+        "Description": "Defines an ordered list.",
+        "Attributes": ["type", "start", "reversed"],
+        "Attribute Description": {
+            "type": "Specifies the numbering type.",
+            "start": "Specifies the start number.",
+            "reversed": "Specifies that the list is reversed."
+        },
+        "Example": "<ol><li>First Item</li><li>Second Item</li></ol>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Using <ol> without <li> elements.",
+        "Visual Representation": "A numbered list."
+    },
+    {
+        "Tag Name": "<table>",
+        "Description": "Defines a table.",
+        "Attributes": ["border", "cellpadding", "cellspacing"],
+        "Attribute Description": {
+            "border": "Specifies the width of the border.",
+            "cellpadding": "Specifies the space between cell content and cell borders.",
+            "cellspacing": "Specifies the space between table cells."
+        },
+        "Example": "<table border='1'><tr><td>Cell 1</td><td>Cell 2</td></tr></table>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not using <tr> and <td> correctly.",
+        "Visual Representation": "A grid of cells."
+    },
+    {
+        "Tag Name": "<form>",
+        "Description": "Defines an HTML form for user input.",
+        "Attributes": ["action", "method", "enctype"],
+        "Attribute Description": {
+            "action": "URL where the form data is sent.",
+            "method": "HTTP method to use (GET or POST).",
+            "enctype": "Encoding type for the form data."
+        },
+        "Example": "<form action='submit.php' method='POST'><input type='text'></form>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not specifying method or action attributes.",
+        "Visual Representation": "A collection of input fields."
+    },
+    {
+        "Tag Name": "<input>",
+        "Description": "Defines an input field.",
+        "Attributes": ["type", "name", "value", "placeholder"],
+        "Attribute Description": {
+            "type": "Type of input (text, password, etc.).",
+            "name": "Name of the input, used for form submission.",
+            "value": "Default value for the input field.",
+            "placeholder": "Text shown when the field is empty."
+        },
+        "Example": "<input type='text' name='username' placeholder='Enter your name'>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not using the correct type attribute.",
+        "Visual Representation": "A text box for user input."
+    },
+    {
+        "Tag Name": "<button>",
+        "Description": "Defines a clickable button.",
+        "Attributes": ["type", "name", "value"],
+        "Attribute Description": {
+            "type": "Specifies the type of button (submit, button, reset).",
+            "name": "Name of the button.",
+            "value": "Value sent when the form is submitted."
+        },
+        "Example": "<button type='submit'>Submit</button>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not specifying the type attribute.",
+        "Visual Representation": "A clickable button."
+    },
+    {
+        "Tag Name": "<span>",
+        "Description": "Inline container for text.",
+        "Attributes": ["class", "style"],
+        "Attribute Description": {
+            "class": "Used to apply CSS styles.",
+            "style": "Inline CSS styles."
+        },
+        "Example": "<span class='highlight'>Highlighted text</span>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Using <span> instead of <div> for block elements.",
+        "Visual Representation": "Inline text with potential styling."
+    },
+    {
+        "Tag Name": "<strong>",
+        "Description": "Defines important text.",
+        "Attributes": [],
+        "Attribute Description": {},
+        "Example": "<strong>This text is important.</strong>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Using <strong> for non-important text.",
+        "Visual Representation": "Bold text."
+    },
+    {
+        "Tag Name": "<em>",
+        "Description": "Defines emphasized text.",
+        "Attributes": [],
+        "Attribute Description": {},
+        "Example": "<em>This text is emphasized.</em>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Using <em> for non-emphasized text.",
+        "Visual Representation": "Italic text."
+    },
+    {
+        "Tag Name": "<br>",
+        "Description": "Inserts a single line break.",
+        "Attributes": [],
+        "Attribute Description": {},
+        "Example": "Line one<br>Line two",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Using <br> for paragraph breaks.",
+        "Visual Representation": "Line break in text."
+    },
+    {
+        "Tag Name": "<hr>",
+        "Description": "Defines a thematic change in the content.",
+        "Attributes": ["size", "width", "align"],
+        "Attribute Description": {
+            "size": "Specifies the height of the horizontal line.",
+            "width": "Specifies the width of the line.",
+            "align": "Specifies the alignment of the line."
+        },
+        "Example": "<hr>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not using <hr> for thematic breaks.",
+        "Visual Representation": "A horizontal line."
+    },
+    {
+        "Tag Name": "<blockquote>",
+        "Description": "Defines a section that is quoted from another source.",
+        "Attributes": ["cite"],
+        "Attribute Description": {
+            "cite": "URL of the source of the quote."
+        },
+        "Example": "<blockquote cite='https://example.com'>This is a quote.</blockquote>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not providing a citation.",
+        "Visual Representation": "Indented text block."
+    },
+    {
+        "Tag Name": "<cite>",
+        "Description": "Defines the title of a work.",
+        "Attributes": [],
+        "Attribute Description": {},
+        "Example": "<cite>The Great Gatsby</cite>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Using <cite> for non-titles.",
+        "Visual Representation": "Italicized text."
+    },
+    {
+        "Tag Name": "<code>",
+        "Description": "Defines a piece of computer code.",
+        "Attributes": [],
+        "Attribute Description": {},
+        "Example": "<code>let x = 10;</code>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Using <code> for non-code text.",
+        "Visual Representation": "Monospace text."
+    },
+    {
+        "Tag Name": "<pre>",
+        "Description": "Defines preformatted text.",
+        "Attributes": [],
+        "Attribute Description": {},
+        "Example": "<pre>    This text is preformatted.</pre>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not using <pre> for non-preformatted text.",
+        "Visual Representation": "Text with preserved formatting."
+    },
+    {
+        "Tag Name": "<abbr>",
+        "Description": "Defines an abbreviation or acronym.",
+        "Attributes": ["title"],
+        "Attribute Description": {
+            "title": "Full term for the abbreviation."
+        },
+        "Example": "<abbr title='Hypertext Markup Language'>HTML</abbr>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not providing a title.",
+        "Visual Representation": "Abbreviated text."
+    },
+    {
+        "Tag Name": "<address>",
+        "Description": "Defines contact information for the author or owner of a document.",
+        "Attributes": [],
+        "Attribute Description": {},
+        "Example": "<address>Contact: example@example.com</address>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Using <address> for non-contact info.",
+        "Visual Representation": "Formatted contact information."
+    },
+    {
+        "Tag Name": "<label>",
+        "Description": "Defines a label for an <input> element.",
+        "Attributes": ["for"],
+        "Attribute Description": {
+            "for": "Specifies which input element the label is bound to."
+        },
+        "Example": "<label for='username'>Username:</label>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not using <label> with form inputs.",
+        "Visual Representation": "Text associated with a form input."
+    },
+    {
+        "Tag Name": "<select>",
+        "Description": "Defines a dropdown list.",
+        "Attributes": ["name", "multiple", "size"],
+        "Attribute Description": {
+            "name": "Name of the dropdown.",
+            "multiple": "Allows multiple selections.",
+            "size": "Specifies the number of visible options."
+        },
+        "Example": "<select name='cars'><option value='volvo'>Volvo</option></select>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not using <option> elements inside <select>.",
+        "Visual Representation": "A dropdown list."
+    },
+    {
+        "Tag Name": "<option>",
+        "Description": "Defines an option in a dropdown list.",
+        "Attributes": ["value", "disabled", "selected"],
+        "Attribute Description": {
+            "value": "Value sent when the form is submitted.",
+            "disabled": "Disables the option.",
+            "selected": "Specifies that this option is pre-selected."
+        },
+        "Example": "<option value='audi'>Audi</option>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not using <option> inside <select>.",
+        "Visual Representation": "An individual option in a dropdown."
+    },
+    {
+        "Tag Name": "<textarea>",
+        "Description": "Defines a multiline text input.",
+        "Attributes": ["name", "rows", "cols"],
+        "Attribute Description": {
+            "name": "Name of the textarea.",
+            "rows": "Number of visible text lines.",
+            "cols": "Width of the textarea in characters."
+        },
+        "Example": "<textarea name='message' rows='4' cols='50'></textarea>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not specifying rows and cols.",
+        "Visual Representation": "A larger input box for text."
+    },
+    {
+        "Tag Name": "<fieldset>",
+        "Description": "Groups related elements in a form.",
+        "Attributes": ["disabled"],
+        "Attribute Description": {
+            "disabled": "Disables all elements in the fieldset."
+        },
+        "Example": "<fieldset><legend>Personal Information</legend><input type='text'></fieldset>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not using <legend> for accessibility.",
+        "Visual Representation": "A bordered section around form elements."
+    },
+    {
+        "Tag Name": "<legend>",
+        "Description": "Defines a caption for a <fieldset>.",
+        "Attributes": [],
+        "Attribute Description": {},
+        "Example": "<fieldset><legend>Legend Title</legend></fieldset>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not using <legend> for context.",
+        "Visual Representation": "Caption text above a fieldset."
+    },
+    {
+        "Tag Name": "<dialog>",
+        "Description": "Defines a dialog box or window.",
+        "Attributes": ["open"],
+        "Attribute Description": {
+            "open": "Specifies that the dialog is open."
+        },
+        "Example": "<dialog open>Dialog content</dialog>",
+        "Browser Compatibility": "Supported by modern browsers.",
+        "Common Mistakes": "Not using scripts to open/close dialogs.",
+        "Visual Representation": "A modal window."
+    },
+    {
+        "Tag Name": "<canvas>",
+        "Description": "Used to draw graphics on the fly via scripting.",
+        "Attributes": ["width", "height"],
+        "Attribute Description": {
+            "width": "Width of the canvas.",
+            "height": "Height of the canvas."
+        },
+        "Example": "<canvas width='200' height='100'></canvas>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not specifying width and height.",
+        "Visual Representation": "An empty rectangular area for drawing."
+    },
+    {
+        "Tag Name": "<svg>",
+        "Description": "Defines a container for SVG graphics.",
+        "Attributes": ["width", "height"],
+        "Attribute Description": {
+            "width": "Width of the SVG container.",
+            "height": "Height of the SVG container."
+        },
+        "Example": "<svg width='100' height='100'><circle cx='50' cy='50' r='40' fill='red'/></svg>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not using correct SVG syntax.",
+        "Visual Representation": "Scalable vector graphic."
+    },
+    {
+        "Tag Name": "<video>",
+        "Description": "Defines a video file.",
+        "Attributes": ["src", "controls", "autoplay", "loop"],
+        "Attribute Description": {
+            "src": "Path to the video file.",
+            "controls": "Displays video controls.",
+            "autoplay": "Automatically plays the video.",
+            "loop": "Loops the video."
+        },
+        "Example": "<video src='movie.mp4' controls></video>",
+        "Browser Compatibility": "Supported by modern browsers.",
+        "Common Mistakes": "Not providing video controls.",
+        "Visual Representation": "A video player."
+    },
+    {
+        "Tag Name": "<audio>",
+        "Description": "Defines sound content.",
+        "Attributes": ["src", "controls", "autoplay", "loop"],
+        "Attribute Description": {
+            "src": "Path to the audio file.",
+            "controls": "Displays audio controls.",
+            "autoplay": "Automatically plays the audio.",
+            "loop": "Loops the audio."
+        },
+        "Example": "<audio src='audio.mp3' controls></audio>",
+        "Browser Compatibility": "Supported by modern browsers.",
+        "Common Mistakes": "Not providing audio controls.",
+        "Visual Representation": "An audio player."
+    },
+    {
+        "Tag Name": "<map>",
+        "Description": "Defines an image map.",
+        "Attributes": ["name"],
+        "Attribute Description": {
+            "name": "Name of the map."
+        },
+        "Example": "<map name='map1'><area shape='rect' coords='34,44,270,350' href='target.html'></map>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not using <area> correctly.",
+        "Visual Representation": "Clickable areas on an image."
+    },
+    {
+        "Tag Name": "<area>",
+        "Description": "Defines a clickable area within an image map.",
+        "Attributes": ["shape", "coords", "href"],
+        "Attribute Description": {
+            "shape": "Shape of the area (rect, circle, poly).",
+            "coords": "Coordinates for the shape.",
+            "href": "URL to link to."
+        },
+        "Example": "<area shape='rect' coords='34,44,270,350' href='target.html'>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not defining coordinates properly.",
+        "Visual Representation": "Clickable shape overlaid on an image."
+    },
+    {
+        "Tag Name": "<iframe>",
+        "Description": "Defines an inline frame.",
+        "Attributes": ["src", "height", "width"],
+        "Attribute Description": {
+            "src": "URL of the document to embed.",
+            "height": "Height of the iframe.",
+            "width": "Width of the iframe."
+        },
+        "Example": "<iframe src='https://example.com' width='300' height='200'></iframe>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not providing a valid source.",
+        "Visual Representation": "A window displaying another document."
+    },
+    {
+        "Tag Name": "<noscript>",
+        "Description": "Defines an alternative content for users that have disabled scripts.",
+        "Attributes": [],
+        "Attribute Description": {},
+        "Example": "<noscript>Your browser does not support JavaScript!</noscript>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not providing fallback content.",
+        "Visual Representation": "Text displayed when scripts are disabled."
+    },
+    {
+        "Tag Name": "<template>",
+        "Description": "Defines a template for future DOM manipulation.",
+        "Attributes": [],
+        "Attribute Description": {},
+        "Example": "<template><p>This is a template</p></template>",
+        "Browser Compatibility": "Supported by modern browsers.",
+        "Common Mistakes": "Using <template> content directly without script.",
+        "Visual Representation": "Invisible template structure."
+    },
+    
+    {
+        "Tag Name": "<link>",
+        "Description": "Defines the relationship between a document and an external resource.",
+        "Attributes": ["rel", "href", "type", "media"],
+        "Attribute Description": {
+            "rel": "Relationship type (stylesheet, icon, etc.).",
+            "href": "URL of the linked resource.",
+            "type": "Type of resource (e.g., text/css).",
+            "media": "Media type for which the resource is designed."
+        },
+        "Example": "<link rel='stylesheet' href='styles.css'>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not linking the stylesheet correctly.",
+        "Visual Representation": "External stylesheet connection."
+    },
+    {
+        "Tag Name": "<meta>",
+        "Description": "Defines metadata about an HTML document.",
+        "Attributes": ["name", "content", "http-equiv", "charset"],
+        "Attribute Description": {
+            "name": "Name of the metadata.",
+            "content": "Value of the metadata.",
+            "http-equiv": "Used to provide HTTP headers.",
+            "charset": "Character encoding for the HTML document."
+        },
+        "Example": "<meta charset='UTF-8'>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not providing necessary metadata.",
+        "Visual Representation": "Invisible information in the document head."
+    },
+    {
+        "Tag Name": "<title>",
+        "Description": "Defines the title of the document.",
+        "Attributes": [],
+        "Attribute Description": {},
+        "Example": "<title>Document Title</title>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not providing a title or duplicate titles.",
+        "Visual Representation": "Title in the browser tab."
+    },
+    {
+        "Tag Name": "<header>",
+        "Description": "Defines the header of a document or section.",
+        "Attributes": [],
+        "Attribute Description": {},
+        "Example": "<header><h1>Site Title</h1></header>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not using <header> in a semantic way.",
+        "Visual Representation": "Top section of a page."
+    },
+    {
+        "Tag Name": "<footer>",
+        "Description": "Defines the footer of a document or section.",
+        "Attributes": [],
+        "Attribute Description": {},
+        "Example": "<footer><p>© 2024 Company Name</p></footer>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not using <footer> for footer content.",
+        "Visual Representation": "Bottom section of a page."
+    },
+    {
+        "Tag Name": "<nav>",
+        "Description": "Defines navigation links.",
+        "Attributes": [],
+        "Attribute Description": {},
+        "Example": "<nav><ul><li><a href='#'>Home</a></li></ul></nav>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not using <nav> for navigational content.",
+        "Visual Representation": "Navigation menu."
+    },
+    {
+        "Tag Name": "<article>",
+        "Description": "Defines an independent piece of content.",
+        "Attributes": [],
+        "Attribute Description": {},
+        "Example": "<article><h2>Article Title</h2><p>Content here.</p></article>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not using <article> for standalone content.",
+        "Visual Representation": "Self-contained content block."
+    },
+    {
+        "Tag Name": "<section>",
+        "Description": "Defines a section in a document.",
+        "Attributes": [],
+        "Attribute Description": {},
+        "Example": "<section><h2>Section Title</h2></section>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not using <section> appropriately.",
+        "Visual Representation": "A thematic grouping of content."
+    },
+    {
+        "Tag Name": "<aside>",
+        "Description": "Defines content aside from the main content.",
+        "Attributes": [],
+        "Attribute Description": {},
+        "Example": "<aside><p>Related information.</p></aside>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not using <aside> for tangential content.",
+        "Visual Representation": "Side content related to main content."
+    },
+    {
+        "Tag Name": "<main>",
+        "Description": "Defines the main content of a document.",
+        "Attributes": [],
+        "Attribute Description": {},
+        "Example": "<main><p>Main content goes here.</p></main>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Using multiple <main> elements.",
+        "Visual Representation": "Central content area."
+    },
+    {
+        "Tag Name": "<figure>",
+        "Description": "Defines self-contained content, typically with a caption.",
+        "Attributes": [],
+        "Attribute Description": {},
+        "Example": "<figure><img src='image.jpg'><figcaption>Image caption.</figcaption></figure>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not using <figcaption> for captions.",
+        "Visual Representation": "Image with a caption."
+    },
+    {
+        "Tag Name": "<figcaption>",
+        "Description": "Defines a caption for a <figure> element.",
+        "Attributes": [],
+        "Attribute Description": {},
+        "Example": "<figure><img src='image.jpg'><figcaption>Image caption</figcaption></figure>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not using <figcaption> with <figure>.",
+        "Visual Representation": "Caption text below an image."
+    },
+    {
+        "Tag Name": "<time>",
+        "Description": "Defines a specific time (datetime).",
+        "Attributes": ["datetime"],
+        "Attribute Description": {
+            "datetime": "Machine-readable date/time format."
+        },
+        "Example": "<time datetime='2024-10-18'>October 18, 2024</time>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not using the correct datetime format.",
+        "Visual Representation": "Formatted date or time."
+    },
+    {
+        "Tag Name": "<progress>",
+        "Description": "Represents the completion progress of a task.",
+        "Attributes": ["value", "max"],
+        "Attribute Description": {
+            "value": "Current value.",
+            "max": "Maximum value."
+        },
+        "Example": "<progress value='50' max='100'></progress>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not setting the max attribute.",
+        "Visual Representation": "Progress bar."
+    },
+    {
+        "Tag Name": "<meter>",
+        "Description": "Defines a scalar measurement within a known range.",
+        "Attributes": ["value", "min", "max", "low", "high", "optimum"],
+        "Attribute Description": {
+            "value": "Current value.",
+            "min": "Minimum value.",
+            "max": "Maximum value.",
+            "low": "Lower range threshold.",
+            "high": "Upper range threshold.",
+            "optimum": "Optimal value."
+        },
+        "Example": "<meter value='5' min='0' max='10'></meter>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not defining the range properly.",
+        "Visual Representation": "Meter gauge."
+    },
+    {
+        "Tag Name": "<details>",
+        "Description": "Defines additional details that the user can view or hide.",
+        "Attributes": ["open"],
+        "Attribute Description": {
+            "open": "Specifies that the details are visible."
+        },
+        "Example": "<details open><summary>More Info</summary>Details content here.</details>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not using <summary> with <details>.",
+        "Visual Representation": "Expandable/collapsible section."
+    },
+    {
+        "Tag Name": "<summary>",
+        "Description": "Defines a summary for a <details> element.",
+        "Attributes": [],
+        "Attribute Description": {},
+        "Example": "<details><summary>Click to expand</summary>Hidden content here.</details>",
+        "Browser Compatibility": "Supported by all modern browsers.",
+        "Common Mistakes": "Not providing a summary for <details>.",
+        "Visual Representation": "Clickable summary for details."
+    }
+];
+
+
+const dictionarySection = document.getElementById('dictionary');
+const searchInput = document.getElementById('search');
+
+function escapeHtml(unsafe) {
+return unsafe
+    .replace(/&/g, "&amp;")
+    .replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;");
+}
+
+function displayDictionary(tags) {
+dictionarySection.innerHTML = '';
+tags.forEach(item => {
+    const div = document.createElement('div');
+    div.classList.add('dictionary-item');
+    div.innerHTML = `
+        <h3>${escapeHtml(item["Tag Name"])}</h3>
+        <p><strong>Description:</strong> ${item.Description}</p>
+        <p><strong>Attributes:</strong> ${item.Attributes.length > 0 ? item.Attributes.join(', ') : 'None'}</p>
+        <p><strong>Attribute Descriptions:</strong></p>
+        <ul>
+            ${Object.entries(item["Attribute Description"]).map(([key, value]) => `
+                <li><strong>${key}:</strong> ${value}</li>
+            `).join('')}
+        </ul>
+        <p><strong>Example:</strong> ${item.Example}</p>
+        <p><strong>Browser Compatibility:</strong> ${item["Browser Compatibility"]}</p>
+        <p><strong>Common Mistakes:</strong> ${item["Common Mistakes"]}</p>
+        <p><strong>Visual Representation:</strong> ${item["Visual Representation"]}</p>
+    `;
+    dictionarySection.appendChild(div);
+});
+}
+
+searchInput.addEventListener('input', () => {
+const searchValue = searchInput.value.toLowerCase();
+const filteredData = dictionaryData.filter(item => 
+    item["Tag Name"].toLowerCase().includes(searchValue)
+);
+displayDictionary(filteredData);
+});
+
+// Initial display of the dictionary
+displayDictionary(dictionaryData);
+

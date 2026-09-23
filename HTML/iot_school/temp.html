@@ -1,0 +1,429 @@
+<?php
+// header.php
+?>
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="title" content="IoT School | Online IoT Tutorial in English and Hindi">
+    <meta name="description"
+        content="Learn Internet of Things (IoT) online through easy-to-understand tutorials in English and Hindi. Start your IoT journey with fun and practical lessons!">
+    <meta name="keywords"
+        content="IoT, Internet of Things, IoT tutorials, learn IoT, IoT in English, IoT in Hindi, online IoT course, IoT School, IoT learning, IoT for beginners">
+    <meta name="robots" content="index, follow">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <meta name="language" content="English">
+    <meta name="revisit-after" content="1 days">
+    <meta name="author" content="IoT School Team">
+    <link rel="apple-touch-icon" sizes="57x57" href="./assets/images/fevicon/apple-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="60x60" href="./assets/images/fevicon/apple-icon-60x60.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="./assets/images/fevicon/apple-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="./assets/images/fevicon/apple-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="./assets/images/fevicon/apple-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./assets/images/fevicon/apple-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="./assets/images/fevicon/apple-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="./assets/images/fevicon/apple-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/images/fevicon/apple-icon-180x180.png">
+    <link rel="icon" type="image/png" sizes="192x192" href="./assets/images/fevicon/android-icon-192x192.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/fevicon/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="96x96" href="./assets/images/fevicon/favicon-96x96.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./assets/images/fevicon/favicon-16x16.png">
+    <link rel="manifest" href="./assets/images/fevicon/manifest.json">
+    <meta name="msapplication-TileColor" content="#ffffff">
+    <meta name="msapplication-TileImage" content="./assets/images/fevicon/ms-icon-144x144.png">
+    <meta name="theme-color" content="#ffffff">
+    <link rel="stylesheet" href="assets/css/styles.css">
+
+
+    <link rel="stylesheet" href="./assets/css/article-style.css">
+    <!--<script src="scroll-nav.js"></script>-->
+
+
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700&family=Lato:wght@400;700&family=Poppins:wght@400;500;600&family=Raleway:wght@500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@7/swiper-bundle.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@7/swiper-bundle.min.js"></script>
+    <style>
+        .tutorial-toc-toggle {
+            display: none !important;
+        }
+
+        .featured-box h3 {
+            background: #233743;
+            min-height: 40px;
+            font-size: 20px !important;
+            color: #fff;
+            text-align: center;
+            padding: .6rem;
+            margin: 0 auto;
+        }
+    </style>
+    <link rel="stylesheet" href="assets/css/nav.css" media="screen, print">
+    <!--<link rel="stylesheet" href="assets/css/home.css">-->
+    <script>
+        window.ezstandalone = window.ezstandalone || {};
+        ezstandalone.cmd = ezstandalone.cmd || [];
+    </script>
+    <style>
+        /* Remove Ezoic Logo Line */
+        .tutorial-toc .reportline {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body>
+    <button class="icon-button--inverted scroll-to-top-button" title="Scroll Up">
+        <i class="fa-sharp fa-light fa-angle-up"></i>
+    </button>
+    <div class="accent-header">
+        <nav class="accent-nav library-accent-nav">
+            <div class="accent-nav__content">
+                <ul class="accent-nav__list">
+                    <li class="accent-nav__item">
+                        <a class="accent-nav__link" href="./index.php" title="Home"><i
+                                class="fa-sharp fa-light fa-home"></i> Home</a>
+                    </li>
+                    <li class="accent-nav__item">
+                        <a class="accent-nav__link" href="tel:+919455595463" title="Call Us"><i
+                                class="fa-sharp fa-light fa-phone"></i> +91 945 595 463</a>
+                    </li>
+                    <li class="accent-nav__item">
+                        <a class="accent-nav__link" href="mailto:support@iotschool.in" title="Email Us"><i
+                                class="fa-sharp fa-light fa-envelope"></i> support@iotschool.in</a>
+                    </li>
+                    <li class="accent-nav__item">
+                        <a class="accent-nav__link" href="./coming_soon.php" title="Contact Us"><i
+                                class="fa-sharp fa-light fa-address-book"></i> Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="flex-group" style="gap:0rem;">
+                <button class="accent-nav__toggle" aria-expanded="false"> Menu <i
+                        class="fa-sharp fa-light fa-angle-down"></i></button>
+                <button aria-expanded="false" class="nav-toggle text-white"> Categories <i
+                        class="fa-sharp fa-light fa-angle-down"></i></button>
+            </div>
+
+            <a href="./coming_soon.php" class="accent-nav__login-button"> Login</a>
+            <ul class="flex-group accent-nav__right-list">
+                <!--<li class="accent-nav__item">-->
+                <!--   <button class="accent-nav__button theme-toggle" aria-expanded="false" href="/index.htm"><span class="sr-only">Switch theme</span></button>-->
+                <!--</li>-->
+                <li>
+                    <a class="accent-nav__social-link" rel="nofollow" target="_blank" href="#"><i
+                            class="fa-sharp fa-light fa-brands fa-facebook-f"></i></a>
+                </li>
+                <li>
+                    <a class="accent-nav__social-link" target="_blank" href="#" rel="nofollow"><i
+                            class="fa-sharp fa-light fa-brands fa-instagram"></i></a>
+                </li>
+                <li>
+                    <a class="accent-nav__social-link" target="_blank" href="#" rel="nofollow"><i
+                            class="fa-sharp fa-light fa-brands fa-x-twitter"></i></a>
+                </li>
+                <li>
+                    <a class="accent-nav__social-link" target="_blank" href="#" rel="nofollow"><i
+                            class="fa-sharp fa-light fa-brands fa-youtube"></i></a>
+                </li>
+                <li>
+                    <a class="accent-nav__social-link" target="_blank" href="#" rel="nofollow"><i
+                            class="fa-sharp fa-light fa-brands fa-linkedin-in"></i></a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+
+    <header class="header library-header show">
+        <div class="container">
+            <a href="https://www.iotschool.in" title="Iotschool">
+                <svg class="logo-desktop" xmlns="http://www.w3.org/2000/svg" width="226" height="42"
+                    viewBox="0 0 226 42" fill="none">
+
+
+                </svg>
+                <svg class="logo-mobile" xmlns="http://www.w3.org/2000/svg" width="43" height="42" viewBox="0 0 43 42"
+                    fill="none">
+
+                </svg>
+            </a>
+            <nav class="nav">
+                <ul class="nav__list">
+                    <li class="nav__item dropdown">
+                        <button aria-expanded="false" aria-controls="category"
+                            class="flex-group dropdown__toggle button-reset" style="--gap: .5rem;">
+                            <i class="fa-sharp fa-light fa-grid-2"></i>
+                            <span class="flex-group" style="--gap: 0.25rem;">
+                                <span>Category</span>
+                                <i class="fa-sharp fa-light fa-angle-down"></i>
+                            </span>
+                        </button>
+
+                        <div class="dropdown__list-wrapper" id="categories">
+                            <div class="categories-menu">
+                                <div class="">
+                                    <ul>
+                                        <li class="category-button" aria-selected="false" role="tab">IoT Basic<i
+                                                class="fa-sharp fa-light fa-angle-right"></i></li>
+                                        <li class="category-button" role="tab">IoT Medium<i
+                                                class="fa-sharp fa-light fa-angle-right"></i></li>
+                                        <li class="category-button" role="tab">IoT Advance<i
+                                                class="fa-sharp fa-light fa-angle-right"></i></li>
+                                        <li class="category-button" role="tab">IoT Videos<i
+                                                class="fa-sharp fa-light fa-angle-right"></i></li>
+                                        <li class="category-button" role="tab">IoT Projects<i
+                                                class="fa-sharp fa-light fa-angle-right"></i></li>
+                                        <li class="category-button" role="tab">Arduino Projects<i
+                                                class="fa-sharp fa-light fa-angle-right"></i></li>
+                                        <li class="category-button" role="tab">Certification Courses (Free)<i
+                                                class="fa-sharp fa-light fa-angle-right"></i></li>
+                                        <li class=""><a href="./coming_soon.php" class="button w100 mt-2"
+                                                title="All Categories"><i class="fa-sharp fa-light fa-cubes"></i> All
+                                                Categories </a></li>
+                                    </ul>
+
+                                    <div class="categories-menu-content">
+                                        <div class="categories-menu-sections-wrapper">
+                                            <!-- Basic IoT Tutorials -->
+                                            <div class="categories-menu-section">
+                                                <button
+                                                    class="button button--neutral categories-menu-section__back-button">
+                                                    <i class="fa-sharp fa-light fa-angle-right"></i> Back
+                                                </button>
+                                                <ul>
+                                                    <li><a href="coming_soon.php">Introduction to IoT</a></li>
+                                                    <li><a href="coming_soon.php">Microcontrollers</a></li>
+                                                    <li><a href="coming_soon.php">Cloud Platforms for IoT</a></li>
+                                                    <li><a href="coming_soon.php">IoT Edge Computing</a></li>
+                                                </ul>
+
+                                                <ul>
+                                                    <li><a href="coming_soon.php">IoT Architecture</a></li>
+                                                    <li><a href="coming_soon.php">Development Boards</a></li>
+                                                    <li><a href="coming_soon.php">Data Security & Privacy</a></li>
+                                                    <li><a href="coming_soon.php">Data Analytics in IoT</a></li>
+                                                </ul>
+
+                                                <ul>
+                                                    <li><a href="coming_soon.php">IoT Devices & Sensors</a></li>
+                                                    <li><a href="coming_soon.php">Communication Protocols</a></li>
+                                                    <li><a href="coming_soon.php">Power Management in IoT</a></li>
+                                                    <li><a href="coming_soon.php" class="w100">See all</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Medium IoT Tutorials -->
+                                            <div class="categories-menu-section">
+                                                <button
+                                                    class="button button--neutral categories-menu-section__back-button">
+                                                    <i class="fa-sharp fa-light fa-angle-right"></i> Back
+                                                </button>
+                                                <ul>
+                                                    <li><a href="coming_soon.php">ML & AI in IoT</a></li>
+                                                    <li><a href="coming_soon.php">IoT in Agriculture</a></li>
+                                                    <li><a href="coming_soon.php">Data Management & Storage</a></li>
+                                                    <li><a href="coming_soon.php">Environmental Monitoring</a></li>
+                                                </ul>
+
+                                                <ul>
+                                                    <li><a href="coming_soon.php">IoT and Smart Homes</a></li>
+                                                    <li><a href="coming_soon.php">Industrial IoT (IIoT)</a></li>
+                                                    <li><a href="coming_soon.php">Smart Cities and IoT</a></li>
+                                                    <li><a href="coming_soon.php" class="w100">See all</a></li>
+                                                </ul>
+
+                                                <ul>
+                                                    <li><a href="coming_soon.php">IoT for Healthcare</a></li>
+                                                    <li><a href="coming_soon.php">IoT Protocols & Standards</a></li>
+                                                    <li><a href="coming_soon.php">IoT in Retail</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Advanced IoT Tutorials -->
+                                            <div class="categories-menu-section">
+                                                <button
+                                                    class="button button--neutral categories-menu-section__back-button">
+                                                    <i class="fa-sharp fa-light fa-angle-right"></i> Back
+                                                </button>
+
+                                                <ul>
+                                                    <li><a href="coming_soon.php">Transportation & Logistics</a></li>
+                                                    <li><a href="coming_soon.php">Future of IoT</a></li>
+                                                </ul>
+
+                                                <ul>
+                                                    <li><a href="coming_soon.php">IoT and Blockchain</a></li>
+                                                    <li><a href="coming_soon.php">Career Path & Resources</a></li>
+                                                </ul>
+
+                                                <ul>
+                                                    <li><a href="coming_soon.php">Testing & Troubleshooting</a></li>
+                                                    <li><a href="coming_soon.php" class="w100">See all</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- IoT Videos -->
+                                            <div class="categories-menu-section">
+                                                <button
+                                                    class="button button--neutral categories-menu-section__back-button">
+                                                    <i class="fa-sharp fa-light fa-angle-right"></i> Back
+                                                </button>
+                                                <ul>
+                                                    <li><a href="coming_soon.php">IoT Introduction Video</a></li>
+                                                </ul>
+
+                                                <ul>
+                                                    <li><a href="coming_soon.php">IoT Projects Video Series</a></li>
+                                                </ul>
+
+                                                <ul>
+                                                    <li><a href="coming_soon.php">Understanding Sensors</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- IoT Projects -->
+                                            <div class="categories-menu-section">
+                                                <button
+                                                    class="button button--neutral categories-menu-section__back-button">
+                                                    <i class="fa-sharp fa-light fa-angle-right"></i> Back
+                                                </button>
+
+                                                <ul>
+                                                    <li><a href="coming_soon.php">IoT Project Ideas</a></li>
+                                                </ul>
+
+                                                <ul>
+                                                    <li><a href="coming_soon.php">Smart Home Project</a></li>
+                                                </ul>
+
+                                                <ul>
+                                                    <li><a href="coming_soon.php">Agriculture Monitoring Project</a>
+                                                    </li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Arduino Projects -->
+                                            <div class="categories-menu-section">
+                                                <button
+                                                    class="button button--neutral categories-menu-section__back-button">
+                                                    <i class="fa-sharp fa-light fa-angle-right"></i> Back
+                                                </button>
+
+                                                <ul>
+                                                    <li><a href="coming_soon.php">Arduino IoT Projects</a></li>
+                                                </ul>
+
+                                                <ul>
+                                                    <li><a href="coming_soon.php">Weather Station</a></li>
+                                                </ul>
+                                                <ul>
+                                                    <li><a href="coming_soon.php">Smart Security System</a></li>
+                                                </ul>
+                                            </div>
+
+                                            <!-- Certification Courses (Free) -->
+                                            <div class="categories-menu-section">
+                                                <button
+                                                    class="button button--neutral categories-menu-section__back-button">
+                                                    <i class="fa-sharp fa-light fa-angle-right"></i> Back
+                                                </button>
+
+                                                <ul>
+                                                    <li><a href="coming_soon.php">D.IoT.</a></li>
+                                                </ul>
+                                                <ul>
+                                                    <li><a href="coming_soon.php">Ad.IoT.</a></li>
+                                                </ul>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li class="nav__search-wrapper">
+                        <input type="text" class="nav__item nav__search gradient-input"
+                            placeholder="Search IoT tutorials, courses, and ebooks..." id="search-strings" name="key"
+                            data-result="search-results" aria-label="Search" autocomplete="off">
+                        <button type="button" id="btnSearch" title="Search Tutorials"
+                            class="btn bg-transparent px-2 py-0 position-absolute top-50 end-0 translate-middle-y"><i
+                                class="fa-sharp fa-light fa-magnifying-glass"></i></button>
+                        <div class="search-box search-box-inn" id="search-results"></div>
+                        <div class="clear"></div>
+                    </li>
+                    <li class="nav__item nav__item--left menuBlock"><a class="nav__link" href="./index.php">Home</a>
+                    </li>
+                    <li class="nav__item menuBlock"><a class='nav__link' href="./courses.php">Courses</a></li>
+                    <li class="nav__item menuBlock"><a class="nav__link" href="./about-us.php">About Us</a></li>
+                    <li class="nav__item nav__item--button menuBlock"><a href="./social-media.php"
+                            class="button nav__signup-link fw-600">Follow Us!</a></li>
+                </ul>
+            </nav>
+
+            <button aria-expanded="false" class="tutorial-toc-toggle">
+                <span class="sr-only">Menu</span>
+            </button>
+            <div class="flex-group header__buttons" style="--gap: min(3vw, 1rem)">
+                <div class="nav__search-wrapper nav__search-wrapper--mobile">
+                    <input type="text" class="nav__item nav__search nav__search--mobile gradient-input"
+                        placeholder="Search tutorials, courses and ebooks..." id="mobile-search-strings" name="key"
+                        data-result="search-results" aria-label="Search" autocomplete="off">
+                </div>
+                <button aria-expanded="false"
+                    class="button-reset mobile-search-button header__search-button search-button">
+                    <span class="sr-only">Show search</span>
+                </button>
+            </div>
+        </div>
+    </header>
+    <nav class="library-nav">
+        <div class="library-nav__container">
+            <button style="display: block;" class="library-nav__prev-button library-nav__button button-reset"
+                id="scroll_left_btn" onmousedown="initScroll(-1)" onmouseup="stopScrolling()"
+                onmouseout="stopScrolling()"><i class="fa-sharp fa-light fa-angle-left"></i></button>
+            <div class="library-nav__slider">
+                <ul id="library-nav">
+                    <li><a class="" href="coming_soon.php" title="IoT Fundamentals Tutorial">IoT Fundamentals000</a>
+                    </li>
+                    <li><a class="" href="coming_soon.php" title="IoT Devices and Sensors Tutorial">IoT Devices and
+                            Sensors</a></li>
+                    <li><a class="" href="coming_soon.php" title="Machine Learning in IoT">Machine Learning in IoT</a>
+                    </li>
+                    <li><a class="" href="coming_soon.php" title="IoT Architecture Tutorial">IoT Architecture</a></li>
+                    <li><a class="" href="coming_soon.php" title="IoT Communication Protocols Tutorial">IoT
+                            Communication Protocols</a></li>
+                    <li><a class="" href="coming_soon.php" title="IoT Security Tutorial">IoT Security</a></li>
+                    <li><a class="" href="coming_soon.php" title="IoT Edge Computing Tutorial">IoT Edge Computing</a>
+                    </li>
+                    <li><a class="" href="coming_soon.php" title="Cloud Platforms for IoT">Cloud Platforms for IoT</a>
+                    </li>
+                    <li><a class="" href="coming_soon.php" title="Data Analytics in IoT">Data Analytics in IoT</a></li>
+                    <li><a class="" href="coming_soon.php" title="IoT Projects">IoT Projects</a></li>
+                    <li><a class="" href="coming_soon.php" title="IoT Certification Courses">IoT Certification
+                            Courses</a></li>
+                    <li><a class="" href="coming_soon.php" title="IoT Video Tutorials">IoT Videos</a></li>
+                    <li><a class="" href="coming_soon.php" title="IoT in Retail">IoT in Retail</a></li>
+                    <li><a class="" href="coming_soon.php" title="Industrial IoT (IIoT)">Industrial IoT (IIoT)</a></li>
+                    <li><a class="" href="coming_soon.php" title="IoT for Healthcare">IoT for Healthcare</a></li>
+                    <li><a class="" href="coming_soon.php" title="Smart Cities and IoT">Smart Cities and IoT</a></li>
+                    <li><a class="" href="coming_soon.php" title="IoT Testing and Troubleshooting">IoT Testing and
+                            Troubleshooting</a></li>
+                </ul>
+
+
+            </div>
+            <button class="library-nav__next-button library-nav__button button-reset" id="scroll_right_btn"
+                onmousedown="initScroll(1)" onmouseup="stopScrolling()" onmouseout="stopScrolling()"><i
+                    class="fa-sharp fa-light fa-angle-right"></i></button>
+        </div>
+    </nav>

@@ -1,0 +1,565 @@
+<html>
+<head>
+<style>
+h1 { 
+  display: block;
+  font-size: 2em;
+  margin-top: 0.67em;
+  margin-bottom: 0.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+h2 { 
+  display: block;
+  font-size: 1.5em;
+  margin-top: 0.83em;
+  margin-bottom: 0.83em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+h3 {
+  display: block;
+  font-size: 1.17em;
+  margin-top: 1em;
+  margin-bottom: 1em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+h4 {
+  display: block;
+  font-size: 1em;
+  margin-top: 1.33em;
+  margin-bottom: 1.33em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+h5 {
+  display: block;
+  font-size: .83em;
+  margin-top: 1.67em;
+  margin-bottom: 1.67em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+h6 {
+  display: block;
+  font-size: .67em;
+  margin-top: 2.33em;
+  margin-bottom: 2.33em;
+  margin-left: 0;
+  margin-right: 0;
+  font-weight: bold;
+}
+
+  table {
+        width: fit-content;
+        border-collapse: collapse;
+      }
+      table,
+      th,
+      td {
+        border: 1px solid black;
+      }
+      th,
+      td {
+        padding: 8px;
+        text-align: start;
+      }
+      th {
+        background-color: #f2f2f2;
+      }
+    
+      .syllabus-outline {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+      }
+      .syllabus-box {
+        width: 100%;
+        /*margin: 0px 5% 0px 5%;*/
+        display: flex;
+      }
+    
+      .syllabus-container {
+        margin-bottom: 10px;
+        padding: 10px;
+        float: left;
+        margin-left: 13px;
+        box-shadow: 0 3px 3px rgb(0 0 0 / 60%), 0 1px 0 rgb(0 0 0 / 60%);
+      }
+  
+      .dashed-border {
+      background-color: #fffba1;
+      padding: 20px 9px 0;
+      border-style: dashed;
+      border-width: 6px;
+      border-color: #000;
+      }
+  
+      .left-right-border-box {
+      max-width: 100%;
+      }
+  
+      .left-right-border {
+      background-color: #eaf5e4;
+      padding: 0 0 0 10px;
+      border-style: groove;
+      border-width: 0 10px;
+      border-color: #66db19;
+      border-radius: 0;
+      }
+  
+      .left-right-border-box-2 {
+      max-width: 100%;
+      }
+  
+      .left-border-sky{
+      padding: 1px 0 1px 10px;
+      border-style: groove;
+      margin: 10px;
+      border-width: 0 0 0 10px;
+      border-color: #02ccee;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+      display: flex;
+      align-items: center;
+      }
+  
+      .left-border-green {
+      padding: 1px 0 1px 10px;
+      border-style: groove;
+      margin: 10px;
+      border-width: 0 0 0 10px;
+      border-color: #a3ee02;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+      display: flex;
+      align-items: center;
+      }
+  
+      .left-border-purple {
+      padding: 1px 0 1px 10px;
+      margin: 10px;
+      border-style: groove;
+      border-width: 0 0 0 10px;
+      border-color: #bc60ff;
+      box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+      display: flex;
+      align-items: center;
+      }
+  
+      .h2-bg-black {
+          background-color: transparent;
+      padding: 15px;
+      background-image: linear-gradient(180deg, #000 0%, #000 100%);
+      color: #fff;
+      }
+  
+      .p-bg-yellow {
+          background-color: transparent;
+      padding: 15px;
+      background-image: linear-gradient(180deg, #677dff 0%, #7f68ff 100%);
+      color: #ffffff;
+      }
+  
+      .h2-bg-yellow-black {
+      background-color: transparent;
+      padding: 0 0 0 10px;
+      background-image: linear-gradient(180deg, #ecca68 0%, #fff144 100%);
+      border-style: groove;
+      border-width: 0 0 0 10px;
+      border-color: #000;
+      }
+      p {
+  margin-top: inherit;
+      margin-bottom: inherit;
+  }
+  li {
+  margin: inherit;
+  }
+  
+  .nav-link {
+    color: rgb(1 54 255) !important;
+  }
+  
+  
+  @media only screen and (max-width: 860px) {
+  .syllabus-box {
+    display: grid;
+  }
+  
+  .syllabus-container {
+     margin-left: 0;
+  }
+  
+  .col-md-6 {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  
+  .ft-m {
+    margin-right: 15px;
+    margin-left: 15px;
+  }
+  
+  img {
+      max-width: 200px;
+  }
+  
+  .left-border-sky {
+      flex-direction: column-reverse;
+  }
+  
+  .left-border-green {
+      flex-direction: column-reverse;
+  }
+  
+  .left-border-purple {
+      flex-direction: column-reverse;
+  }
+}
+
+</style>
+</head>
+<body>
+    <h1 style="margin-left: 5%; margin-top: 100px;">DETAILED SYLLABUS</h1>
+    
+    <div class="syllabus-box">
+      <div class="syllabus-container">
+        <h3>1. INTRODUCTION TO COMPUTER</h3>
+        <ul>
+          <li>1.0 Introduction</li>
+          <li>1.1 Objectives</li>
+          <li>
+            1.2 What is Computer?
+            <ul>
+              <li>1.2.1 History of Computer</li>
+              <li>1.2.2 Characteristics of Computer</li>
+              <li>1.2.3 Basic Application of Computer</li>
+            </ul>
+          </li>
+          <li>1.3 Components of Computer System</li>
+          <ul>
+            <li>1.3.1 Central Processing Unit</li>
+            <li>1.3.2 Keyboard, mouse and VDU</li>
+            <li>1.3.3 Other Input devices</li>
+            <li>1.3.4 Other Output devices</li>
+            <li>1.3.5 Computer Memory</li>
+          </ul>
+          <li>1.4 Concept of Hardware and Software</li>
+          <ul>
+            <li>1.4.1 Hardware</li>
+            <li>1.4.2 Software</li>
+            <ul>
+              <li>1.4.2.1 Application Software</li>
+              <li>1.4.2.2 Systems software</li>
+            </ul>
+            <li>1.4.3 Programming Languages</li>
+          </ul>
+          <li>1.5 Representation of Data/Information</li>
+          <li>1.6 Concept of Data processing</li>
+          <li>1.7 Applications of IECT</li>
+          <ul>
+            <li>1.7.1 e-governance</li>
+            <li>1.7.2 Multimedia and Entertainment</li>
+          </ul>
+          <li>1.8 Summary</li>
+          <li>1.9 Model Questions and Answers</li>
+        </ul>
+    
+        <h3>2. INTRODUCTION TO GUI BASED OPERATING SYSTEM</h3>
+    
+        <ul>
+          <li>2.0 Introduction</li>
+          <li>2.1 Objectives</li>
+          <li>2.2 Basics of Operating System</li>
+          <ul>
+            <li>2.2.1 Operating system</li>
+            <li>2.2.2 Basics of popular operating system (LINUX, WINDOWS)</li>
+          </ul>
+          <li>2.3 The User Interface</li>
+          <ul>
+            <li>2.3.1 Task Bar</li>
+            <li>2.3.2 Icons</li>
+            <li>2.3.3 Start Menu</li>
+            <li>2.3.4 Running an Application</li>
+          </ul>
+          <li>2.4 Operating System Simple Setting</li>
+          <ul>
+            <li>2.4.1 Changing System Date And Time</li>
+            <li>2.4.2 Changing Display Properties</li>
+            <li>2.4.3 To Add Or Remove A Windows Component</li>
+            <li>2.4.4 Changing Mouse Properties</li>
+            <li>2.4.5 Adding and removing Printers</li>
+          </ul>
+          <li>2.5 File and Directory Management</li>
+          <li>2.6 Types of files</li>
+          <li>2.7 Summary</li>
+          <li>2.8 Model Questions and Answers</li>
+        </ul>
+    
+        <h3>3. Elements of Word Processing</h3>
+        <ul>
+          <li>3.0 Introduction</li>
+    
+          <li>3.1 Objectives</li>
+    
+          <li>3.2 Word Processing Basics</li>
+          <ul>
+            <li>3.2.1 Opening Word Processing Package</li>
+            <li>3.2.2 Menu Bar</li>
+            <li>3.2.3 Using The Help</li>
+            <li>3.2.4 Using The Icons Below Menu Bar</li>
+          </ul>
+    
+          <li>3.3 Opening and Closing Documents</li>
+          <ul>
+            <li>3.3.1 Opening Documents</li>
+            <li>3.3.2 Save and Save as</li>
+            <li>3.3.3 Page Setup</li>
+            <li>3.3.4 Print Preview</li>
+            <li>3.3.5 Printing of Documents</li>
+          </ul>
+    
+          <li>3.4 Text Creation and Manipulation</li>
+          <ul>
+            <li>3.4.1 Document Creation</li>
+            <li>3.4.2 Editing Text</li>
+            <li>3.4.3 Text Selection</li>
+            <li>3.4.4 Cut, Copy and Paste</li>
+            <li>3.4.5 Font and Size Selection</li>
+            <li>3.4.6 Alignment of Text</li>
+          </ul>
+    
+          <li>3.5 Formatting the Text</li>
+          <ul>
+            <li>3.5.1 Paragraph Indenting</li>
+            <li>3.5.2 Bullets and Numbering</li>
+            <li>3.5.3 Changing Case</li>
+          </ul>
+    
+          <li>3.6 Table Manipulation</li>
+          <ul>
+            <li>3.6.1 Draw Table</li>
+            <li>3.6.2 Changing Cell Width and Height</li>
+            <li>3.6.3 Alignment of Text in Cell</li>
+            <li>3.6.4 Delete / Insertion of Row and Column</li>
+            <li>3.6.5 Border and Shading</li>
+          </ul>
+    
+          <li>3.7 Summary</li>
+    
+          <li>3.8 Model Questions and Answers</li>
+        </ul>
+    
+        <h3>4. Spreadsheet</h3>
+        <ul>
+          <li>4.0 Introduction</li>
+    
+          <li>4.1 Objectives</li>
+    
+          <li>4.2 Elements of Electronic Spreadsheet</li>
+          <ul>
+            <li>4.2.1 Opening of Spreadsheet</li>
+            <li>4.2.2 Addressing of Cells</li>
+            <li>4.2.3 Printing of Spreadsheet</li>
+            <li>4.2.4 Saving Workbooks</li>
+          </ul>
+    
+          <li>4.3 Manipulation of Cells</li>
+          <ul>
+            <li>4.3.1 Entering Text, Numbers, and Dates</li>
+            <li>4.3.2 Creating Text, Number, and Date Series</li>
+            <li>4.3.3 Editing Worksheet Data</li>
+            <li>4.3.4 Inserting and Deleting Rows, Columns</li>
+            <li>4.3.5 Changing Cell Height and Width</li>
+          </ul>
+    
+          <li>4.4 Functions and Charts</li>
+          <ul>
+            <li>4.4.1 Using Formulas</li>
+            <li>4.4.2 Functions</li>
+            <li>4.4.3 Charts</li>
+          </ul>
+    
+          <li>4.5 Summary</li>
+    
+          <li>4.6 Model Questions and Answers</li>
+        </ul>
+      </div>
+    
+      <div class="syllabus-container">
+        <h3>5. Computer Communication and Internet</h3>
+        <ul>
+          <li>5.0 Introduction</li>
+    
+          <li>5.1 Objectives</li>
+    
+          <li>5.2 Basics of Computer Networks</li>
+          <ul>
+            <li>5.2.1 Local Area Network (LAN)</li>
+            <li>5.2.2 Wide Area Network (WAN)</li>
+          </ul>
+    
+          <li>5.3 Internet</li>
+          <ul>
+            <li>5.3.1 Concept of Internet</li>
+            <li>5.3.2 Basics of Internet Architecture</li>
+          </ul>
+    
+          <li>5.4 Services on Internet</li>
+          <ul>
+            <li>5.4.1 World Wide Web and Websites</li>
+            <li>5.4.2 Communication on Internet</li>
+            <li>5.4.3 Internet Services</li>
+          </ul>
+    
+          <li>5.5 Preparing Computer for Internet Access</li>
+          <ul>
+            <li>5.5.1 ISPs and Examples (Broadband/Dialup/WiFi)</li>
+            <li>5.5.2 Internet Access Techniques</li>
+          </ul>
+    
+          <li>5.6 Summary</li>
+    
+          <li>5.7 Model Questions and Answers</li>
+        </ul>
+    
+        <h3>6. WWW and Web Browser</h3>
+        <ul>
+          <li>6.0 Introduction</li>
+    
+          <li>6.1 Objectives</li>
+    
+          <li>6.2 Web Browsing Software</li>
+          <ul>
+            <li>6.2.1 Popular Web Browsing Software</li>
+          </ul>
+    
+          <li>6.3 Configuring Web Browser</li>
+    
+          <li>6.4 Search Engines</li>
+          <ul>
+            <li>6.4.1 Popular Search Engines / Search for Content</li>
+            <li>6.4.2 Accessing Web Browser</li>
+            <li>6.4.3 Using Favorites Folder</li>
+            <li>6.4.4 Downloading Web Pages</li>
+            <li>6.4.5 Printing Web Pages</li>
+          </ul>
+    
+          <li>6.5 Summary</li>
+    
+          <li>6.6 Model Questions and Answers</li>
+        </ul>
+    
+        <h3>7. Communication and Collaboration</h3>
+        <ul>
+          <li>7.0 Introduction</li>
+    
+          <li>7.1 Objectives</li>
+    
+          <li>7.2 Basics of E-mail</li>
+          <ul>
+            <li>7.2.1 What is an Electronic Mail</li>
+            <li>7.2.2 Email Addressing</li>
+            <li>7.2.3 Configuring Email Client</li>
+          </ul>
+    
+          <li>7.3 Using E-mails</li>
+          <ul>
+            <li>7.3.1 Opening Email Client</li>
+            <li>7.3.2 Mailbox: Inbox and Outbox</li>
+            <li>7.3.3 Creating and Sending a New E-mail</li>
+            <li>7.3.4 Replying to an E-mail Message</li>
+            <li>7.3.5 Forwarding an E-mail Message</li>
+            <li>7.3.6 Sorting and Searching Emails</li>
+          </ul>
+    
+          <li>7.4 Advanced Email Features</li>
+          <ul>
+            <li>7.4.1 Sending Document by E-mail</li>
+            <li>7.4.2 Activating Spell Checking</li>
+            <li>7.4.3 Using Address Book</li>
+            <li>7.4.4 Sending Softcopy as Attachment</li>
+            <li>7.4.5 Handling SPAM</li>
+          </ul>
+    
+          <li>7.5 Instant Messaging and Collaboration</li>
+          <ul>
+            <li>7.5.1 Using Smiley</li>
+            <li>7.5.2 Internet Etiquettes</li>
+          </ul>
+    
+          <li>7.6 Summary</li>
+    
+          <li>7.7 Model Questions and Answers</li>
+        </ul>
+    
+        <h3>8. Making Small Presentations</h3>
+        <ul>
+          <li>8.0 Introduction</li>
+    
+          <li>8.1 Objectives</li>
+    
+          <li>8.2 Basics</li>
+          <ul>
+            <li>8.2.1 Using PowerPoint</li>
+            <li>8.2.2 Opening a PowerPoint Presentation</li>
+            <li>8.2.3 Saving a Presentation</li>
+          </ul>
+    
+          <li>8.3 Creation of Presentation</li>
+          <ul>
+            <li>8.3.1 Creating a Presentation Using a Template</li>
+            <li>8.3.2 Creating a Blank Presentation</li>
+            <li>8.3.3 Entering and Editing Text</li>
+            <li>8.3.4 Inserting and Deleting Slides in a Presentation</li>
+          </ul>
+    
+          <li>8.4 Preparation of Slides</li>
+          <ul>
+            <li>8.4.1 Inserting Word Table or an Excel Worksheet</li>
+            <li>8.4.2 Adding Clip Art Pictures</li>
+            <li>8.4.3 Inserting Other Objects</li>
+            <li>8.4.4 Resizing and Scaling an Object</li>
+          </ul>
+    
+          <li>8.5 Providing Aesthetics</li>
+          <ul>
+            <li>8.5.1 Enhancing Text Presentation</li>
+            <li>8.5.2 Working with Color and Line Style</li>
+            <li>8.5.3 Adding Movie and Sound</li>
+            <li>8.5.4 Adding Headers and Footers</li>
+          </ul>
+    
+          <li>8.6 Presentation of Slides</li>
+          <ul>
+            <li>8.6.1 Viewing a Presentation</li>
+            <li>8.6.2 Choosing a Set Up for Presentation</li>
+            <li>8.6.3 Printing Slides and Handouts</li>
+          </ul>
+    
+          <li>8.7 Slide Show</li>
+          <ul>
+            <li>8.7.1 Running a Slide Show</li>
+            <li>8.7.2 Transition and Slide Timings</li>
+            <li>8.7.3 Automating a Slide Show</li>
+          </ul>
+    
+          <li>8.8 Summary</li>
+    
+          <li>8.9 Model Questions and Answers</li>
+        </ul>
+      </div>
+      </div>
+</body>
+</html>

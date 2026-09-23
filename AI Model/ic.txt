@@ -1,0 +1,712 @@
+यहां "Introduction to Computer" विषय पर 100 MCQs दिए गए हैं, जो हिंदी और अंग्रेजी दोनों में हैं:
+
+### MCQs
+
+
+1. What is the full form of CPU? | CPU का पूरा नाम क्या है?
+ a) Central Processing Unit | केंद्रीय प्रसंस्करण इकाई
+ b) Central Program Unit | केंद्रीय कार्यक्रम इकाई
+ c) Control Processing Unit | नियंत्रण प्रसंस्करण इकाई
+ d) None of the above | उपरोक्त में से कोई नहीं
+ Answer: a) Central Processing Unit | केंद्रीय प्रसंस्करण इकाई
+
+2. Which device is used for input? | इनपुट के लिए कौन सा डिवाइस इस्तेमाल होता है?
+ a) Monitor | मॉनिटर
+ b) Printer | प्रिंटर
+ c) Keyboard | कीबोर्ड
+ d) Speaker | स्पीकर
+ Answer: c) Keyboard | कीबोर्ड
+
+3. What does RAM stand for? | RAM का पूरा नाम क्या है?
+ a) Read Access Memory | रीड एक्सेस मेमोरी
+ b) Random Access Memory | रैंडम एक्सेस मेमोरी
+ c) Run Access Memory | रन एक्सेस मेमोरी
+ d) None of the above | उपरोक्त में से कोई नहीं
+ Answer: b) Random Access Memory | रैंडम एक्सेस मेमोरी
+
+4. What is a computer virus? | कंप्यूटर वायरस क्या है?
+ a) A program that causes harm | एक प्रोग्राम जो नुकसान पहुँचाता है
+ b) A software for gaming | गेमिंग के लिए एक सॉफ़्टवेयर
+ c) A type of hardware | हार्डवेयर का एक प्रकार
+ d) None of the above | उपरोक्त में से कोई नहीं
+ Answer: a) A program that causes harm | एक प्रोग्राम जो नुकसान पहुँचाता है
+
+5. Which of the following is an output device? | निम्नलिखित में से कौन सा आउटपुट डिवाइस है?
+ a) Scanner | स्कैनर
+ b) Monitor | मॉनिटर
+ c) Keyboard | कीबोर्ड
+ d) Mouse | माउस
+ Answer: b) Monitor | मॉनिटर
+
+6. What does the 'boot' process refer to? | 'बूट' प्रक्रिया किसे संदर्भित करती है?
+ a) Starting up a computer | कंप्यूटर को चालू करना
+ b) Shutting down a computer | कंप्यूटर को बंद करना
+ c) Installing software | सॉफ़्टवेयर स्थापित करना
+ d) None of the above | उपरोक्त में से कोई नहीं
+ Answer: a) Starting up a computer | कंप्यूटर को चालू करना
+
+7. Which is not a programming language? | इनमें से कौन सी प्रोग्रामिंग भाषा नहीं है?
+ a) Python | पायथन
+ b) Java | जावा
+ c) HTML | एचटीएमएल
+ d) Microsoft Word | माइक्रोसॉफ्ट वर्ड
+ Answer: d) Microsoft Word | माइक्रोसॉफ्ट वर्ड
+
+8. What is the function of an operating system? | ऑपरेटिंग सिस्टम का कार्य क्या है?
+ a) To manage computer hardware and software | कंप्यूटर हार्डवेयर और सॉफ़्टवेयर का प्रबंधन करना
+ b) To store data | डेटा संग्रहीत करना
+ c) To connect to the internet | इंटरनेट से कनेक्ट करना
+ d) None of the above | उपरोक्त में से कोई नहीं
+ Answer: a) To manage computer hardware and software | कंप्यूटर हार्डवेयर और सॉफ़्टवेयर का प्रबंधन करना
+
+9. Which of the following is used to connect to the internet? | निम्नलिखित में से किसका उपयोग इंटरनेट से कनेक्ट करने के लिए किया जाता है?
+ a) USB | यूएसबी
+ b) Modem | मोडेम
+ c) Printer | प्रिंटर
+ d) Monitor | मॉनिटर
+ Answer: b) Modem | मोडेम
+
+10. What does 'URL' stand for? | 'URL' का पूरा नाम क्या है?
+a) Uniform Resource Locator | यूनिफ़ॉर्म रिसोर्स लोकेटर
+b) Universal Resource Locator | यूनिवर्सल रिसोर्स लोकेटर
+c) Uniform Retrieval Locator | यूनिफ़ॉर्म रिट्रीवल लोकेटर
+d) None of the above | उपरोक्त में से कोई नहीं
+Answer: a) Uniform Resource Locator | यूनिफ़ॉर्म रिसोर्स लोकेटर
+
+
+
+11. Which of the following is a storage device? |निम्नलिखित में से कौन सा स्टोरेज डिवाइस है?
+a) Monitor
+b) Hard Drive
+c) Keyboard
+d) Printer
+Answer: b) Hard Drive
+
+12. What does the term 'software' refer to? |'सॉफ़्टवेयर' शब्द किसे संदर्भित करता है?
+a) Physical components of a computer
+b) Programs and applications
+c) Power supply
+d) None of the above
+Answer: b) Programs and applications
+
+13. What is the main function of the motherboard? |मदरबोर्ड का मुख्य कार्य क्या है?
+a) To provide power
+b) To connect all hardware components
+c) To store data
+d) None of the above
+Answer: b) To connect all hardware components
+
+14. What is an IP address? |IP पता क्या है?
+a) Internet Protocol address
+b) Internet Provider address
+c) Internal Protocol address
+d) None of the above
+Answer: a) Internet Protocol address
+
+15. Which of the following is not an operating system? |इनमें से कौन सा ऑपरेटिंग सिस्टम नहीं है?
+a) Windows
+b) Linux
+c) Google
+d) MacOS
+Answer: c) Google
+
+16. What is the purpose of antivirus software? |एंटीवायरस सॉफ़्टवेयर का उद्देश्य क्या है?
+a) To enhance graphics
+b) To protect against viruses
+c) To increase memory
+d) None of the above
+Answer: b) To protect against viruses
+
+17. Which part of the computer is considered the 'brain'? |कंप्यूटर का कौन सा भाग 'मस्तिष्क' माना जाता है?
+a) RAM
+b) CPU
+c) Hard Drive
+d) Motherboard
+Answer: b) CPU
+
+18. What is a bit? |बिट क्या है?
+a) A unit of data
+b) A type of software
+c) A computer part
+d) None of the above
+Answer: a) A unit of data
+
+19. Which file format is commonly used for images? |किस फ़ाइल प्रारूप का आमतौर पर चित्रों के लिए उपयोग किया जाता है?
+a) .exe
+b) .jpg
+c) .doc
+d) .txt
+Answer: b) .jpg
+
+20. What is cloud computing? |क्लाउड कंप्यूटिंग क्या है?
+a) Storing data on a physical hard drive
+b) Storing data on the internet
+c) Using only local servers
+d) None of the above
+Answer: b) Storing data on the internet
+
+21. Which of the following is a web browser? |निम्नलिखित में से कौन सा वेब ब्राउज़र है?
+a) Microsoft Word
+b) Google Chrome
+c) Adobe Photoshop
+d) Microsoft Excel
+Answer: b) Google Chrome
+
+22. What does GUI stand for? |GUI का पूरा नाम क्या है?
+a) Graphical User Interface
+b) General User Interface
+c) Graphical Unified Interface
+d) None of the above
+Answer: a) Graphical User Interface
+
+23. Which of the following is a type of malware? |निम्नलिखित में से कौन सा एक प्रकार का मैलवेयर है?
+a) Virus
+b) Application
+c) Operating System
+d) None of the above
+Answer: a) Virus
+
+24. What is a database? |डेटाबेस क्या है?
+a) A collection of data
+b) A type of software
+c) A computer component
+d) None of the above
+Answer: a) A collection of data
+
+25. Which programming language is primarily used for web development? |किस प्रोग्रामिंग भाषा का मुख्य रूप से वेब विकास के लिए उपयोग किया जाता है?
+a) C++
+b) HTML
+c) Java
+d) Python
+Answer: b) HTML
+
+26. What does 'HTTP' stand for? |'HTTP' का पूरा नाम क्या है?
+a) Hyper Text Transfer Protocol
+b) Hyper Text Transmission Protocol
+c) High Transfer Text Protocol
+d) None of the above
+Answer: a) Hyper Text Transfer Protocol
+
+27. Which of the following is used for graphic design? |निम्नलिखित में से किसका उपयोग ग्राफिक डिज़ाइन के लिए किया जाता है?
+a) Microsoft Word
+b) Adobe Illustrator
+c) Notepad
+d) Excel
+Answer: b) Adobe Illustrator
+
+28. What is the function of a modem? |एक मोडेम का कार्य क्या है?
+a) To convert digital data to analog
+b) To provide power
+c) To store data
+d) None of the above
+Answer: a) To convert digital data to analog
+
+29. What is phishing? |फिशिंग क्या है?
+a) A type of malware
+b) A method of stealing personal information
+c) A software for security
+d) None of the above
+Answer: b) A method of stealing personal information
+
+30. Which of the following is a spreadsheet application? |निम्नलिखित में से कौन सा स्प्रेडशीट एप्लिकेशन है?
+a) Microsoft Word
+b) Microsoft Excel
+c) Adobe Reader
+d) Google Chrome
+Answer: b) Microsoft Excel
+
+31. What is the purpose of a firewall? |फ़ायरवॉल का उद्देश्य क्या है?
+a) To enhance speed
+b) To protect a network
+c) To store data
+d) None of the above
+Answer: b) To protect a network
+
+32. 
+
+What does the 'cloud' refer to in computing? |कंप्यूटिंग में 'क्लाउड' किसे संदर्भित करता है?
+a) Local storage
+b) Internet-based storage
+c) Hardware
+d) None of the above
+Answer: b) Internet-based storage
+
+33. Which component is responsible for displaying images? |कौन सा घटक चित्र प्रदर्शित करने के लिए जिम्मेदार है?
+a) Monitor
+b) CPU
+c) Keyboard
+d) Hard Drive
+Answer: a) Monitor
+
+34. What is an algorithm? |एल्गोरिदम क्या है?
+a) A type of software
+b) A step-by-step procedure for solving a problem
+c) A computer part
+d) None of the above
+Answer: b) A step-by-step procedure for solving a problem
+
+35. What is the main purpose of an email? |ईमेल का मुख्य उद्देश्य क्या है?
+a) To send messages
+b) To store files
+c) To browse the internet
+d) None of the above
+Answer: a) To send messages
+
+36. Which of the following is a computer language? |निम्नलिखित में से कौन सी कंप्यूटर भाषा है?
+a) HTML
+b) PDF
+c) JPG
+d) MP3
+Answer: a) HTML
+
+37. What does 'SSD' stand for? |SSD का पूरा नाम क्या है?
+a) Solid State Drive
+b) Simple Storage Device
+c) System Storage Drive
+d) None of the above
+Answer: a) Solid State Drive
+
+38. Which of the following is used to access the internet? |निम्नलिखित में से किसका उपयोग इंटरनेट तक पहुंचने के लिए किया जाता है?
+a) Hard Drive
+b) Network Interface Card
+c) USB Drive
+d) Monitor
+Answer: b) Network Interface Card
+
+39. What is the role of a server? |सर्वर की भूमिका क्या है?
+a) To store data
+b) To provide services to other computers
+c) To manage network traffic
+d) All of the above
+Answer: d) All of the above
+
+40. What is the function of a printer? |प्रिंटर का कार्य क्या है?
+a) To store data
+b) To produce hard copies of documents
+c) To display images
+d) None of the above
+Answer: b) To produce hard copies of documents
+
+41. Which of the following is not a type of software? |इनमें से कौन सा सॉफ़्टवेयर का प्रकार नहीं है?
+a) Application software
+b) System software
+c) Hardware
+d) Utility software
+Answer: c) Hardware
+
+42. What does 'Wi-Fi' stand for? |'Wi-Fi' का पूरा नाम क्या है?
+a) Wireless Fidelity
+b) Wireless Frequency
+c) Wide Fidelity
+d) None of the above
+Answer: a) Wireless Fidelity
+
+43. Which of the following is a type of malware? |निम्नलिखित में से कौन सा एक प्रकार का मैलवेयर है?
+a) Trojan horse
+b) Spreadsheet
+c) Word processor
+d) None of the above
+Answer: a) Trojan horse
+
+44. What is the main purpose of backup? |बैकअप का मुख्य उद्देश्य क्या है?
+a) To enhance performance
+b) To store duplicate data
+c) To increase security
+d) None of the above
+Answer: b) To store duplicate data
+
+45. What is a byte? |बाइट क्या है?
+a) A type of software
+b) A group of 8 bits
+c) A type of hardware
+d) None of the above
+Answer: b) A group of 8 bits
+
+46. Which of the following is a desktop operating system? |निम्नलिखित में से कौन सा डेस्कटॉप ऑपरेटिंग सिस्टम है?
+a) Android
+b) iOS
+c) Windows
+d) None of the above
+Answer: c) Windows
+
+47. What is phishing? |फिशिंग क्या है?
+a) A method of stealing personal information
+b) A type of computer hardware
+c) A software application
+d) None of the above
+Answer: a) A method of stealing personal information
+
+48. Which of the following is not a web browser? |निम्नलिखित में से कौन सा वेब ब्राउज़र नहीं है?
+a) Firefox
+b) Chrome
+c) Word
+d) Safari
+Answer: c) Word
+
+49. What does 'VPN' stand for? |'VPN' का पूरा नाम क्या है?
+a) Virtual Private Network
+b) Variable Public Network
+c) Verified Personal Network
+d) None of the above
+Answer: a) Virtual Private Network
+
+50. What is a cookie in computing? |कंप्यूटिंग में कुकी क्या है?
+a) A type of virus
+b) A small piece of data stored on the user's computer
+c) A hardware component
+d) None of the above
+Answer: b) A small piece of data stored on the user's computer
+
+51. What is the primary function of a graphics card? |ग्राफिक्स कार्ड का प्राथमिक कार्य क्या है?
+a) To store data
+b) To render images
+c) To connect to the internet
+d) None of the above
+Answer: b) To render images
+
+52. Which of the following is an input device? |निम्नलिखित में से कौन सा इनपुट डिवाइस है?
+a) Monitor
+b) Mouse
+c) Printer
+d) Speakers
+Answer: b) Mouse
+
+53. What is the function of an operating system? |ऑपरेटिंग सिस्टम का कार्य क्या है?
+a) To manage hardware and software resources
+b) To increase processing speed
+c) To store files
+d) None of the above
+Answer: a) To manage hardware and software resources
+
+54. Which of the following is not a type of network topology? |निम्नलिखित में से कौन सा नेटवर्क टोपोलॉजी का प्रकार नहीं है?
+a) Star
+b) Ring
+c) Circle
+d) Mesh
+Answer: c) Circle
+
+55. What does the 'print' command do? |'प्रिंट' कमांड क्या करता है?
+a) Saves a document
+b) Produces a hard copy of a document
+c) Deletes a document
+d) None of the above
+Answer: b) Produces a hard copy of a document
+
+56. Which of the following is a cloud storage service? |निम्नलिखित में से कौन सा क्लाउड स्टोरेज सेवा है?
+a) Dropbox
+b) Microsoft Word
+c) Adobe Photoshop
+d) None of the above
+Answer: a) Dropbox
+
+57. What does 'ASCII' stand for? |'ASCII' का पूरा नाम क्या है?
+a) American Standard Code for Information Interchange
+b) Advanced Standard Code for Internet Interchange
+c) Automatic Standard Code for Information Interchange
+d) None of the above
+Answer: a) American Standard Code for Information Interchange
+
+58. Which of the following is a file extension for audio files? |निम्नलिखित में से कौन सा ऑडियो फ़ाइल के लिए फ़ाइल एक्सटेंशन है?
+a) .jpg
+b) .mp3
+c) .doc
+d) .pdf
+Answer: b) .mp3
+
+59. What is the function of a backup? |बैकअप का कार्य क्या है?
+a) To enhance performance
+b) To protect against data loss
+c) To increase speed
+d) None of the above
+Answer: b) To protect against data loss
+
+60. Which of the following is a type of operating system? |निम्नलिखित में से कौन सा ऑपरेटिंग सिस्टम का प्रकार है?
+a) Microsoft Office
+b) Linux
+c) Adobe Reader
+d) None of the above
+Answer: b) Linux
+
+61. What is the purpose of the 'Save' command? |'सेव' कमांड का उद्देश्य क्या है?
+a) To delete a document
+b) To store changes made to a document
+c) To print a document
+d) None of the above
+Answer: b) To store changes made to a document
+
+62. What does 'RAM' stand for? |RAM का पूरा नाम क्या
+
+ है?
+a) Random Access Memory
+b) Read Access Memory
+c) Rapid Access Memory
+d) None of the above
+Answer: a) Random Access Memory
+
+63. Which of the following is an operating system? |निम्नलिखित में से कौन सा ऑपरेटिंग सिस्टम है?
+a) Excel
+b) Word
+c) Ubuntu
+d) None of the above
+Answer: c) Ubuntu
+
+64. What is the primary function of a web server? |वेब सर्वर का प्राथमिक कार्य क्या है?
+a) To host websites
+b) To store files
+c) To manage email
+d) None of the above
+Answer: a) To host websites
+
+65. Which of the following is not a type of computer virus? |निम्नलिखित में से कौन सा कंप्यूटर वायरस का प्रकार नहीं है?
+a) Worm
+b) Trojan horse
+c) Spyware
+d) Internet
+Answer: d) Internet
+
+66. What is a LAN? |LAN क्या है?
+a) Local Area Network
+b) Large Area Network
+c) Long Area Network
+d) None of the above
+Answer: a) Local Area Network
+
+67. Which of the following is a type of software? |निम्नलिखित में से कौन सा सॉफ़्टवेयर का प्रकार है?
+a) Application software
+b) Hardware
+c) Data
+d) None of the above
+Answer: a) Application software
+
+68. What is the main purpose of an antivirus program? |एंटीवायरस प्रोग्राम का मुख्य उद्देश्य क्या है?
+a) To enhance graphics
+b) To remove malware
+c) To increase speed
+d) None of the above
+Answer: b) To remove malware
+
+69. What does 'PDF' stand for? |'PDF' का पूरा नाम क्या है?
+a) Portable Document Format
+b) Portable Data Format
+c) Personal Document Format
+d) None of the above
+Answer: a) Portable Document Format
+
+70. Which of the following is an example of a search engine? |निम्नलिखित में से कौन सा एक सर्च इंजन का उदाहरण है?
+a) Google
+b) Microsoft Word
+c) Adobe Reader
+d) None of the above
+Answer: a) Google
+
+71. What does 'ISP' stand for? |ISP का पूरा नाम क्या है?
+a) Internet Service Provider
+b) Internal Service Provider
+c) Internet Security Protocol
+d) None of the above
+Answer: a) Internet Service Provider
+
+72. What is the function of a router? |राउटर का कार्य क्या है?
+a) To connect different networks
+b) To print documents
+c) To store data
+d) None of the above
+Answer: a) To connect different networks
+
+73. Which of the following is not a function of a computer? |निम्नलिखित में से कौन सा कंप्यूटर का कार्य नहीं है?
+a) Input
+b) Processing
+c) Printing
+d) None of the above
+Answer: d) None of the above
+
+74. What is the main purpose of a computer? |कंप्यूटर का मुख्य उद्देश्य क्या है?
+a) To perform calculations
+b) To play games
+c) To manage files
+d) All of the above
+Answer: d) All of the above
+
+75. Which of the following is an example of hardware? |निम्नलिखित में से कौन सा हार्डवेयर का उदाहरण है?
+a) Software
+b) Monitor
+c) Data
+d) None of the above
+Answer: b) Monitor
+
+76. What is a network? |नेटवर्क क्या है?
+a) A collection of computers connected together
+b) A type of software
+c) A hardware component
+d) None of the above
+Answer: a) A collection of computers connected together
+
+77. Which of the following is an input/output device? |निम्नलिखित में से कौन सा इनपुट/आउटपुट डिवाइस है?
+a) Monitor
+b) Keyboard
+c) Printer
+d) All of the above
+Answer: d) All of the above
+
+78. What does 'WWW' stand for? |'WWW' का पूरा नाम क्या है?
+a) World Wide Web
+b) Wide World Web
+c) World Web Web
+d) None of the above
+Answer: a) World Wide Web
+
+79. What is the main purpose of a spreadsheet? |स्प्रेडशीट का मुख्य उद्देश्य क्या है?
+a) To create documents
+b) To perform calculations and organize data
+c) To design graphics
+d) None of the above
+Answer: b) To perform calculations and organize data
+
+80. Which of the following is a type of storage media? |निम्नलिखित में से कौन सा स्टोरेज मीडिया का प्रकार है?
+a) Hard disk
+b) RAM
+c) CPU
+d) None of the above
+Answer: a) Hard disk
+
+81. What does 'HTML' stand for? |'HTML' का पूरा नाम क्या है?
+a) Hyper Text Markup Language
+b) Hyper Text Management Language
+c) High Transfer Markup Language
+d) None of the above
+Answer: a) Hyper Text Markup Language
+
+82. Which of the following is a type of malware? |निम्नलिखित में से कौन सा मैलवेयर का प्रकार है?
+a) Adware
+b) Browser
+c) Operating System
+d) None of the above
+Answer: a) Adware
+
+83. What is the function of a keyboard? |कीबोर्ड का कार्य क्या है?
+a) To input data
+b) To display output
+c) To store information
+d) None of the above
+Answer: a) To input data
+
+84. Which of the following is a type of email client? |निम्नलिखित में से कौन सा ईमेल क्लाइंट का प्रकार है?
+a) Microsoft Outlook
+b) Adobe Photoshop
+c) Microsoft Excel
+d) None of the above
+Answer: a) Microsoft Outlook
+
+85. What does 'SQL' stand for? |'SQL' का पूरा नाम क्या है?
+a) Structured Query Language
+b) Standard Query Language
+c) Simple Query Language
+d) None of the above
+Answer: a) Structured Query Language
+
+86. Which of the following is a type of database? |निम्नलिखित में से कौन सा डेटाबेस का प्रकार है?
+a) Relational database
+b) Word processor
+c) Spreadsheet
+d) None of the above
+Answer: a) Relational database
+
+87. What is the purpose of a database management system? |डेटाबेस प्रबंधन प्रणाली का उद्देश्य क्या है?
+a) To create and manage databases
+b) To perform calculations
+c) To edit documents
+d) None of the above
+Answer: a) To create and manage databases
+
+88. Which of the following is not a common type of file? |निम्नलिखित में से कौन सा सामान्य फ़ाइल का प्रकार नहीं है?
+a) Document
+b) Image
+c) Application
+d) None of the above
+Answer: d) None of the above
+
+89. What does 'Ethernet' refer to? |'ईथरनेट' किसे संदर्भित करता है?
+a) A type of network technology
+b) A type of software
+c) A computer part
+d) None of the above
+Answer: a) A type of network technology
+
+90. Which of the following is used to create presentations? |निम्नलिखित में से कौन सी प्रस्तुतियों को बनाने के लिए इस्तेमाल होती है?
+a) Microsoft PowerPoint
+b) Microsoft Word
+c) Adobe Reader
+d) None of the above
+Answer: a) Microsoft PowerPoint
+
+91. What is the main purpose of the task manager? |टास्क मैनेजर का मुख्य उद्देश्य क्या है?
+a) To manage running applications
+b) To create documents
+c) To browse the internet
+d) None of the above
+Answer: a) To manage running applications
+
+92. What does 'URL' stand for? |'URL' का पूरा नाम क्या है?
+a) Uniform Resource Locator
+b) Universal Resource Locator
+c) Uniform Retrieval Locator
+d) None of the above
+Answer: a) Uniform Resource Locator
+
+
+
+93. Which of the following is an example of an operating system? |निम्नलिखित में से कौन सा ऑपरेटिंग सिस्टम का उदाहरण है?
+a) Microsoft Excel
+b) Google Chrome
+c) macOS
+d) None of the above
+Answer: c) macOS
+
+94. What does 'DOS' stand for? |'DOS' का पूरा नाम क्या है?
+a) Disk Operating System
+b) Data Operating System
+c) Direct Operating System
+d) None of the above
+Answer: a) Disk Operating System
+
+95. What is the main purpose of a firewall? |फ़ायरवॉल का मुख्य उद्देश्य क्या है?
+a) To enhance graphics
+b) To protect a network from unauthorized access
+c) To increase internet speed
+d) None of the above
+Answer: b) To protect a network from unauthorized access
+
+96. Which of the following is not an operating system? |निम्नलिखित में से कौन सा ऑपरेटिंग सिस्टम नहीं है?
+a) Windows
+b) Android
+c) Microsoft Office
+d) macOS
+Answer: c) Microsoft Office
+
+97. What is the purpose of a search engine? |सर्च इंजन का उद्देश्य क्या है?
+a) To browse the internet
+b) To store files
+c) To find information on the internet
+d) None of the above
+Answer: c) To find information on the internet
+
+98. Which of the following is a component of a computer? |निम्नलिखित में से कौन सा कंप्यूटर का घटक है?
+a) Monitor
+b) Keyboard
+c) CPU
+d) All of the above
+Answer: d) All of the above
+
+99. What is the purpose of a web browser? |वेब ब्राउज़र का उद्देश्य क्या है?
+a) To create documents
+b) To browse the internet
+c) To manage files
+d) None of the above
+Answer: b) To browse the internet
+
+100. What does 'LAN' stand for? |'LAN' का पूरा नाम क्या है?
+a) Local Area Network
+b) Large Area Network
+c) Long Area Network
+d) None of the above
+Answer: a) Local Area Network

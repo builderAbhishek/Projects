@@ -1,0 +1,260 @@
+<style>
+    h1 {
+        display: block;
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h2 {
+        display: block;
+        font-size: 1.5em;
+        margin-top: 0.83em;
+        margin-bottom: 0.83em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h4 {
+        display: block;
+        font-size: 1.17em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h4 {
+        display: block;
+        font-size: 1em;
+        margin-top: 1.33em;
+        margin-bottom: 1.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h5 {
+        display: block;
+        font-size: .83em;
+        margin-top: 1.67em;
+        margin-bottom: 1.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h6 {
+        display: block;
+        font-size: .67em;
+        margin-top: 2.33em;
+        margin-bottom: 2.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    table {
+        width: fit-content;
+        border-collapse: collapse;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        text-align: start;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .syllabus-outline {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .syllabus-box {
+        width: 100%;
+        /*margin: 0px 5% 0px 5%;*/
+        display: flex;
+    }
+
+    .syllabus-container {
+        margin-bottom: 10px;
+        padding: 10px;
+        float: left;
+        margin-left: 13px;
+        box-shadow: 0 3px 3px rgb(0 0 0 / 60%), 0 1px 0 rgb(0 0 0 / 60%);
+    }
+
+    .dashed-border {
+        background-color: #fffba1;
+        padding: 20px 9px 0;
+        border-style: dashed;
+        border-width: 6px;
+        border-color: #000;
+    }
+
+    .left-right-border-box {
+        max-width: 100%;
+    }
+
+    .left-right-border {
+        background-color: #eaf5e4;
+        padding: 0 0 0 10px;
+        border-style: groove;
+        border-width: 0 10px;
+        border-color: #66db19;
+        border-radius: 0;
+    }
+
+    .left-right-border-box-2 {
+        max-width: 100%;
+    }
+
+    .left-border-sky {
+        padding: 1px 0 1px 10px;
+        border-style: groove;
+        margin: 10px;
+        border-width: 0 0 0 10px;
+        border-color: #02ccee;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+    }
+
+    .left-border-green {
+        padding: 1px 0 1px 10px;
+        border-style: groove;
+        margin: 10px;
+        border-width: 0 0 0 10px;
+        border-color: #a3ee02;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+    }
+
+    .section {
+        margin-bottom: 40px;
+    }
+
+    .left-border-purple {
+        padding: 1px 0 1px 10px;
+        margin: 10px;
+        border-style: groove;
+        border-width: 0 0 0 10px;
+        border-color: #bc60ff;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+    }
+
+    .h2-bg-black {
+        background-color: transparent;
+        padding: 15px;
+        background-image: linear-gradient(180deg, #000 0%, #000 100%);
+        color: #fff;
+    }
+
+    .p-bg-yellow {
+        background-color: transparent;
+        padding: 15px;
+        background-image: linear-gradient(180deg, #677dff 0%, #7f68ff 100%);
+        color: #ffffff;
+    }
+
+    .h2-bg-yellow-black {
+        background-color: transparent;
+        padding: 0 0 0 10px;
+        background-image: linear-gradient(180deg, #ecca68 0%, #fff144 100%);
+        border-style: groove;
+        border-width: 0 0 0 10px;
+        border-color: #000;
+    }
+
+    p {
+        margin-top: inherit;
+        margin-bottom: inherit;
+    }
+
+    li {
+        margin: inherit;
+    }
+
+
+    @media only screen and (max-width: 860px) {
+        .syllabus-box {
+            display: grid;
+        }
+
+        .syllabus-container {
+            margin-left: 0;
+        }
+
+        .col-md-6 {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+</style>
+
+
+<div class="container">
+    <h1>Concept of Data Processing: Simple Explanation</h1>
+
+    <h2>1. What is Data Processing? (डेटा प्रोसेसिंग क्या है?)</h2>
+    <p>Data Processing refers to the method of converting raw data into meaningful information through various processes. In simple terms, it involves taking data, processing it, and producing useful output.</p>
+    <p>डेटा प्रोसेसिंग कच्चे डेटा को उपयोगी जानकारी में बदलने की विधि है। सरल भाषा में, इसमें डेटा को लेना, प्रोसेस करना और उपयोगी परिणाम उत्पन्न करना शामिल होता है।</p>
+
+    <h2>2. Steps of Data Processing (डेटा प्रोसेसिंग के चरण)</h2>
+    <p>The basic steps involved in data processing are:</p>
+    <ul>
+        <li class="left-right-border-box-2">
+            <div class="left-border-sky">
+                <p><b>Input (इनपुट):</b> Data is collected from various sources. For example, entering data into a spreadsheet.</p>
+            </div>
+        </li>
+        <li class="left-right-border-box-2">
+            <div class="left-border-green">
+                <p><b>Processing (प्रोसेसिंग):</b> The collected data is processed through calculations, sorting, or organizing. For example, calculating the total sales for a month.</p>
+            </div>
+        </li>
+        <li class="left-right-border-box-2">
+            <div class="left-border-purple">
+                <p><b>Output (आउटपुट):</b> The processed data is then converted into useful information. For example, generating a sales report or chart.</p>
+            </div>
+        </li>
+    </ul>
+
+    <h2>3. Examples (उदाहरण)</h2>
+    <div class="example">
+        <h3>Example 1:</h3>
+        <p><span>Calculating Average Marks:</span> You enter the marks of students (Input), calculate the average (Processing), and generate a report of average marks (Output).</p>
+    </div>
+    <div class="example">
+        <h3>Example 2:</h3>
+        <p><span>Inventory Management:</span> Input data about stock items, process it to update stock levels, and output a report on current inventory status.</p>
+    </div>
+
+    <h2>4. Importance of Data Processing (डेटा प्रोसेसिंग का महत्व)</h2>
+    <p>Data processing is crucial for making informed decisions. By converting raw data into meaningful information, businesses and individuals can make better choices and solve problems more effectively.</p>
+    <p>डेटा प्रोसेसिंग महत्वपूर्ण है क्योंकि यह सूचित निर्णय लेने में मदद करता है। कच्चे डेटा को उपयोगी जानकारी में बदलकर, व्यवसाय और व्यक्ति बेहतर विकल्प चुन सकते हैं और समस्याओं को अधिक प्रभावी ढंग से हल कर सकते हैं। </p>
+
+    <h2>5. Conclusion (निष्कर्ष)</h2>
+    <p>I hope this guide helps you understand the concept of data processing clearly and how it is applied in real-world scenarios.</p>
+    <p>आशा है कि इस गाइड से आपको डेटा प्रोसेसिंग के अवधारणा को स्पष्ट रूप से समझने में मदद मिली होगी और यह कैसे वास्तविक दुनिया के परिदृश्यों में लागू होती है।</p>
+</div>

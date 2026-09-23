@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birthday Wish for Savita</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div id="page-container">
+        <audio id="background-music" src="its-your-birthday-song.mp3" preload="auto"></audio>
+        <div id="gift-box" onclick="playMusic()">
+            <img src="gift-box.png" alt="Gift Box">
+        </div>
+        <div id="content">
+            <div id="image">
+                <img src="../priti.png" alt="Savita" height="100px" weight="200px">
+            </div>
+            <h1>Happy Birthday Priti!</h1>
+            <div id="shayari">
+                <p>शुभ जन्मदिन की शुभकामनाएँ,</p>
+                <p>तेरी खुशियाँ हों हमेशा चहकती,</p>
+                <p>तेरे जीवन में आये हर दिन,</p>
+                <p>खुशियों की बौछारें बरसाती।</p>
+            </div>
+            <div id="balloons"></div>
+        </div>
+    </div>
+    <div id="popup" class="hidden">
+        <div class="popup-content">
+            <h2>Happy Birthday Priti!</h2>
+            <p>Wishing you a day filled with love and joy!</p>
+            <button onclick="closePopup()">Close</button>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

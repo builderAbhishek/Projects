@@ -1,0 +1,174 @@
+<?php
+session_start();
+
+// Check if the user is not logged in, redirect to login page
+if (!isset($_SESSION["school_id"])) {
+    header("Location: /attendance/login.php");
+    exit;
+}
+?>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>New Admission</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <!-- Start Header -->
+  <!-- <header class="header">
+    <div class="container">
+      <div class="header-area justify-content-center align-items-center">
+        <div class="logo">SkyNet</div>
+        <div class="links-container">
+          <ul class="links">
+            <li><a href="index.php">Home</a></li>
+            <li><a href="#why-us">Why Us</a></li>
+            <li><a href="#courses">Courses</a></li>
+            <li><a href="#reviews">Reviews</a></li>
+            <li><a href="#contact">Contact Us</a></li>
+            <button class="btn2">Submit</button>
+          </ul>
+          <button class="toggle-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+          </button>
+        </div>
+      </div>
+      </div>
+  </header> -->
+  
+  <div id="header">
+    <!-- Include header.html here -->
+    <?php include 'header.html'; ?>
+</div>
+  <!-- End Header -->
+
+<!-- Start Contact Section -->
+<section class="contact-section sec-padding" id="contact">
+  <div class="container">
+    <div class="row">
+      <div class="section-title">
+        <h2>New<span> Admission</span></h2>
+      </div>
+    </div>
+    <div class="row">
+      <div class="contact-img">
+        <img src="img/contact-img.png" alt="Contact-img">
+      </div>
+      <div class="contact-form">
+        <form id="registrationForm" method="post">
+            
+          <div class="input-group">
+            <input type="text" name="name" id="name" placeholder="Name" class="form-control" required>
+          </div>
+          <div class="select">
+              <select id="class" name="class" required>
+                <option value="">Select Class</option>
+                <option value="1">Class 1</option>
+                <option value="2">Class 2</option>
+                <option value="3">Class 3</option>
+                <option value="4">Class 4</option>
+                <option value="5">Class 5</option>
+                <option value="6">Class 6</option>
+                <option value="7">Class 7</option>
+                <option value="8">Class 8</option>
+                <option value="9">Class 9</option>
+                <option value="10">Class 10</option>
+                <option value="11">Class 11</option>
+                <option value="12">Class 12</option>
+              </select>
+              <br><br>
+              <select id="section" name="section" required>
+                <option value="">Select Section</option>
+                <option value="A">Section A</option>
+                <option value="B">Section B</option>
+                <option value="C">Section C</option>
+                <option value="D">Section D</option>
+                <option value="E">Section E</option>
+              </select>
+              </div><br>
+          <div class="input-group">
+            <input type="text" id="roll_number" name="roll_number" placeholder="Roll Number" class="form-control" required>
+          </div>
+          <div class="input-group">
+              <input type="text" id="rfid_number" name="rfid_number" class="form-control" placeholder="RFID Number" required>
+          </div>
+          <div class="input-group">
+              <input type="text" id="school_id" name="school_id" class="form-control" placeholder="School ID" value="<?php echo $_SESSION['school_id']; ?>" readonly required>
+              </div>
+          <div class="input-group">
+              <input type="text" id="device_number" name="device_number" class="form-control" placeholder="Device Number" required>
+              </div>
+          <div class="input-group">
+            <input type="text" id="father_name" name="father_name" placeholder="Father Name" class="form-control" required>
+          </div>
+          <div class="input-group">
+            <input type="text" id="mobile_number" name="mobile_number" placeholder="Mobile Number" class="form-control" required>
+          </div>
+          <div class="input-group">
+            <input type="email" id="email" name="email" placeholder="Email Id" class="form-control">
+          </div>
+          <div class="input-group">
+            <textarea id="address" name="address" placeholder="Address" class="form-control" required></textarea>
+          </div>
+          <div class="input-group">
+            <h3>Gender</h3><br>
+            <input type="radio" id="male" name="gender" value="male" required>
+            <label class="label" for="male">Male</label>
+            <input type="radio" id="female" name="gender" value="female" required>
+            <label class="label" for="female">Female</label><br>
+          </div>
+          <div class="input-group">
+            <h3>Date of Birth:</h3><br>
+            <input class="date" type="date" id="dob" name="dob" required><br><br>
+            <button type="submit" value="Register" class="btn btn-1">Submit</button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Script to handle registration form submission and response -->
+<script>
+  document.getElementById('registrationForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    
+    // Create form data object
+    var formData = new FormData(this);
+
+    // Send form data using AJAX
+    fetch('submit_registration.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => response.json()) // Parse response as JSON
+    .then(data => {
+      // Display response message in a popup
+      alert(data.message);
+      // Reload the page if registration was successful
+      if (data.success) {
+        location.reload();
+      }
+    })
+    .catch(error => {
+      console.error('Error:', error);
+    });
+  });
+</script>
+
+<div id="footer" class="footer">
+    
+    <!-- Include header.html here -->
+    <?php include 'footer.html'; ?>
+</div>
+<!-- End Footer -->
+<script src="main.js"></script>
+</body>
+</html>z

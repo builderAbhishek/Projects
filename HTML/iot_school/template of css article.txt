@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IoT Tutorial</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="article-style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav>
+            <div class="logo">
+                <h1>IoT Tutorials</h1>
+            </div>
+        </nav>
+    </header>
+
+    <div class="nav-item">
+        <!-- <h3>IoT Courses</h3> -->
+        <div class="scroll-buttons">
+            <button class="scroll-left" onclick="scrollLeftBtn()">&#10094;</button>
+            <ul class="scrollable-list">
+                <li><a href="/course/intro-to-iot"><i class="bx bx-link"></i> Introduction to IoT</a></li>
+                <li><a href="/course/iot-for-beginners"><i class="bx bx-link"></i> IoT for Beginners</a></li>
+                <li><a href="/course/iot-and-smart-devices"><i class="bx bx-link"></i> IoT and Smart Devices</a></li>
+                <li><a href="/course/iot-security"><i class="bx bx-link"></i> IoT Security and Privacy</a></li>
+                <li><a href="/course/iot-systems-and-applications"><i class="bx bx-link"></i> IoT Systems and Applications</a></li>
+                <li><a href="/course/advanced-iot-design"><i class="bx bx-link"></i> Advanced IoT Design</a></li>
+                <li><a href="/course/iot-with-raspberry-pi"><i class="bx bx-link"></i> IoT with Raspberry Pi</a></li>
+                <li><a href="/course/smart-home-iot"><i class="bx bx-link"></i> Smart Home IoT</a></li>
+                <li><a href="/course/iot-for-industries"><i class="bx bx-link"></i> IoT for Industrial Applications</a></li>
+                <li><a href="/course/iot-data-analysis"><i class="bx bx-link"></i> IoT Data Analysis and Visualization</a></li>
+            </ul>
+            <button class="scroll-right" onclick="scrollRightBtn()">&#10095;</button>
+        </div>
+    </div>
+
+    <script>
+// Function for left button scroll with boundary check
+function scrollLeftBtn() {
+    const list = document.querySelector('.scrollable-list');
+    // Check if we are at the left edge (don't scroll if already at the edge)
+    if (list.scrollLeft > 0) {
+        list.scrollBy({
+            left: -200,  // Scroll by 200px (adjust as needed)
+            behavior: 'smooth'
+        });
+    }
+}
+
+// Function for right button scroll with boundary check
+function scrollRightBtn() {
+    const list = document.querySelector('.scrollable-list');
+    // Check if we are at the right edge (don't scroll if already at the edge)
+    if (list.scrollLeft < (list.scrollWidth - list.clientWidth)) {
+        list.scrollBy({
+            left: 200,  // Scroll by 200px (adjust as needed)
+            behavior: 'smooth'
+        });
+    }
+}
+
+let isMouseDown = false;
+let startX;
+let scrollLeftPosition;
+
+const scrollableList = document.querySelector('.scrollable-list');
+
+// Prevent drag event from firing when a button is clicked
+let isButtonClicked = false;
+
+// Enable smooth scrolling when mouse is pressed down and moved
+scrollableList.addEventListener('mousedown', (e) => {
+    if (isButtonClicked) return; // Prevent scrolling during button click
+    e.preventDefault(); // Prevent default action of text selection
+    isMouseDown = true;
+    startX = e.pageX - scrollableList.offsetLeft;
+    scrollLeftPosition = scrollableList.scrollLeft;
+    scrollableList.classList.add('grabbing');  // Change cursor to grabbing
+});
+
+// Mouse move event: when dragging
+scrollableList.addEventListener('mousemove', (e) => {
+    if (!isMouseDown) return;
+    const x = e.pageX - scrollableList.offsetLeft;
+    const walk = (x - startX) * 2;  // Adjust the multiplier to control scroll speed
+    scrollableList.scrollLeft = scrollLeftPosition - walk;
+});
+
+// Mouse up event: stop dragging
+scrollableList.addEventListener('mouseup', () => {
+    isMouseDown = false;
+    scrollableList.classList.remove('grabbing');  // Reset cursor
+});
+
+// Mouse leave event: stop dragging if the mouse leaves the list area
+scrollableList.addEventListener('mouseleave', () => {
+    if (isMouseDown) {
+        isMouseDown = false;
+        scrollableList.classList.remove('grabbing');
+    }
+});
+
+// Touch events for mobile users
+scrollableList.addEventListener('touchstart', (e) => {
+    if (isButtonClicked) return; // Prevent scrolling during button click
+    e.preventDefault();
+    isMouseDown = true;
+    startX = e.touches[0].pageX - scrollableList.offsetLeft;
+    scrollLeftPosition = scrollableList.scrollLeft;
+});
+
+scrollableList.addEventListener('touchmove', (e) => {
+    if (!isMouseDown) return;
+    const x = e.touches[0].pageX - scrollableList.offsetLeft;
+    const walk = (x - startX) * 2;  // Adjust the multiplier to control scroll speed
+    scrollableList.scrollLeft = scrollLeftPosition - walk;
+});
+
+scrollableList.addEventListener('touchend', () => {
+    isMouseDown = false;
+});
+
+scrollableList.addEventListener('touchcancel', () => {
+    isMouseDown = false;
+});
+
+// Button click handling to prevent double scrolling
+document.querySelector('.scroll-left').addEventListener('click', (e) => {
+    isButtonClicked = true;
+    scrollLeftBtn();
+    setTimeout(() => isButtonClicked = false, 300);  // Reset after 300ms to avoid interference
+});
+
+document.querySelector('.scroll-right').addEventListener('click', (e) => {
+    isButtonClicked = true;
+    scrollRightBtn();
+    setTimeout(() => isButtonClicked = false, 300);  // Reset after 300ms to avoid interference
+});
+
+    </script>
+
+    <div class="main-container">
+        <!-- Left Sidebar Section -->
+        <div class="left-sidebar">
+            <div class="left-sidebar-list">
+                <h2>IoT Tutorial</h2>
+                <ul>
+                    <li><a href="#">Introduction to IoT</a></li>
+                    <li><a href="#">Sensors & Actuators</a></li>
+                    <li><a href="#">Networking in IoT</a></li>
+                    <li><a href="#">IoT Security</a></li>
+                    <li><a href="#">Advanced IoT Projects</a></li>
+                    <li><a href="#">Introduction to IoT</a></li>
+                    <li><a href="#">Sensors & Actuators</a></li>
+                    <li><a href="#">Networking in IoT</a></li>
+                    <li><a href="#">IoT Security</a></li>
+                    <li><a href="#">Advanced IoT Projects</a></li>
+                    <li><a href="#">Introduction to IoT</a></li>
+                    <li><a href="#">Sensors & Actuators</a></li>
+                    <li><a href="#">Networking in IoT</a></li>
+                    <li><a href="#">IoT Security</a></li>
+                    <li><a href="#">Advanced IoT Projects</a></li>
+                    <li><a href="#">Introduction to IoT</a></li>
+                    <li><a href="#">Sensors & Actuators</a></li>
+                    <li><a href="#">Networking in IoT</a></li>
+                    <li><a href="#">IoT Security</a></li>
+                    <li><a href="#">Advanced IoT Projects</a></li>
+                    <li><a href="#">Introduction to IoT</a></li>
+                    <li><a href="#">Sensors & Actuators</a></li>
+                    <li><a href="#">Networking in IoT</a></li>
+                    <li><a href="#">IoT Security</a></li>
+                    <li><a href="#">Advanced IoT Projects</a></li>
+                    <li><a href="#">Introduction to IoT</a></li>
+                    <li><a href="#">Sensors & Actuators</a></li>
+                    <li><a href="#">Networking in IoT</a></li>
+                    <li><a href="#">IoT Security</a></li>
+                    <li><a href="#">Advanced IoT Projects</a></li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Main Content Section -->
+       
+        <div class="content-section">
+            <h2>h2 content-section tag</h2>
+        
+            <div class="tuto-info">
+                <p>p tuto-info tag</p>
+                <p>p tuto-info tag</p>
+            </div>
+        
+            <p><strong>strong content-section tag</strong> p content-section tag</p>
+        
+            <p>p content-section tag</p>
+        
+            <div class="imp-bg2">
+                <h3>h3 imp-bg2 tag</h3>
+                <p><strong>strong imp-bg2 tag</strong> p imp-bg2 tag
+                    <ul>
+                        <li><strong>strong imp-bg2 tag</strong> li imp-bg2 tag</li>
+                        <li><strong>strong imp-bg2 tag</strong> li imp-bg2 tag</li>
+                        <li><strong>strong imp-bg2 tag</strong> li imp-bg2 tag</li>
+                    </ul>
+                </p>
+            </div>
+        
+            <div class="imp-bg1">
+                <p><strong>strong imp-bg1 tag</strong> p imp-bg1 tag
+                    <ul>
+                        <li><strong>strong imp-bg1 tag</strong> li imp-bg1 tag</li>
+                        <li><strong>strong imp-bg1 tag</strong> li imp-bg1 tag</li>
+                        <li><strong>strong imp-bg1 tag</strong> li imp-bg1 tag</li>
+                    </ul>
+                </p>
+            </div>
+        
+            <div class="examples1">
+                <h3>h3 examples1 tag</h3>
+                <ul>
+                    <li><strong>strong examples1 tag</strong> li examples1 tag</li>
+                    <li><strong>strong examples1 tag</strong> li examples1 tag</li>
+                    <li><strong>strong examples1 tag</strong> li examples1 tag</li>
+                </ul>
+            </div>
+        
+            <div class="imp-bg3">
+                <p><strong>strong imp-bg3 tag</strong> p imp-bg3 tag
+                    <ul>
+                        <li><strong>strong imp-bg3 tag</strong> li imp-bg3 tag</li>
+                        <li><strong>strong imp-bg3 tag</strong> li imp-bg3 tag</li>
+                        <li><strong>strong imp-bg3 tag</strong> li imp-bg3 tag</li>
+                    </ul>
+                </p>
+            </div>
+        
+        
+
+    <p><strong>Challenges in IoT:</strong> IoT ke kuch challenges bhi hain, jaise security concerns, privacy issues, aur connectivity problems. Jab cheezein internet se connected hoti hain, to unhe hack hone ka risk hota hai, aur data privacy ko leke concerns bhi ho sakte hain. In challenges ka solution dhundhna zaroori hai.</p>
+
+     </div>
+        <!-- Right Additional Resources Section -->
+        <div class="right-sidebar">
+            <h3>Additional Resources</h3>
+            <ul>
+                <li><a href="#">IoT Development Kits</a></li>
+                <li><a href="#">IoT Platform Providers</a></li>
+                <li><a href="#">IoT Programming Languages</a></li>
+                <li><a href="#">IoT Protocols</a></li>
+                <li><a href="#">IoT Security Best Practices</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <footer>
+        <p>&copy; 2024 IoT Tutorials. All rights reserved.</p>
+    </footer>
+
+</body>
+
+</html>

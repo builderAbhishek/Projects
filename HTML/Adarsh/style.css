@@ -1,0 +1,258 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    line-height: 1.6;
+  }
+  
+  h1, h2, h3 {
+    color: #333;
+    margin-bottom: 15px;
+  }
+  
+  ul {
+    list-style-type: none;
+  }
+  
+  /* Container */
+  .container {
+    width: 85%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  /* Header */
+  header {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    text-align: center;
+  }
+  
+  header h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+  }
+  
+  nav ul {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 600;
+    transition: all 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    color: #007BFF;
+    transform: scale(1.1);
+  }
+  
+  /* Section Styling */
+  .section {
+    padding: 60px 0;
+    text-align: center;
+    background-color: #fff;
+    margin-top: 20px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .section h2 {
+    font-size: 2rem;
+    margin-bottom: 30px;
+  }
+  
+  /* About Me */
+  #about p {
+    font-size: 1.1rem;
+    max-width: 800px;
+    margin: 0 auto;
+    line-height: 1.8;
+    text-align: justify;
+  }
+  
+  /* My Skills */
+  #skills ul {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 15px;
+    font-size: 1.1rem;
+  }
+  
+  #skills li {
+    background-color: #f4f4f4;
+    padding: 10px 20px;
+    border-radius: 25px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  #skills li:hover {
+    background-color: #007BFF;
+    color: white;
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+  }
+  
+  /* My Projects */
+  .projects {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  
+  .project {
+    width: 100%;
+    max-width: 350px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+  }
+  
+  .project img {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+  }
+  
+  .project h3 {
+    margin-top: 10px;
+  }
+  
+  .project p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 10px;
+  }
+  
+  .project a {
+    color: #007BFF;
+    text-decoration: none;
+    font-weight: bold;
+  }
+  
+  .project a:hover {
+    text-decoration: underline;
+  }
+  
+  .project:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Contact Section */
+  form input, form textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+  }
+  
+  form input[type="submit"] {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    font-size: 1.1rem;
+    cursor: pointer;
+  }
+  
+  form input[type="submit"]:hover {
+    background-color: #0056b3;
+    transition: all 0.3s ease;
+  }
+  
+  form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+    text-align: left;
+  }
+  
+  #formMessage {
+    margin-top: 20px;
+    color: green;
+    font-size: 1.1rem;
+  }
+  
+  /* Footer */
+  footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 15px 0;
+    margin-top: 30px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    header h1 {
+      font-size: 2rem;
+    }
+  
+    nav ul {
+      flex-direction: column;
+      gap: 10px;
+    }
+  
+    .projects {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    .project {
+      width: 90%;
+    }
+  
+    #skills ul {
+      flex-direction: column;
+      align-items: center;
+    }
+  
+    form input, form textarea {
+      font-size: 1rem;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    header h1 {
+      font-size: 1.8rem;
+    }
+  
+    nav ul {
+      gap: 5px;
+    }
+  
+    .section {
+      padding: 40px 0;
+    }
+  
+    #skills li {
+      font-size: 1rem;
+    }
+  
+    form input, form textarea {
+      padding: 12px;
+    }
+  
+    form input[type="submit"] {
+      padding: 12px;
+      font-size: 1rem;
+    }
+  }
+  

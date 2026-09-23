@@ -1,0 +1,750 @@
+/* Resetting some default styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+}
+
+/* Header Styles */
+header {
+    background-color: #007BFF;
+    padding: 20px 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo h1 {
+    color: white;
+    font-size: 28px;
+    transition: all 0.3s;
+}
+
+.logo h1:hover {
+    color: #FF5733;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+}
+
+.nav-links li {
+    margin-left: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    transition: all 0.3s;
+}
+
+.nav-links a:hover {
+    text-decoration: underline;
+    color: #FF5733;
+}
+
+
+/* 
+-------------------------
+-------------------------
+   Nav List Start Here 
+-------------------------
+-------------------------
+*/
+
+
+.nav-item {
+    position: relative;
+}
+
+.nav-item h3 {
+    font-size: 20px;
+    margin-bottom: 10px;
+}
+
+.scroll-buttons {
+    display: flex;
+    align-items: center;
+    background-color: #0100a3;
+    justify-content: space-between;
+    overflow-x: auto;
+    white-space: nowrap;
+}
+
+.scrollable-list {
+    display: flex;
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    overflow-x: hidden;  /* Hide scrollbar */
+    width: 100%;
+    cursor: grab; /* Indicates to the user that it is draggable */
+}
+
+.scrollable-list li {
+    margin-right: 20px;
+}
+
+/* Prevent text selection in the entire scrollable list */
+.scrollable-list, .scrollable-list a {
+    user-select: none; /* Disable text selection */
+}
+
+.scrollable-list a {
+    text-decoration: none;
+    color: #ffffff; /* Customize the color */
+    font-size: 16px;
+    display: flex;
+    align-items: center;
+    transition: color 0.3s ease; /* Smooth transition on hover */
+    user-select: none;  /* Prevent text selection */
+    pointer-events: auto;
+}
+
+.scrollable-list a:hover {
+    color: #007BFF;
+}
+
+/* Cursor effect for links */
+.scrollable-list a:active {
+    user-select: none;  /* Disable selection during clicks */
+    cursor: pointer;
+}
+
+/* Prevent accidental selection and drag on the list */
+.scrollable-list {
+    pointer-events: auto; /* Ensure interaction with the list */
+}
+
+/* Prevent scrolling by dragging */
+.scrollable-list {
+    overflow-x: hidden; /* Ensure that dragging doesn’t trigger unwanted scroll */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+/* Optional: Scroll container should have pointer-events auto to handle button clicks */
+.scrollable-list {
+    pointer-events: auto;
+}
+
+/* Smooth cursor during dragging */
+.scrollable-list {
+    cursor: grab;
+}
+
+.scrollable-list.grabbing {
+    cursor: grabbing; /* Changes cursor when dragging */
+}
+
+.scrollable-list i {
+    margin-right: 8px;
+}
+
+.scroll-left, .scroll-right {
+    background-color: #000000;
+    color: white;
+    border: none;
+    padding: 10px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.scroll-left:hover, .scroll-right:hover {
+    background-color: #0056b3;
+}
+
+.scroll-left {
+    margin-right: 10px;
+}
+
+.scroll-right {
+    margin-left: 10px;
+}
+
+/* Optional: Styling for the scrollbar */
+.nav-item::-webkit-scrollbar {
+    height: 8px;
+}
+
+.nav-item::-webkit-scrollbar-thumb {
+    background-color: #007BFF;
+    border-radius: 10px;
+}
+
+.nav-item::-webkit-scrollbar-track {
+    background-color: #f1f1f1;
+}
+
+/* 
+-------------------------
+-------------------------
+   Nav List End Here 
+-------------------------
+-------------------------
+*/
+
+
+/* Hero Section */
+/* Hero Section */
+.hero {
+    background-color: #007BFF;
+    color: white;
+    padding: 70px 0;
+    text-align: center;
+    position: relative;
+    animation: fadeIn 2s ease-in-out;
+    overflow: hidden;
+}
+
+.hero-content h2 {
+    font-size: 48px;
+    margin-bottom: 20px;
+    animation: fadeInUp 1s ease-in-out;
+    text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2); /* Adding shadow */
+}
+
+.hero-content p {
+    font-size: 22px;
+    margin-bottom: 30px;
+    animation: fadeInUp 1.5s ease-in-out;
+}
+
+/* Search Container */
+.search-container {
+    margin-top: 30px;
+    margin-bottom: 30px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    animation: fadeInUp 2s ease-in-out;
+}
+
+.search-input {
+    padding: 10px;
+    font-size: 18px;
+    width: 300px;
+    border-radius: 5px;
+    border: none;
+    outline: none;
+    transition: all 0.3s ease;
+}
+
+.search-input:focus {
+    box-shadow: 0 0 5px 3px rgba(0, 123, 255, 0.6); /* Focus effect */
+    border: 2px solid #007BFF;
+}
+
+.search-btn {
+    background-color: #FF5733;
+    color: white;
+    padding: 12px 25px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+.search-btn:hover {
+    background-color: #FF3D00;
+    transform: scale(1.1);
+}
+
+/* CTA Button */
+.cta-button {
+    color: white;
+    padding: 10px 30px;
+    margin-top: 20px;
+    text-decoration: none;
+    font-size: 22px;
+    font-weight: 700;
+    text-decoration: underline;
+    border-radius: 5px;
+    animation: fadeInUp 2s ease-in-out;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-button:hover {
+    background-color: #FF3D00;
+    transform: scale(1.05);
+}
+
+
+/* Courses Section */
+.courses {
+    padding: 50px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.courses h2 {
+    font-size: 30px;
+    margin-bottom: 30px;
+}
+
+.course-list {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+
+/* Card for courseeee */
+/* From Uiverse.io by Yaya12085 */ 
+.plan {
+    border-radius: 16px;
+    box-shadow: 0 30px 30px -25px rgba(0, 38, 255, 0.205);
+    padding: 10px;
+    background-color: #fff;
+    color: #697e91;
+    max-width: 300px;
+  }
+  
+  .plan strong {
+    font-weight: 600;
+    color: #425275;
+  }
+  
+  .plan .inner {
+    align-items: center;
+    padding: 20px;
+    padding-top: 40px;
+    background-color: #ecf0ff;
+    border-radius: 12px;
+    position: relative;
+  }
+  
+  .plan .pricing {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: #ff6633;
+    border-radius: 99em 0 0 99em;
+    display: flex;
+    align-items: center;
+    padding: 0.35em 0.5em;
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #fff;
+  }
+  
+  .plan .pricing small {
+    color: #fff;
+    font-size: 0.75em;
+    margin-left: 0.25em;
+  }
+  
+  .plan .title {
+    font-weight: 600;
+    font-size: 1.25rem;
+    color: #425675;
+    text-align: left; /* Aligns the title to the left */
+  }
+  
+  
+  .plan .title + * {
+    margin-top: 0.75rem;
+    text-align: left;
+  }
+  
+  .plan .info + * {
+    margin-top: 1rem;
+  }
+  
+  .plan .features {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .plan .features li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  
+  .plan .features li + * {
+    margin-top: 0.75rem;
+  }
+  
+  .plan .features .icon {
+    background-color: #1FCAC5;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+  }
+  
+  .plan .features .icon svg {
+    width: 14px;
+    height: 14px;
+  }
+  
+  .plan .features + * {
+    margin-top: 1.25rem;
+  }
+  
+  .plan .action {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: end;
+  }
+  
+  .plan .button {
+    background-color: #6558d3;
+    border-radius: 6px;
+    color: #fff;
+    font-weight: 500;
+    font-size: 1.125rem;
+    text-align: center;
+    border: 0;
+    outline: 0;
+    width: 100%;
+    padding: 0.625em 0.75em;
+    text-decoration: none;
+  }
+  
+  .plan .button:hover, .plan .button:focus {
+    background-color: #4133B7;
+  }
+
+/* Animation Styles */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    /* Hide navigation links initially */
+    .nav-links {
+        display: none;
+        width: 100%;
+        text-align: center;
+        background-color: #007BFF;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        z-index: 9999;
+        padding: 15px 0;
+        border-radius: 8px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease-in-out;
+        transform: translateY(-20px); /* Start from slightly above */
+    }
+
+    /* When the navigation menu is active */
+    .nav-links.active {
+        display: block;
+        transform: translateY(0); /* Slide in */
+    }
+
+    /* Style for list items */
+    .nav-links li {
+        margin: 10px 0;
+        padding: 12px;
+        width: 100%;
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #fff;
+        transition: background-color 0.3s ease;
+        border-radius: 5px;
+    }
+
+    /* Hover effect for list items */
+    .nav-links li:hover {
+        background-color: #0056b3; /* Darker blue on hover */
+        cursor: pointer;
+    }
+
+    /* Style for links within the list items */
+    .nav-links li a {
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+        font-size: 1.1rem;
+        font-weight: 500;
+        transition: color 0.3s ease;
+    }
+
+    /* Hover effect for links */
+    .nav-links li a:hover {
+        color: #ffd700; /* Golden color on hover */
+    }
+
+
+    .hero {
+        padding: 50px 15px;
+    }
+
+    .hero-content h2 {
+        font-size: 32px;
+    }
+
+    .cta-button {
+        padding: 12px 25px;
+    }
+
+    .course-list {
+        flex-direction: column;
+    }
+
+    .course-card {
+        width: 90%;
+        margin: 10px auto;
+    }
+}
+
+/* Hamburger Menu */
+.hamburger-menu {
+    display: none;
+    cursor: pointer;
+    font-size: 28px;
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .hamburger-menu {
+        display: block;
+    }
+}
+
+
+/* ----------------------------------
+-------------------------------------
+        Tutorial Page style
+        Start Here 
+-------------------------------------
+-------------------------------------*/
+
+/* Main Layout (Flexbox) */
+.main-container {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+/* Left Sidebar Styles */
+.left-sidebar {
+    min-width: 250px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: 100vh; /* Full viewport height */
+    position: sticky; /* Keep the sidebar sticky while scrolling */
+    top: 0; /* Stick it to the top */
+    overflow-y: auto; /* Makes the sidebar scrollable */
+    margin-right: 20px;
+}
+
+.left-sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* Style for the list and items */
+.left-sidebar ul {
+    list-style: none;
+    padding-left: 16px;
+}
+
+.left-sidebar li {
+    margin: 10px 0;
+    padding: 2px;
+    border-bottom: 1px solid #ddd; /* Adds a line between each item */
+}
+
+/* Link Styling */
+.left-sidebar a {
+    color: #000000;
+    text-decoration: none;
+    font-size: 15px;
+    display: block;
+    padding: 5px 0;
+}
+
+/* Hover Effects for list items */
+.left-sidebar a:hover {
+    color: #fff;
+    background-color: #007BFF; /* Background color change on hover */
+    padding-left: 10px; /* Indicate it's an active/hovered item */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Active or Selected Item Hover Effect */
+.left-sidebar li:hover {
+    background-color: #f0f8ff; /* Light blue hover background for list items */
+    border-bottom: 2px solid #007BFF; /* Make it more distinct on hover */
+}
+
+
+.left-sidebar-list {
+    width: 100%;
+}
+
+
+/* Main Content Section */
+.content-section {
+    width: 83%;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.content-section h2 {
+    font-size: 32px;
+    font-weight: 600;
+    color: #000;
+    margin-bottom: 20px;
+    margin-top: 50px;
+}
+
+.tuto-info {
+    background-color: #D9EEE1;
+    border-left: none;
+    padding: 32px;
+    margin: 24px;
+    margin-left: -20px;
+    margin-right: -20px;
+}
+
+.tuto-info p {
+    color: #000;
+}
+
+.imp-p1 {
+    background-color: #D9EEE1;
+    color: #000;
+}
+
+.content-section p {
+    font-size: 18px;
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+/* Right Sidebar Styles */
+/* Right Sidebar Styles */
+.right-sidebar {
+    max-width: 200px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    height: 100vh; /* Full viewport height */
+    position: sticky; /* Keep the sidebar sticky while scrolling */
+    top: 0; /* Stick it to the top */
+    overflow-y: auto; /* Makes the sidebar scrollable */
+    margin-left: 20px;
+}
+
+.right-sidebar h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+}
+
+/* Style for the list and items in the right sidebar */
+.right-sidebar ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.right-sidebar li {
+    margin: 10px 0;
+    padding: 8px;
+    border-bottom: 1px solid #ddd; /* Adds a line between each item */
+}
+
+/* Link Styling */
+.right-sidebar a {
+    color: #007BFF;
+    text-decoration: none;
+    font-size: 18px;
+    display: block;
+    padding: 5px 0;
+}
+
+/* Hover Effects for list items in the right sidebar */
+.right-sidebar a:hover {
+    color: #fff;
+    background-color: #007BFF; /* Background color change on hover */
+    padding-left: 10px; /* Indicate it's an active/hovered item */
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Active or Selected Item Hover Effect in right sidebar */
+.right-sidebar li:hover {
+    background-color: #f0f8ff; /* Light blue hover background for list items */
+    border-bottom: 2px solid #007BFF; /* Make it more distinct on hover */
+}
+
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 50px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+}
+
+/* Media Queries for Mobile Devices */
+@media (max-width: 768px) {
+    .main-container {
+        flex-direction: column;
+    }
+
+    .left-sidebar {
+        display: none;
+    }
+
+    .left-sidebar, .content-section, .right-sidebar {
+        width: 100%;
+        margin-bottom: 20px;
+    }
+}

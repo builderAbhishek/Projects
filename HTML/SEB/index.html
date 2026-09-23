@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Home Control</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    padding: 20px;
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: #fff;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+}
+
+.relay-control {
+    margin: 20px 0;
+    text-align: center;
+}
+
+button {
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    background-color: #007bff;
+    color: white;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Smart Home Control</h1>
+        <div class="relay-control">
+            <h2>Control Relay 1</h2>
+            <button onclick="toggleRelay('relay1/on')">Turn ON</button>
+            <button onclick="toggleRelay('relay1/off')">Turn OFF</button>
+            <p id="relay1Status">Status: Unknown</p>
+        </div>
+        <div class="relay-control">
+            <h2>Control Relay 2</h2>
+            <button onclick="toggleRelay('relay2/on')">Turn ON</button>
+            <button onclick="toggleRelay('relay2/off')">Turn OFF</button>
+            <p id="relay2Status">Status: Unknown</p>
+        </div>
+    </div>
+    <script>
+        const espIP = "http://192.168.4.1"; // Change this to your ESP8266's IP
+
+function toggleRelay(action) {
+    fetch(`${espIP}/${action}`)
+        .then(response => response.text())
+        .then(data => {
+            console.log(data);
+            updateRelayStatus();
+        })
+        .catch(error => console.error('Error:', error));
+}
+
+function updateRelayStatus() {
+    fetch(`${espIP}/status`)
+        .then(response => response.json())
+        .then(data => {
+            document.getElementById('relay1Status').innerText = "Status: " + (data.relay1 ? "ON" : "OFF");
+            document.getElementById('relay2Status').innerText = "Status: " + (data.relay2 ? "ON" : "OFF");
+        })
+        .catch(error => console.error('Error fetching status:', error));
+}
+
+// Update status on page load
+document.addEventListener('DOMContentLoaded', updateRelayStatus);
+
+    </script>
+</body>
+</html>

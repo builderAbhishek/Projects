@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Background Remover</title>
+    <style>
+        /* styles.css */
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f8f8f8;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        .container {
+            max-width: 600px;
+            margin: 0 auto;
+            padding: 50px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        form {
+            margin: 20px 0;
+        }
+
+        input[type="file"] {
+            font-size: 1.2rem;
+            padding: 10px;
+            margin: 10px 0;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1.2rem;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        #loading {
+            font-size: 1.5rem;
+            color: #007BFF;
+        }
+
+        #result h2 {
+            margin-top: 30px;
+        }
+
+        .upload-again-btn {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Remove Image Background</h1>
+        
+        <!-- Form to upload the image -->
+        <form id="imageForm" enctype="multipart/form-data">
+            <input type="file" id="imageInput" name="image" accept="image/*" required />
+            <button type="submit">Upload & Remove Background</button>
+        </form>
+
+        <!-- Loading message while image is being processed -->
+        <div id="loading" class="hidden">Processing...</div>
+
+        <!-- Result section to show processed image and download link -->
+        <div id="result" class="hidden">
+            <h2>Download Processed Image</h2>
+            <a id="downloadLink" href="#" download="output_image.png">
+                <button>Download Image</button>
+            </a>
+            <div class="upload-again-btn">
+                <button id="removeAnotherBtn">Remove Another Background</button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('imageForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+
+            // Show loading message
+            document.getElementById('loading').classList.remove('hidden');
+            document.getElementById('result').classList.add('hidden');
+
+            const formData = new FormData();
+            formData.append('image', document.getElementById('imageInput').files[0]);
+
+            fetch('/upload', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.blob())
+            .then(blob => {
+                // Hide loading and show result
+                document.getElementById('loading').classList.add('hidden');
+                document.getElementById('result').classList.remove('hidden');
+
+                // Create a download link for the processed image
+                const downloadLink = document.getElementById('downloadLink');
+                downloadLink.href = URL.createObjectURL(blob);
+            })
+            .catch(error => {
+                alert('An error occurred while processing the image.');
+                console.error(error);
+            });
+        });
+
+        // Handle the "Remove Background from Another Image" button click
+        document.getElementById('removeAnotherBtn').addEventListener('click', function() {
+            // Reset the form and hide the result section
+            document.getElementById('imageForm').reset();
+            document.getElementById('result').classList.add('hidden');
+            document.getElementById('loading').classList.add('hidden');
+        });
+    </script>
+
+</body>
+</html>

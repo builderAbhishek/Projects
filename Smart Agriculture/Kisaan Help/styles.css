@@ -1,0 +1,263 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+}
+
+header {
+    background-color: #4CAF50;
+    color: white;
+    padding: 1em 0;
+    text-align: center;
+}
+
+nav ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+nav ul li {
+    display: inline;
+    margin: 0 1em;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}
+
+main {
+    padding: 2em;
+}
+
+h2 {
+    color: #333;
+}
+
+article {
+    background-color: white;
+    padding: 1em;
+    margin: 1em 0;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#home {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-content: center;
+    align-items: center;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 1em 0;
+    width: 100%;
+    bottom: 0;
+}
+.weather {
+    Display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    align-content: space-between;
+    align-items: center;
+    margin-bottom: 6em;
+    margin-top: 3em;
+    box-sizing: border-box; 
+    border: 2px solid gray; 
+}
+
+.response {
+width: 90%;
+}
+
+#weather, #googleSearch {
+    margin: 2em 0;
+}
+
+#weatherInfo {
+    font-size: 1.2em;
+}
+
+#voiceOutput, #botResponse {
+    font-size: 1.2em;
+    margin-top: 1em;
+}
+
+.card {
+    width: 342px;
+    height: 184px;
+    position: relative;
+    padding: 20px;
+    color: #fff;
+    margin: 10px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  
+  .background {
+    fill: linear-gradient(90deg, #5936B4 0%, #362A84 100%);
+    position: absolute;
+    inset: 0;
+    z-index: -1;
+  }
+  
+  .cloud {
+    position: absolute;
+    right: 0;
+    top: -12px;
+  }
+  
+  .cloud svg {
+    height: 120px;
+  }
+  
+  .card .main-text {
+    font-size: 40px;
+    z-index: 2;
+  }
+  
+  .card .info {
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .card .info .text-gray {
+    color: rgba(235, 235, 245, 0.60);
+  }
+  
+  .card .info .info-right {
+    align-self: flex-end;
+  }
+  
+
+
+  /* Mic Button*/
+
+  .switch {
+    position: relative;
+    width: 48px;
+    height: 48px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: red; /* Default color when off */
+    color: #fff;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all .3s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.mic-on, .mic-off {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all .3s ease-in-out;
+}
+
+.mic-on {
+    z-index: 4;
+}
+
+.mic-off {
+    position: absolute;
+    inset: 0;
+    z-index: 5;
+    opacity: 1; /* Default visibility when off */
+}
+
+.switch:hover {
+    background-color: rgba(255,0,0, 0.8); /* Slightly transparent red on hover */
+}
+
+#checkbox {
+    display: none;
+}
+
+#checkbox:checked + .switch {
+    background-color: blue; /* Color when on */
+}
+
+#checkbox:checked + .switch .mic-off {
+    opacity: 0; /* Hide mic-off when on */
+}
+
+#checkbox:checked + .switch .mic-on {
+    opacity: 1; /* Show mic-on when on */
+}
+
+#checkbox:active + .switch {
+    transform: scale(1.2); /* Zoom effect when active */
+}
+
+
+
+.news-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
+}
+
+.news-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 10px;
+    padding: 20px;
+    width: 300px;
+    transition: transform 0.2s;
+}
+
+.news-card:hover {
+    transform: scale(1.05);
+}
+
+.news-title {
+    font-size: 1.5em;
+    margin: 0 0 10px;
+}
+
+.news-author, .news-published {
+    font-size: 0.9em;
+    color: #555;
+    margin: 0 0 10px;
+}
+
+.news-link {
+    display: inline-block;
+    font-size: 1em;
+    color: #007bff;
+    text-decoration: none;
+    padding: 10px 15px;
+    border: 1px solid #007bff;
+    border-radius: 4px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.news-link:hover {
+    background-color: #007bff;
+    color: #fff;
+}
+
+#video {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-content: space-between;
+    justify-content: flex-start;
+    align-items: center;
+}

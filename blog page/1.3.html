@@ -1,0 +1,581 @@
+<style>
+    h1 {
+        display: block;
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h2 {
+        display: block;
+        font-size: 1.5em;
+        margin-top: 0.83em;
+        margin-bottom: 0.83em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h4 {
+        display: block;
+        font-size: 1.17em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h4 {
+        display: block;
+        font-size: 1em;
+        margin-top: 1.33em;
+        margin-bottom: 1.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h5 {
+        display: block;
+        font-size: .83em;
+        margin-top: 1.67em;
+        margin-bottom: 1.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h6 {
+        display: block;
+        font-size: .67em;
+        margin-top: 2.33em;
+        margin-bottom: 2.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    table {
+        width: fit-content;
+        border-collapse: collapse;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        text-align: start;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .syllabus-outline {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .syllabus-box {
+        width: 100%;
+        /*margin: 0px 5% 0px 5%;*/
+        display: flex;
+    }
+
+    .syllabus-container {
+        margin-bottom: 10px;
+        padding: 10px;
+        float: left;
+        margin-left: 13px;
+        box-shadow: 0 3px 3px rgb(0 0 0 / 60%), 0 1px 0 rgb(0 0 0 / 60%);
+    }
+
+    .dashed-border {
+        background-color: #fffba1;
+        padding: 20px 9px 0;
+        border-style: dashed;
+        border-width: 6px;
+        border-color: #000;
+    }
+
+    .left-right-border-box {
+        max-width: 100%;
+    }
+
+    .left-right-border {
+        background-color: #eaf5e4;
+        padding: 0 0 0 10px;
+        border-style: groove;
+        border-width: 0 10px;
+        border-color: #66db19;
+        border-radius: 0;
+    }
+
+    .left-right-border-box-2 {
+        max-width: 100%;
+    }
+
+    .left-border-sky {
+        padding: 1px 0 1px 10px;
+        border-style: groove;
+        margin: 10px;
+        border-width: 0 0 0 10px;
+        border-color: #02ccee;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+    }
+
+    .left-border-green {
+        padding: 1px 0 1px 10px;
+        border-style: groove;
+        margin: 10px;
+        border-width: 0 0 0 10px;
+        border-color: #a3ee02;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+    }
+
+    .section {
+        margin-bottom: 40px;
+    }
+
+    .left-border-purple {
+        padding: 1px 0 1px 10px;
+        margin: 10px;
+        border-style: groove;
+        border-width: 0 0 0 10px;
+        border-color: #bc60ff;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+    }
+
+    .h2-bg-black {
+        background-color: transparent;
+        padding: 15px;
+        background-image: linear-gradient(180deg, #000 0%, #000 100%);
+        color: #fff;
+    }
+
+    .p-bg-yellow {
+        background-color: transparent;
+        padding: 15px;
+        background-image: linear-gradient(180deg, #677dff 0%, #7f68ff 100%);
+        color: #ffffff;
+    }
+
+    .h2-bg-yellow-black {
+        background-color: transparent;
+        padding: 0 0 0 10px;
+        background-image: linear-gradient(180deg, #ecca68 0%, #fff144 100%);
+        border-style: groove;
+        border-width: 0 0 0 10px;
+        border-color: #000;
+    }
+
+    p {
+        margin-top: inherit;
+        margin-bottom: inherit;
+    }
+
+    li {
+        margin: inherit;
+    }
+
+
+    @media only screen and (max-width: 860px) {
+        .syllabus-box {
+            display: grid;
+        }
+
+        .syllabus-container {
+            margin-left: 0;
+        }
+
+        .col-md-6 {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+</style>
+
+
+
+<h1>कंप्यूटर सिस्टम के प्रमुख कंपोनेंट्स: एक विस्तृत गाइड</h1>
+
+<p>अगर आप CCC (Course on Computer Concepts) कोर्स कर रहे हैं या कंप्यूटर के बुनियादी पहलुओं के बारे में अधिक जानना चाहते
+    हैं, तो यह जानना महत्वपूर्ण है कि एक कंप्यूटर सिस्टम किन-किन भागों से मिलकर बनता है। इस ब्लॉग में, हम कंप्यूटर के
+    प्रमुख कंपोनेंट्स को विस्तार से समझेंगे, ताकि आप इन्हें आसानी से समझ सकें और अपने कोर्स में सफल हो सकें।</p>
+
+
+    <h2>1. Central Processing Unit (CPU)</h2>
+    <h4>क्या है:</h4>
+    <p>Central Processing Unit (CPU) को कंप्यूटर का "मस्तिष्क" या "दिमाग" कहा जाता है। यह कंप्यूटर का सबसे महत्वपूर्ण
+        भाग होता है जो सभी गणनाओं और डेटा प्रोसेसिंग का काम करता है। CPU सभी प्रोग्राम्स और कमांड्स को इंटरप्रेट करता है
+        और उनकी प्रक्रिया को संभालता है।</p>
+
+    <h4>Main Functions:</h4>
+    <ul>
+        <li class="left-right-border-box-2">
+            <div class="left-border-sky">
+                <p><b>Processing Input:</b> The CPU processes commands and data received from other input devices (like
+                    the keyboard, mouse).</p>
+            </div>
+        </li>
+        <li class="left-right-border-box-2">
+            <div class="left-border-green">
+                <p><b>Computation and Logic Operations:</b> Performs arithmetic and logical operations like addition,
+                    subtraction, comparison, etc.</p>
+            </div>
+        </li>
+        <li class="left-right-border-box-2">
+            <div class="left-border-purple">
+                <p><b>Generating Output:</b> Sends processed data to output devices (such as monitors, printers).</p>
+            </div>
+        </li>
+    </ul>
+
+    <h4>उदाहरण:</h4>
+    <p>जब आप एक वर्ड डॉक्यूमेंट पर काम कर रहे हैं, तो CPU टाइपिंग कमांड्स को प्रोसेस करता है और डॉक्यूमेंट को अपडेट करता
+        है। अगर आप एक गेम खेल रहे हैं, तो CPU गेम के ग्राफिक्स और मूवमेंट्स को प्रोसेस करता है।</p>
+
+    <h4>Example:</h4>
+    <p>When you are working on a Word document, the CPU processes your typing commands and updates the document. If you
+        are playing a game, the CPU processes the game's graphics and movements.</p>
+
+
+
+    <h2>2. Keyboard, Mouse, और VDU (Visual Display Unit)</h2>
+
+    <h3>Keyboard:</h3>
+    <h4>क्या है:</h4>
+    <p>Keyboard एक इनपुट डिवाइस है जो कंप्यूटर में टेक्स्ट और कमांड्स एंटर करने के लिए प्रयोग किया जाता है। इसमें
+        विभिन्न प्रकार की कीज होती हैं जिनसे आप डेटा एंटर करते हैं।</p>
+
+    <h4>What is it:</h4>
+    <p>The Keyboard is an input device used to enter text and commands into the computer. It consists of various keys
+        through which you input data.</p>
+
+    <h4>मुख्य कार्य:</h4>
+    <ul>
+        <li class="left-right-border-box-2">
+            <div class="left-border-sky">
+                <p><b>टाइपिंग:</b> अल्फाबेट्स, नंबर्स, और स्पेशल कैरेक्टर्स को इनपुट करता है।</p>
+            </div>
+        </li>
+        <li class="left-right-border-box-2">
+            <div class="left-border-green">
+                <p><b>कमांड्स:</b> विभिन्न शॉर्टकट्स और कमांड्स को ट्रिगर करता है जैसे 'Ctrl+C' (कॉपी) और 'Ctrl+V'
+                    (पेस्ट)।</p>
+            </div>
+        </li>
+    </ul>
+
+    <h4>What it Does:</h4>
+    <ul>
+        <li class="left-right-border-box-2">
+            <div class="left-border-sky">
+                <p><b>Typing:</b> Inputs alphabets, numbers, and special characters.</p>
+            </div>
+        </li>
+        <li class="left-right-border-box-2">
+            <div class="left-border-green">
+                <p><b>Commands:</b> Executes various shortcuts and commands like 'Ctrl+C' (copy) and 'Ctrl+V' (paste).
+                </p>
+            </div>
+        </li>
+    </ul>
+
+    <h4>उदाहरण:</h4>
+    <p>जब आप किसी वर्ड प्रोसेसिंग डॉक्यूमेंट में कुछ टाइप करते हैं, तो कीबोर्ड के माध्यम से एंटर किए गए डेटा को CPU
+        प्रोसेस करता है और डॉक्यूमेंट को अपडेट करता है।</p>
+
+    <h4>Example:</h4>
+    <p>When you type something in a word processing document, the data entered through the keyboard is processed by the
+        CPU and the document is updated.</p>
+
+    <h3>Mouse:</h3>
+    <h4>क्या है:</h4>
+    <p>Mouse एक इनपुट डिवाइस है जिसका उपयोग स्क्रीन पर कर्सर को मूव करने और विभिन्न ऑपरेशंस (जैसे क्लिक, ड्रैग) को करने
+        के लिए किया जाता है।</p>
+
+    <h4>What is it:</h4>
+    <p>The Mouse is an input device used to move the cursor on the screen and perform various operations like clicking
+        and dragging.</p>
+
+    <h4>मुख्य कार्य:</h4>
+    <ul>
+        <li class="left-right-border-box-2">
+            <div class="left-border-sky">
+                <p><b>कर्सर मूवमेंट:</b> स्क्रीन पर कर्सर को दिशा देने के लिए।</p>
+            </div>
+        </li>
+        <li class="left-right-border-box-2">
+            <div class="left-border-green">
+                <p><b>क्लिक और ड्रैग:</b> आइटम्स को सलेक्ट करने और मव करने के लिए।</p>
+            </div>
+        </li>
+    </ul>
+
+    <h4>What it Does:</h4>
+    <ul>
+        <li class="left-right-border-box-2">
+            <div class="left-border-sky">
+                <p><b>Cursor Movement:</b> Moves the cursor on the screen.</p>
+            </div>
+        </li>
+        <li class="left-right-border-box-2">
+            <div class="left-border-green">
+                <p><b>Click and Drag:</b> Selects and moves items.</p>
+            </div>
+        </li>
+    </ul>
+
+    <h4>उदाहरण:</h4>
+    <p>जब आप किसी आइकन पर क्लिक करते हैं या ड्रैग करके किसी फाइल को मूव करते हैं, तो माउस इन कार्यों को संभव बनाता है।
+    </p>
+
+    <h4>Example:</h4>
+    <p>When you click on an icon or drag a file to move it, the mouse enables these actions.</p>
+
+    <h3>VDU (Visual Display Unit):</h3>
+    <h4>क्या है:</h4>
+    <p>VDU (Visual Display Unit) जिसे मॉनिटर भी कहते हैं, एक आउटपुट डिवाइस है जो प्रोसेस्ड डेटा को विजुअल फॉर्म में
+        डिस्प्ले करता है।</p>
+
+    <h4>What is it:</h4>
+    <p>VDU (Visual Display Unit), also known as a monitor, is an output device that displays processed data in a visual
+        format.</p>
+
+    <h4>मुख्य कार्य:</h4>
+    <ul>
+        <li class="left-right-border-box-2">
+            <div class="left-border-sky">
+                <p><b>डेटा डिस्प्ले:</b> स्क्रीन पर टेक्स्ट, इमेजेस, और अन्य ग्राफिकल डेटा को दिखाता है।</p>
+            </div>
+        </li>
+        <li class="left-right-border-box-2">
+            <div class="left-border-green">
+                <p><b>यूजर इंटरफेस:</b> यूजर इंटरएक्शन के लिए ग्राफिकल इंटरफेस प्रदान करता है।</p>
+            </div>
+        </li>
+    </ul>
+
+    <h4>What it Does:</h4>
+    <ul>
+        <li class="left-right-border-box-2">
+            <div class="left-border-sky">
+                <p><b>Data Display:</b> Shows text, images, and other graphical data on the screen.</p>
+            </div>
+        </li>
+        <li class="left-right-border-box-2">
+            <div class="left-border-green">
+                <p><b>User Interface:</b> Provides a graphical interface for user interaction.</p>
+            </div>
+        </li>
+    </ul>
+
+    <h4>उदाहरण:</h4>
+    <p>जब आप वेबपेज या डॉक्यूमेंट देख रहे होते हैं, तो यह कंटेंट मॉनिटर पर डिस्प्ले होता है।</p>
+
+    <h4>Example:</h4>
+    <p>When you are viewing a webpage or document, the content is displayed on the monitor.</p>
+</div>
+
+
+    <h2>3. Other Input Devices</h2>
+
+    <h4>क्या है:</h4>
+    <p>Other Input Devices वे हार्डवेयर डिवाइस होते हैं जो उपयोगकर्ता के डेटा को कंप्यूटर तक पहुंचाते हैं।</p>
+
+    <h4>What are they:</h4>
+    <p>Other Input Devices are hardware devices that send user inputs to the computer for processing.</p>
+
+    <h4>उदाहरण:</h4>
+    <ul>
+        <li class="left-right-border-box-2">
+            <div class="left-border-sky">
+                <p><b>Microphone:</b> एक इनपुट डिवाइस जो वॉयस कमांड्स और ऑडियो को रिकॉर्ड करता है।</p>
+            </div>
+        </li>
+        <li class="left-right-border-box-2">
+            <div class="left-border-green">
+                <p><b>Scanner:</b> एक डिवाइस जो फिजिकल डॉक्यूमेंट्स और इमेजेस को डिजिटल फॉर्मेट में बदलता है।</p>
+            </div>
+        </li>
+        <li class="left-right-border-box-2">
+            <div class="left-border-purple">
+                <p><b>Webcam:</b> एक डिवाइस जो लाइव वीडियो और इमेजेस कैप्चर करता है।</p>
+            </div>
+        </li>
+    </ul>
+
+    <h4>Examples:</h4>
+    <ul>
+        <li class="left-right-border-box-2">
+            <div class="left-border-sky">
+                <p><b>Microphone:</b> Records voice commands and audio.</p>
+            </div>
+        </li>
+        <li class="left-right-border-box-2">
+            <div class="left-border-green">
+                <p><b>Scanner:</b> Converts physical documents and images into digital format.</p>
+            </div>
+        </li>
+        <li class="left-right-border-box-2">
+            <div class="left-border-purple">
+                <p><b>Webcam:</b> Captures live video and images.</p>
+            </div>
+        </li>
+    </ul>
+
+
+    <h2>4. Other Output Devices</h2>
+
+    <h4>क्या है:</h4>
+    <p>Other Output Devices वे हार्डवेयर डिवाइस होते हैं जो प्रोसेस्ड डेटा को उपयोगकर्ता के लिए पठनीय और समझने योग्य
+        फॉर्म में प्रदान करते हैं।</p>
+
+    <h4>What are they:</h4>
+    <p>Other Output Devices are hardware devices that provide processed data to the user in a readable and
+        understandable form.</p>
+
+    <h4>उदाहरण:</h4>
+    <ul>
+        <li class="left-right-border-box-2">
+            <div class="left-border-sky">
+                <p><b>Printer:</b> एक आउटपुट डिवाइस जो टेक्स्ट और इमेजेस को पेपर पर प्रिंट करता है।</p>
+            </div>
+        </li>
+        <li class="left-right-border-box-2">
+            <div class="left-border-green">
+                <p><b>Speakers:</b> एक आउटपुट डिवाइस जो ऑडियो साउंड और म्यूजिक आउटपुट करता है।</p>
+            </div>
+        </li>
+        <li class="left-right-border-box-2">
+            <div class="left-border-purple">
+                <p><b>Projector:</b> एक डिवाइस जो कंप्यूटर स्क्रीन के कंटेंट को बड़े डिस्प्ले पर दिखाता है।</p>
+            </div>
+        </li>
+    </ul>
+
+    <h4>Examples:</h4>
+    <ul>
+        <li class="left-right-border-box-2">
+            <div class="left-border-sky">
+                <p><b>Printer:</b> Prints text and images onto paper.</p>
+            </div>
+        </li>
+        <li class="left-right-border-box-2">
+            <div class="left-border-green">
+                <p><b>Speakers:</b> Produces audio sound and music.</p>
+            </div>
+        </li>
+        <li class="left-right-border-box-2">
+            <div class="left-border-purple">
+                <p><b>Projector:</b> Displays computer screen content on a large display.</p>
+            </div>
+        </li>
+    </ul>
+
+
+
+    <h2>5. Computer Memory</h2>
+
+    <h4>क्या है:</h4>
+    <p>Computer Memory वह स्पेस है जहाँ डेटा और प्रोग्राम्स को अस्थायी या स्थायी रूप से स्टोर किया जाता है।</p>
+
+    <h4>What is it:</h4>
+    <p>Computer Memory is the space where data and programs are stored temporarily or permanently.</p>
+
+    <h4>प्रमुख प्रकार:</h4>
+    <ul>
+        <li class="left-right-border-box-2">
+            <div class="left-border-sky">
+                <p><b>RAM (Random Access Memory):</b> अस्थायी मेमोरी जो कंप्यूटर के वर्तमान कार्यों और एप्लिकेशंस को
+                    सपोर्ट करती है।</p>
+            </div>
+        </li>
+        <li class="left-right-border-box-2">
+            <div class="left-border-green">
+                <p><b>ROM (Read-Only Memory):</b> स्थायी मेमोरी जो सिस्टम की बेसिक इंस्ट्रक्शन्स और फर्मवेयर को स्टोर
+                    करती है।</p>
+            </div>
+        </li>
+    </ul>
+
+    <h4>Types of Memory:</h4>
+    <ul>
+        <li class="left-right-border-box-2">
+            <div class="left-border-sky">
+                <p><b>RAM (Random Access Memory):</b> Temporary memory that supports the computer's current tasks and
+                    applications.</p>
+            </div>
+        </li>
+        <li class="left-right-border-box-2">
+            <div class="left-border-green">
+                <p><b>ROM (Read-Only Memory):</b> Permanent memory that stores the system's basic instructions and
+                    firmware.</p>
+            </div>
+        </li>
+    </ul>
+
+    <h4>उदाहरण:</h4>
+    <p>RAM में डेटा अस्थायी रूप से स्टोर किया जाता है, जैसे जब आप एक डॉक्यूमेंट खोलते हैं, तो वह RAM में लोड होता है।
+        ROM में डेटा स्थायी रूप से स्टोर होता है, जैसे BIOS सिस्टम की बेसिक इंस्ट्रक्शन्स ROM में स्टोर होती हैं।</p>
+
+    <h4>Examples:</h4>
+    <p>Data is temporarily stored in RAM, such as when you open a document, it is loaded into RAM. Data is permanently
+        stored in ROM, such as the BIOS system’s basic instructions stored in ROM.</p>
+
+
+
+
+<br>
+<h2>निष्कर्ष / Conclusion:</h2>
+
+
+
+<p>आशा है कि इस गाइड के माध्यम से आप कंप्यूटर सिस्टम के प्रमुख कंपोनेंट्स को समझ पाए होंगे और CCC कोर्स में अपने अध्ययन
+    को और अधिक प्रभावी बना सकेंगे।</p>
+
+<p>I hope this guide helps you understand the major components of a computer system and makes your study for the CCC
+    course more effective.</p>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="left-right-border-box">
+    <div class="left-border-green">
+        <p><b>व्यापार: </b>अकाउंट्स और इन्वेंट्री मैनेजमेंट से लेकर ग्राहक सेवा और मार्केटिंग तक, कंप्यूटर व्यापार को
+            सुसंगठित करते हैं।</p>
+    </div>
+</div>

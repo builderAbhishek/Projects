@@ -1,0 +1,384 @@
+<style>
+    h1 {
+        display: block;
+        font-size: 2em;
+        margin-top: 0.67em;
+        margin-bottom: 0.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h2 {
+        display: block;
+        font-size: 1.5em;
+        margin-top: 0.83em;
+        margin-bottom: 0.83em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h4 {
+        display: block;
+        font-size: 1.17em;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h4 {
+        display: block;
+        font-size: 1em;
+        margin-top: 1.33em;
+        margin-bottom: 1.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h5 {
+        display: block;
+        font-size: .83em;
+        margin-top: 1.67em;
+        margin-bottom: 1.67em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    h6 {
+        display: block;
+        font-size: .67em;
+        margin-top: 2.33em;
+        margin-bottom: 2.33em;
+        margin-left: 0;
+        margin-right: 0;
+        font-weight: bold;
+    }
+
+    table {
+        width: fit-content;
+        border-collapse: collapse;
+    }
+
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+
+    th,
+    td {
+        padding: 8px;
+        text-align: start;
+    }
+
+    th {
+        background-color: #f2f2f2;
+    }
+
+    .syllabus-outline {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .syllabus-box {
+        width: 100%;
+        /*margin: 0px 5% 0px 5%;*/
+        display: flex;
+    }
+
+    .syllabus-container {
+        margin-bottom: 10px;
+        padding: 10px;
+        float: left;
+        margin-left: 13px;
+        box-shadow: 0 3px 3px rgb(0 0 0 / 60%), 0 1px 0 rgb(0 0 0 / 60%);
+    }
+
+    .dashed-border {
+        background-color: #fffba1;
+        padding: 20px 9px 0;
+        border-style: dashed;
+        border-width: 6px;
+        border-color: #000;
+    }
+
+    .left-right-border-box {
+        max-width: 100%;
+    }
+
+    .left-right-border {
+        background-color: #eaf5e4;
+        padding: 0 0 0 10px;
+        border-style: groove;
+        border-width: 0 10px;
+        border-color: #66db19;
+        border-radius: 0;
+    }
+
+    .left-right-border-box-2 {
+        max-width: 100%;
+    }
+
+    .left-border-sky {
+        padding: 1px 0 1px 10px;
+        border-style: groove;
+        margin: 10px;
+        border-width: 0 0 0 10px;
+        border-color: #02ccee;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+    }
+
+    .left-border-green {
+        padding: 1px 0 1px 10px;
+        border-style: groove;
+        margin: 10px;
+        border-width: 0 0 0 10px;
+        border-color: #a3ee02;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+    }
+
+    .section {
+        margin-bottom: 40px;
+    }
+
+    .left-border-purple {
+        padding: 1px 0 1px 10px;
+        margin: 10px;
+        border-style: groove;
+        border-width: 0 0 0 10px;
+        border-color: #bc60ff;
+        box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, .5);
+        display: flex;
+        align-items: center;
+    }
+
+    .h2-bg-black {
+        background-color: transparent;
+        padding: 15px;
+        background-image: linear-gradient(180deg, #000 0%, #000 100%);
+        color: #fff;
+    }
+
+    .p-bg-yellow {
+        background-color: transparent;
+        padding: 15px;
+        background-image: linear-gradient(180deg, #677dff 0%, #7f68ff 100%);
+        color: #ffffff;
+    }
+
+    .h2-bg-yellow-black {
+        background-color: transparent;
+        padding: 0 0 0 10px;
+        background-image: linear-gradient(180deg, #ecca68 0%, #fff144 100%);
+        border-style: groove;
+        border-width: 0 0 0 10px;
+        border-color: #000;
+    }
+
+    p {
+        margin-top: inherit;
+        margin-bottom: inherit;
+    }
+
+    li {
+        margin: inherit;
+    }
+
+
+    @media only screen and (max-width: 860px) {
+        .syllabus-box {
+            display: grid;
+        }
+
+        .syllabus-container {
+            margin-left: 0;
+        }
+
+        .col-md-6 {
+            padding-right: 0;
+            padding-left: 0;
+        }
+    }
+</style>
+
+<div class="container">
+    <h1>Hardware और Software के Concepts: एक विस्तृत गाइड</h1>
+
+    <p>अगर आप CCC (Course on Computer Concepts) या कंप्यूटर के बुनियादी पहलुओं के बारे में जानना चाहते हैं, तो यह समझना महत्वपूर्ण है कि हार्डवेयर और सॉफ्टवेयर क्या हैं और इनकी विभिन्न श्रेणियाँ क्या होती हैं। इस ब्लॉग में, हम इन अवधारणाओं को विस्तार से समझेंगे।</p>
+
+    <div class="section">
+        <h2>1.4 Concept of Hardware and Software</h2>
+
+        <h3>1.4.1 Hardware</h3>
+        <h4>क्या है:</h4>
+        <p>Hardware उन भौतिक उपकरणों और भागों को संदर्भित करता है जो कंप्यूटर सिस्टम में होते हैं। इसमें कंप्यूटर के सभी टुकड़े जैसे कि प्रोसेसर, कीबोर्ड, माउस, मॉनिटर, और प्रिंटर शामिल हैं।</p>
+
+        <h4>What is it:</h4>
+        <p>Hardware refers to the physical devices and components in a computer system. It includes all the physical parts of a computer such as the processor, keyboard, mouse, monitor, and printer.</p>
+
+        <h4>उदाहरण:</h4>
+        <ul>
+            <li class="left-right-border-box-2">
+                <div class="left-border-sky">
+                    <p><b>Processor (CPU):</b> कंप्यूटर का मस्तिष्क जो सभी गणनाएं और प्रोसेसिंग करता है।</p>
+                </div>
+            </li>
+            <li class="left-right-border-box-2">
+                <div class="left-border-green">
+                    <p><b>Keyboard:</b> डेटा और कमांड्स एंटर करने के लिए उपयोग किया जाता है।</p>
+                </div>
+            </li>
+            <li class="left-right-border-box-2">
+                <div class="left-border-purple">
+                    <p><b>Monitor:</b> स्क्रीन पर डेटा और ग्राफिक्स को डिस्प्ले करता है।</p>
+                </div>
+            </li>
+        </ul>
+
+        <h4>Examples:</h4>
+        <ul>
+            <li class="left-right-border-box-2">
+                <div class="left-border-sky">
+                    <p><b>Processor (CPU):</b> The brain of the computer that performs all calculations and processing.</p>
+                </div>
+            </li>
+            <li class="left-right-border-box-2">
+                <div class="left-border-green">
+                    <p><b>Keyboard:</b> Used to enter data and commands.</p>
+                </div>
+            </li>
+            <li class="left-right-border-box-2">
+                <div class="left-border-purple">
+                    <p><b>Monitor:</b> Displays data and graphics on the screen.</p>
+                </div>
+            </li>
+        </ul>
+
+        <h3>1.4.2 Software</h3>
+        <h4>क्या है:</h4>
+        <p>Software उन प्रोग्राम्स और एप्लिकेशंस को संदर्भित करता है जो कंप्यूटर हार्डवेयर को नियंत्रित करते हैं और उसे कार्यात्मक बनाते हैं। सॉफ्टवेयर को मुख्य रूप से दो श्रेणियों में बांटा जा सकता है: एप्लिकेशन सॉफ्टवेयर और सिस्टम सॉफ्टवेयर।</p>
+
+        <h4>What is it:</h4>
+        <p>Software refers to the programs and applications that control and make the computer hardware functional. Software can be primarily divided into two categories: application software and system software.</p>
+
+        <h4>1.4.2.1 Application Software</h4>
+        <h4>क्या है:</h4>
+        <p>Application Software वह सॉफ्टवेयर है जो विशिष्ट उपयोगकर्ता कार्यों को पूरा करने के लिए डिज़ाइन किया गया है। यह सॉफ्टवेयर यूजर की आवश्यकताओं के अनुसार कार्य करता है।</p>
+
+        <h4>What is it:</h4>
+        <p>Application Software is software designed to perform specific user tasks. It operates according to the needs of the user.</p>
+
+        <h4>उदाहरण:</h4>
+        <ul>
+            <li class="left-right-border-box-2">
+                <div class="left-border-sky">
+                    <p><b>Microsoft Word:</b> एक वर्ड प्रोसेसिंग सॉफ़्टवेयर जो दस्तावेज़ तैयार करने के लिए उपयोग किया जाता है।</p>
+                </div>
+            </li>
+            <li class="left-right-border-box-2">
+                <div class="left-border-green">
+                    <p><b>Google Chrome:</b> एक वेब ब्राउज़र जो इंटरनेट पर ब्राउज़िंग के लिए प्रयोग किया जाता है।</p>
+                </div>
+            </li>
+        </ul>
+
+        <h4>Examples:</h4>
+        <ul>
+            <li class="left-right-border-box-2">
+                <div class="left-border-sky">
+                    <p><b>Microsoft Word:</b> A word processing software used for creating documents.</p>
+                </div>
+            </li>
+            <li class="left-right-border-box-2">
+                <div class="left-border-green">
+                    <p><b>Google Chrome:</b> A web browser used for browsing the internet.</p>
+                </div>
+            </li>
+        </ul>
+
+        <h4>1.4.2.2 System Software</h4>
+        <h4>क्या है:</h4>
+        <p>System Software वह सॉफ्टवेयर होता है जो कंप्यूटर हार्डवेयर को ऑपरेटिंग सिस्टम और अन्य बेसिक फंक्शनलिटी प्रदान करता है। यह सॉफ्टवेयर हार्डवेयर और एप्लिकेशन सॉफ्टवेयर के बीच मध्यस्थता करता है।</p>
+
+        <h4>What is it:</h4>
+        <p>System Software is software that provides the operating system and other basic functionalities to the computer hardware. It acts as an intermediary between hardware and application software.</p>
+
+        <h4>उदाहरण:</h4>
+        <ul>
+            <li class="left-right-border-box-2">
+                <div class="left-border-sky">
+                    <p><b>Windows:</b> एक ऑपरेटिंग सिस्टम जो कंप्यूटर को नियंत्रित करता है और अन्य सॉफ्टवेयर चलाने के लिए आधार प्रदान करता है।</p>
+                </div>
+            </li>
+            <li class="left-right-border-box-2">
+                <div class="left-border-green">
+                    <p><b>Linux:</b> एक ओपन-सोर्स ऑपरेटिंग सिस्टम जो विभिन्न प्रकार के कंप्यूटर हार्डवेयर पर काम करता है।</p>
+                </div>
+            </li>
+        </ul>
+
+        <h4>Examples:</h4>
+        <ul>
+            <li class="left-right-border-box-2">
+                <div class="left-border-sky">
+                    <p><b>Windows:</b> An operating system that controls the computer and provides a platform for running other software.</p>
+                </div>
+            </li>
+            <li class="left-right-border-box-2">
+                <div class="left-border-green">
+                    <p><b>Linux:</b> An open-source operating system that works on various types of computer hardware.</p>
+                </div>
+            </li>
+        </ul>
+
+        <h3>1.4.3 Programming Languages</h3>
+        <h4>क्या है:</h4>
+        <p>Programming Languages वे भाषाएँ हैं जिनका उपयोग सॉफ्टवेयर और एप्लिकेशंस को विकसित करने के लिए किया जाता है। ये भाषाएँ कोड और निर्देशों को कंप्यूटर के लिए समझने योग्य फॉर्म में बदलती हैं।</p>
+
+        <h4>What are they:</h4>
+        <p>Programming Languages are languages used to develop software and applications. These languages translate code and instructions into a format that the computer can understand.</p>
+
+        <h4>उदाहरण:</h4>
+        <ul>
+            <li class="left-right-border-box-2">
+                <div class="left-border-sky">
+                    <p><b>Python:</b> एक उच्च-स्तरीय प्रोग्रामिंग भाषा जो पढ़ने में आसान और प्रयोग में सरल है।</p>
+                </div>
+            </li>
+            <li class="left-right-border-box-2">
+                <div class="left-border-green">
+                    <p><b>Java:</b> एक बहु-उद्देशीय प्रोग्रामिंग भाषा जो क्रॉस-प्लेटफ़ॉर्म एप्लिकेशंस के लिए उपयुक्त है।</p>
+                </div>
+            </li>
+        </ul>
+
+        <h4>Examples:</h4>
+        <ul>
+            <li class="left-right-border-box-2">
+                <div class="left-border-sky">
+                    <p><b>Python:</b> A high-level programming language that is easy to read and simple to use.</p>
+                </div>
+            </li>
+            <li class="left-right-border-box-2">
+                <div class="left-border-green">
+                    <p><b>Java:</b> A multi-purpose programming language suitable for cross-platform applications.</p>
+                </div>
+            </li>
+        </ul>
+<br>
+        <p>आशा है कि इस गाइड के माध्यम से आप हार्डवेयर और सॉफ्टवेयर के बीच अंतर और उनके प्रमुख तत्वों को समझ पाएंगे।</p>
+
+        <p>I hope this guide helps you understand the difference between hardware and software and their key elements.</p>
+    </div>
+</div>

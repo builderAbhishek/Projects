@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Before and After Images</title>
+</head>
+<body>
+    <h1>Upload Before and After Images for Training</h1>
+    <form action="/train" method="POST" enctype="multipart/form-data">
+        <label for="before_image">Before Image:</label>
+        <input type="file" name="before_image" id="before_image" required><br><br>
+        
+        <label for="after_image">After Image:</label>
+        <input type="file" name="after_image" id="after_image" required><br><br>
+
+        <input type="submit" value="Upload">
+    </form>
+
+    <h1>Enhance an Image Using Your Model</h1>
+    <form action="/enhance" method="POST" enctype="multipart/form-data">
+        <label for="image_to_enhance">Upload Image to Enhance:</label>
+        <input type="file" name="image_to_enhance" id="image_to_enhance" required><br><br>
+
+        <input type="submit" value="Enhance">
+    </form>
+</body>
+</html>

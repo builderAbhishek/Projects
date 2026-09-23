@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Images for Training</title>
+</head>
+<body>
+    <h1>Upload LR and HR Images for Model Training</h1>
+
+    <form action="/upload" method="POST" enctype="multipart/form-data">
+        <label for="lr_image">Upload Low-Resolution Image (LR):</label><br>
+        <input type="file" name="lr_image" required><br><br>
+
+        <label for="hr_image">Upload High-Resolution Image (HR):</label><br>
+        <input type="file" name="hr_image" required><br><br>
+
+        <button type="submit">Upload and Train</button>
+    </form>
+</body>
+</html>
